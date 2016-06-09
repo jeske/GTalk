@@ -1,0 +1,2 @@
+bcc -oenc enc.c
+

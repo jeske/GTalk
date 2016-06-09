@@ -1,0 +1,165 @@
+Warning: Segment CODE is in two groups: CODE and CGROUP
+Warning: Segment CODE is in two groups: CODE and CGROUP
+
+ Start  Stop   Length Name               Class
+
+ 00000H 00036H 00037H _TEXT              CODE
+ 00037H 01469H 01433H CODE               CODE
+ 01470H 01470H 00000H _FARDATA           CODE
+ 01470H 01470H 00000H _FARBSS            CODE
+ 01470H 01470H 00000H _DATA              CODE
+ 01470H 01470H 00000H _CVTSEG            CODE
+ 01470H 01470H 00000H _SCNSEG            CODE
+ 01470H 01470H 00000H _CONST             CODE
+ 01470H 01470H 00000H _INIT_             CODE
+ 01470H 01470H 00000H _INITEND_          CODE
+ 01470H 01470H 00000H _EXIT_             CODE
+ 01470H 01470H 00000H _EXITEND_          CODE
+ 01470H 01470H 00000H _BSS               CODE
+ 01470H 01470H 00000H _BSSEND            CODE
+
+  Address         Publics by Name
+
+ 0000:06E3       _aget_abuffer
+ 0000:0748       _aput_into_buffer
+ 0000:0033       _arg_addr
+ 0000:0D1C       _background
+ 0000:0DC3       _blink_video
+ 0000:0DF8       _bold_video
+ 0000:118B       _change_dtr_state
+ 0000:12FE       _change_my_info_line
+ 0000:0E66       _chars_in_buffer
+ 0000:1020       _char_in_buf
+ 0000:11D2       _check_for_privates
+ 0000:0EB1       _dcd_detect
+ 0000:0793       _dealloc_abuf
+ 0000:0FDD       _empty_buffer
+ 0000:1148       _empty_outbuffer
+ 0000:0CE3       _foreground
+ 0000:0F44       _get_char
+ 0000:106B       _get_first_char
+ 0000:10B6       _get_nchar
+ 0000:00C4       _get_string_cntrl
+ 0000:1359       _ginsu_main
+ 0000:088B       _g_delay
+ 0000:02B1       _g_fclose
+ 0000:0930       _g_findfirst
+ 0000:09A4       _g_findnext
+ 0000:031B       _g_flush
+ 0000:0234       _g_fopen
+ 0000:04DD       _g_fread
+ 0000:0385       _g_free
+ 0000:05CB       _g_fseek
+ 0000:063F       _g_ftell
+ 0000:0554       _g_fwrite
+ 0000:1203       _g_getcwd
+ 0000:0466       _g_malloc
+ 0000:03EF       _g_malloc_main_only
+ 0000:0B34       _g_mkdir
+ 0000:0A46       _g_remove
+ 0000:08BF       _g_rename
+ 0000:0B9F       _g_rmdir
+ 0000:0037       _g_sprintf
+ 0000:0188       _g_time
+ 0000:06AF       _initabuffer
+ 0000:01F8       _islocked
+ 0000:002B       _jmptl
+ 0000:0847       _line_editor
+ 0000:0124       _lock_dos
+ 0000:0A0E       _log_error
+ 0000:002F       _old_DS
+ 0000:0031       _old_ES
+ 0000:133E       _ourblock
+ 0000:0CAA       _position
+ 0000:0C0A       _print_chr
+ 0000:0C79       _print_cr
+ 0000:07C7       _print_file_to_cntrl
+ 0000:0C40       _print_string
+ 0000:008C       _print_str_cr
+ 0000:0EFC       _put_char_in_buffer
+ 0000:0AF1       _recv_files
+ 0000:12BE       _register_bot
+ 0000:0D8E       _reset_attributes
+ 0000:0F95       _send_char
+ 0000:0AB1       _send_files
+ 0000:0D55       _special_code
+ 0000:0158       _unlock_dos
+ 0000:1286       _unregister_bot_myself
+ 0000:080F       _wait_ch
+ 0000:1101       _wait_for_xmit
+ 0000:0E2D       _wrap_line
+
+  Address         Publics by Value
+
+ 0000:002B       _jmptl
+ 0000:002F       _old_DS
+ 0000:0031       _old_ES
+ 0000:0033       _arg_addr
+ 0000:0037       _g_sprintf
+ 0000:008C       _print_str_cr
+ 0000:00C4       _get_string_cntrl
+ 0000:0124       _lock_dos
+ 0000:0158       _unlock_dos
+ 0000:0188       _g_time
+ 0000:01F8       _islocked
+ 0000:0234       _g_fopen
+ 0000:02B1       _g_fclose
+ 0000:031B       _g_flush
+ 0000:0385       _g_free
+ 0000:03EF       _g_malloc_main_only
+ 0000:0466       _g_malloc
+ 0000:04DD       _g_fread
+ 0000:0554       _g_fwrite
+ 0000:05CB       _g_fseek
+ 0000:063F       _g_ftell
+ 0000:06AF       _initabuffer
+ 0000:06E3       _aget_abuffer
+ 0000:0748       _aput_into_buffer
+ 0000:0793       _dealloc_abuf
+ 0000:07C7       _print_file_to_cntrl
+ 0000:080F       _wait_ch
+ 0000:0847       _line_editor
+ 0000:088B       _g_delay
+ 0000:08BF       _g_rename
+ 0000:0930       _g_findfirst
+ 0000:09A4       _g_findnext
+ 0000:0A0E       _log_error
+ 0000:0A46       _g_remove
+ 0000:0AB1       _send_files
+ 0000:0AF1       _recv_files
+ 0000:0B34       _g_mkdir
+ 0000:0B9F       _g_rmdir
+ 0000:0C0A       _print_chr
+ 0000:0C40       _print_string
+ 0000:0C79       _print_cr
+ 0000:0CAA       _position
+ 0000:0CE3       _foreground
+ 0000:0D1C       _background
+ 0000:0D55       _special_code
+ 0000:0D8E       _reset_attributes
+ 0000:0DC3       _blink_video
+ 0000:0DF8       _bold_video
+ 0000:0E2D       _wrap_line
+ 0000:0E66       _chars_in_buffer
+ 0000:0EB1       _dcd_detect
+ 0000:0EFC       _put_char_in_buffer
+ 0000:0F44       _get_char
+ 0000:0F95       _send_char
+ 0000:0FDD       _empty_buffer
+ 0000:1020       _char_in_buf
+ 0000:106B       _get_first_char
+ 0000:10B6       _get_nchar
+ 0000:1101       _wait_for_xmit
+ 0000:1148       _empty_outbuffer
+ 0000:118B       _change_dtr_state
+ 0000:11D2       _check_for_privates
+ 0000:1203       _g_getcwd
+ 0000:1286       _unregister_bot_myself
+ 0000:12BE       _register_bot
+ 0000:12FE       _change_my_info_line
+ 0000:133E       _ourblock
+ 0000:1359       _ginsu_main
+
+Program entry point at 0000:0000
+Warning: No stack
+

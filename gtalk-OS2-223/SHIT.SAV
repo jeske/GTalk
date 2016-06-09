@@ -1,0 +1,56 @@
+
+				   current_scanline++;
+
+				   if (current_scanline <= local_os2_video.current_buf->height)
+				   {
+
+
+					   /* if this line is split between the beginning
+						  and end of the buffer, then do the pieces
+						  separatly */
+
+					   if ((walk_through+width) >= backtemp.bufend)
+					   {
+						 puttext(1,current_scanline,
+								   (backtemp.bufend - walk_through),
+								   1, walk_through);
+
+						 walk_through = backtemp.bufstart;
+
+						 puttext((backtemp.bufend - walk_through)+1,current_scanline,
+								   width - (backtemp.bufend - walk_through), 1,
+								   walk_through);
+
+					   }
+
+					   region_top_ptr = backtemp.bufstart;
+					   region_top	  = current_scanline;
+
+					   /* now continue as much as we can until we get to
+						  dispptr
+						  */
+
+                           while (((walk_through+width) < backtemp.curbuf)
+                                      && (current_scanline < local_os2_video.current_buf->height))
+                           {  walk_through += width;
+                              current_scanline++;
+                           }
+
+                           /* if there actually IS such a region */
+
+                           if ((current_scanline-region_top))
+                           {
+                               puttext(1,region_top,local_os2_video.current_buf->width,
+                                 (current_scanline-region_top),
+                                 (void *)walk_through);
+                           }
+
+                           /*
+                            if (current_scanline <= local_os2_video.current_buf->height)
+                            {
+
+                             puttext(1,current_scanline+1)
+
+                            }
+                            */
+				   }

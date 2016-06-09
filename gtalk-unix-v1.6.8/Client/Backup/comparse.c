@@ -1,0 +1,241 @@
+
+/*
+ * Gtalk/UNIX 
+ * Copyright (C) 1995, by David W Jeske, and Daniel L Marks 
+ * Copying or distributing this source code without written  
+ * permission of David W Jeske and Daniel L Marks is strictly forbidden 
+ *
+ * - comparse.h
+ *
+ * handle dynamic command parsing
+ *
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdb.h>
+
+#include "types.h"
+#include "str.h"
+#include "list.h"
+#include "abuf.h"
+#include "comparse.h"
+#include "command.h"
+#include "gamecon.h"
+#include "squelch.h"
+#include "rotator.h"
+#include "term_cli.h"
+#include "accounting.h"
+
+list commands;
+
+int start_user_edit(com_struct *command, char *str);
+
+com_struct static_commands[] =
+{
+
+/* basic commands */
+
+/*
+  { "E", "Edit File", NULL,
+	edit_file,           NULL , COM_NONE},
+*/
+/*
+  { "L", "Start Login Subshell", "GT Login",
+	"CMD_L", cmd_do_login_subshell,   NULL , COM_NONE},
+*/
+  { "Q", "Quit"       , NULL,
+	"CMD_Q",  cmd_quit_loop,           NULL , COM_NONE},
+  { "ELM",   "Enter Email Subsystem"  , "GT Email (elm)",
+	"CMD_MAIL", NULL,                "/usr/bin/elm" , COM_NONE},
+  { "PINE",   "Enter Email Subsystem"  , "GT Email (pine)",
+	"CMD_MAIL", NULL,                "/usr/bin/pine" , COM_NONE},
+  { "SHELL",   "Enter Shell Subsystem" , "GT Shell",
+	"CMD_SHELL", cmd_do_user_shell,      NULL , COM_NONE},
+  { "MENU",    "Enter User Menu Subsystem" , "GT User Menu",
+	"CMD_MESG", cmd_do_user_menu,	NULL,	COM_NONE},
+  { "BBS",	"Enter BBS subsystem",	"BBS",
+        "CMD_BBS", cmd_enter_bbs,	NULL,	COM_NONE},
+  { "H", "Change Handle"       , NULL,
+	"CMD_H", cmd_change_handle,       NULL , COM_NONE},
+  { "T", "Change Channel"  , NULL, 
+	"CMD_T", cmd_change_channel, NULL, COM_NONE},
+  { "S", "Display System List"       , NULL,
+	"CMD_S", cmd_system_list,     NULL , COM_NONE},
+  { "SL", "Display Extended System List"       , NULL,
+	"CMD_S", cmd_long_system_list,     NULL , COM_NONE},
+  { "?", "Display Command List (type /? <command> for more help)", NULL, 
+	"CMD_?", cmd_command_help,    NULL, COM_NONE},
+  { "ANSI", "Toggle ANSI color ON/OFF", NULL,
+	"CMD_ANSI", cmd_toggle_ansi_color, NULL, COM_NONE},
+  { "ASCII", "Toggle High-Bit ASCII ON/OFF", NULL,
+	"CMD_ASCII", cmd_toggle_high_ascii, NULL, COM_NONE},
+  { "INFO",  "Display User Info", NULL,
+	"CMD_INFO", cmd_print_user_info, NULL, COM_NONE},
+  { "LAST",  "Display User Last Info", NULL,
+	"CMD_LAST", cmd_print_user_last_info, NULL, COM_NONE},
+  { "TIME",  "Display Current Time", NULL,
+        "CMD_TIME", cmd_time_command, NULL, COM_NONE},
+  { "I",     "Display GTalk Information",  NULL,
+	NULL, cmd_show_gtalk_info, NULL, COM_NONE},
+  { "P",     "Send Private Message", NULL,
+	"CMD_P", cmd_send_private_message, NULL, COM_NONE},
+  { "PAGE",  "Page a Node with a Reason", NULL,
+        "CMD_PAGE", cmd_page_node, NULL, COM_NONE},
+  { "CONFIG","Change your account configuration", "User Configuration",
+        "CMD_LURK", cmd_do_user_config, NULL, COM_NONE},
+
+/** CHANNEL MODERATION COMMANDS **/
+
+   { "CI", "Channel Invite", NULL,
+         "CMD_CI", cmd_channel_invite, NULL , COM_NONE},
+   { "CK", "Channel Ban", NULL,
+         "CMD_CK", cmd_channel_ban, NULL , COM_NONE},
+   { "CG", "Channel Give Moderator", NULL,
+         "CMD_CG", cmd_give_moderator, NULL , COM_NONE},
+   { "CW", "Channel Allow Writing", NULL,
+         "CMD_CW", cmd_allow_write, NULL , COM_NONE},
+   { "CL", "Channel Lock", NULL,
+         "CMD_CL", cmd_channel_lock, NULL , COM_NONE},
+   { "CC", "Channel Lineout Counter", NULL,
+         "CMD_CC", cmd_lineout_counter, NULL ,COM_NONE},
+
+/** MISC commands **/
+
+  { "GAMECON", "Game Connection", NULL,
+        "CMD_GAMECON", cmd_gamecon, NULL , COM_NONE},
+  { "U",        "User Editor", "GT: User Editor",
+      "CMD_U", start_user_edit, NULL , COM_NONE},
+  { "M",        "Show /M", NULL,
+        "CMD_M", cmd_print_message_box, NULL, COM_NONE},
+  { "LOG",      "Print Caller Log", NULL, 
+      "CMD_LOG", cmd_print_caller_log, NULL},
+  { "SYSINFO",  "Show System Information", NULL,
+      "CMD_SYSINFO", cmd_print_sysinfo, NULL, COM_NONE},
+  { "X",        "Squelch Private Messages", NULL, 
+      "CMD_X",  cmd_squelch_node, COM_NONE},
+  { "TERM",     "Terminal Command", NULL,
+      "CMD_TERM", cmd_terminal, COM_NONE},
+  { "FTERM",    "Force Terminal On/Off", NULL,
+      "CMD_TERM", cmd_force_terminal, COM_NONE},
+
+/***** Disabled commands ****
+  { "FB",       cmd_send_feedback,    NULL},
+  { "D",        cmd_toggle_stream_send, NULL},
+  { "DS",       cmd_toggle_double_space, NULL},
+
+
+  { "RE",       cmd_toggle_self_echo, NULL},
+  { "SM",       cmd_display_user_list, NULL},
+  { "SYSHELP",  NULL, syshelp},
+
+  { "W",        cmd_set_screen_width, NULL},
+ ****************************/
+
+/* user level commands */
+  { "PASSWD",   "Change Password", NULL,
+      "CMD_PASSWD", cmd_change_passwd, NULL, COM_NONE},
+
+  { "DEVICES",   "Show Configured Devices", NULL,
+      "CMD_DEVICES", cmd_device_list, NULL, COM_NONE},
+
+  { "RESET", "Reset DEVICE", NULL, 
+      "CMD_RESET", cmd_reset_device, NULL, COM_NONE},
+
+/****************** Disabled Commands **********
+  { "C",        cmd_channel_message, NULL},
+  { "CHAT",     cmd_start_chat,   NULL},
+  { "MESG",     cmd_message_edit,  NULL},
+  { "MON",      cmd_monitor_channels, NULL},
+  { "SI",       cmd_silence_node, NULL},
+  { "TS",       cmd_show_channel_info, NULL},
+*************************************************/
+
+
+
+
+/* cosysop/sysop commands */
+  { "K",        "Kill Node", NULL,
+      "CMD_K", cmd_kill_node, NULL,COM_NONE},
+  { "RL",       "Relog Node", NULL,
+      "CMD_RL", cmd_relog_node, NULL,COM_NONE},
+  { "G",        "Give Time", NULL,
+      "CMD_G",  cmd_give_time, NULL ,COM_NONE},
+  { "MAKE",     "Make User Access Level Changes (temp)", NULL,
+      "CMD_MAKE", cmd_make_access, NULL, COM_NONE},
+  { "LOCK",     "Lock System", NULL,
+      "CMD_LOCK", cmd_lock_system, NULL, COM_NONE},
+  { "BANK",     "Enter Online Bank", "GT Bank",
+      "CMD_BANK", cmd_bank, NULL, COM_NONE},
+  { "CREDIT",   "Enter Sysop Credit Utility", "GT Sysop Bank",
+      "CMD_CREDIT", cmd_credit, NULL, COM_NONE},
+  { "LINK",     "Link yourself", NULL,
+      "CMD_LINK", link_main_loop, NULL, COM_NONE},
+
+/**************** Disabled Commands ***************
+  { "K",        cmd_kill_node, NULL},
+  { "LURK",     cmd_lurk, NULL},
+  { "SAFE",     cmd_set_lurk_safe, NULL}, 
+  { "RESET",    cmd_reset_node, NULL},
+  { "TASK",     cmd_display_task_info, NULL},
+  { "DEVICES",  cmd_show_device_info, NULL},
+
+  { "MEMUD",    NULL, "updateMemberList"},
+  { "SYSUD",    cmd_save_system_info, NULL},
+  { "ROT",      cmd_rotator_menu, NULL},
+  { "SCHED",    cmd_show_scheduler_info, NULL},
+  { "SHUTDOWN", cmd_shutdown_system, NULL},
+  { "SUSPEND",  cmd_suspend_user, NULL},
+
+  { "WALL",     cmd_wall_users, NULL},
+  { "WALLA",    cmd_walla_users, NULL},
+  { "WATCH",    cmd_watch, NULL}, 
+***********************************************************/
+
+/* COMMAND LIST TERMINATOR */
+  { "", "",  NULL, NULL,      NULL,                NULL , COM_NONE}
+};
+
+static int compare_cstring(com_struct *c1, com_struct *c2)
+{
+  return (strcmp(c1->command,c2->command));
+}
+
+int init_commands(void)
+{
+  com_struct *cs = static_commands;
+
+  if (!new_list(&commands,sizeof(com_struct)))
+    return (0);
+  while ((cs->cfunc)||(cs->run_command))
+    add_list(&commands, cs++);
+  add_index(&commands, compare_cstring);
+  return (1);
+}
+
+com_struct *find_command(char **src_d)
+{
+  int len = MAX_COMMAND_LEN;
+  char *src = *src_d;
+  char *c;
+  com_struct temp_s;
+
+  c = temp_s.command;
+  src = skip_blanks(src);
+  while ((is_alpha(*src) || *src=='?') && (len > 0))
+    {
+      *c++ = upcase(*src);
+      src++;
+      len--;
+    }
+  while (is_alpha(*src))
+    src++;
+  *src_d = src;
+  *c = '\000';
+  if ((len=search_list(&commands, 0, &temp_s)) < 0)
+    return (NULL);
+  return element_of_index(com_struct,&commands,len,0);
+}

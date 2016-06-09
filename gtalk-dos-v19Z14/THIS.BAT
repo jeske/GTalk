@@ -1,0 +1,1 @@
+C:\DOS\UTILS\VMODE.EXE m 3

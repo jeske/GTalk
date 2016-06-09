@@ -1,0 +1,13 @@
+Sysop Commands
+10
+CMD_WALL*Write to all users (/wall)
+CMD_ROT*Administer Rotator Boxes (/rot)
+CMD_TERM*Connect to Modem Directly (/term)
+CMD_TERM_OVERRIDE*Connect to Modem override (while user is online)
+CMD_U*User Editor (/U)
+CMD_F*Force User (/F)
+CMD_MAKE*Temporary User Priv Change (/MAKE)
+CMD_DCD*Check Modem DCD states (/DCD)
+CMD_LURK*Lurk Mode (/LURK)
+CMD_WATCH*Watch Another User (/WATCH)
+

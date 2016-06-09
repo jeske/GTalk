@@ -1,0 +1,10 @@
+
+Do not forget your accout number or password. It is suggested that
+you not write down your password. At least do not write it down anywhere
+that anyone you know can steal it. It is a good idea to write down
+your account number so that you do not forget it.
+
+Should you forget it, you can log in as a guest and type "/sm" for
+the system list and look for your handle.
+
+Write this down:

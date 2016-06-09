@@ -1,0 +1,270 @@
+#=============================================================
+#
+#   GTALK.MAK - Makefile for project D:\gtalk\os2\gt200\gtalk.prj
+#		Created on 05/30/94 at 20:07
+#
+#=============================================================
+
+.AUTODEPEND
+.silent
+
+#=============================================================
+#		Translator Definitions
+#=============================================================
+CC = bcc +GTALK.CFG
+TASM = tasm.exe
+TLIB = tlib.exe
+TLINK = tlink
+RC = brcc.exe
+RB = rc.exe
+LIBPATH = D:\addons\BCOS2\LIB;D:\addons\tcpip\lib
+INCLUDEPATH = D:\addons\bcos2\include;D:\addons\tcpip\include
+
+
+#=============================================================
+#		Implicit Rules
+#=============================================================
+
+#=============================================================
+#		List Macros
+#=============================================================
+
+
+EXE_DEPENDENCIES =  \
+ obj\diags.obj \
+ obj\console.obj \
+ obj\useredit.obj \
+ obj\user.obj \
+ obj\terminal.obj \
+ obj\task.obj \
+ obj\sysop.obj \
+ obj\os2ser.obj \
+ obj\string.obj \
+ obj\schedule.obj \
+ obj\rotator.obj \
+ obj\protocol.obj \
+ obj\mail.obj \
+ obj\link.obj \
+ obj\abuf.obj \
+ obj\syslog.obj \
+ obj\output.obj \
+ obj\input.obj \
+ obj\init.obj \
+ obj\gt.obj \
+ obj\glink.obj \
+ obj\gfiles.obj \
+ obj\function.obj \
+ obj\event.obj \
+ obj\editor.obj \
+ obj\command.obj \
+ obj\com.obj \
+ obj\channel.obj \
+ obj\bbs.obj \
+ obj\alloc.obj \
+ obj\dos.obj \
+ obj\newuser.obj \
+ obj\automenu.obj \
+ obj\tcpip.obj \
+ obj\feedback.obj \
+ obj\except.obj \
+ obj\filesec.obj
+
+#=============================================================
+#		Explicit Rules
+#=============================================================
+gtalk.exe: gtalk.cfg $(EXE_DEPENDENCIES)
+  $(TLINK) /v /c /s /Toe /ap /L$(LIBPATH) @&&|
+D:\addons\BCOS2\LIB\C02.OBJ+
+obj\diags.obj+
+obj\console.obj+
+obj\useredit.obj+
+obj\user.obj+
+obj\terminal.obj+
+obj\task.obj+
+obj\sysop.obj+
+obj\os2ser.obj+
+obj\string.obj+
+obj\schedule.obj+
+obj\rotator.obj+
+obj\protocol.obj+
+obj\mail.obj+
+obj\link.obj+
+obj\abuf.obj+
+obj\syslog.obj+
+obj\output.obj+
+obj\input.obj+
+obj\init.obj+
+obj\gt.obj+
+obj\glink.obj+
+obj\gfiles.obj+
+obj\function.obj+
+obj\event.obj+
+obj\editor.obj+
+obj\command.obj+
+obj\com.obj+
+obj\channel.obj+
+obj\bbs.obj+
+obj\alloc.obj+
+obj\dos.obj+
+obj\newuser.obj+
+obj\automenu.obj+
+obj\tcpip.obj+
+obj\feedback.obj+
+obj\except.obj+
+obj\filesec.obj
+gtalk,gtalk
+D:\addons\BCOS2\LIB\C2MT.LIB+
+D:\addons\BCOS2\LIB\OS2.LIB
+
+|
+
+
+#=============================================================
+#		Individual File Dependencies
+#=============================================================
+
+OBJ\CONSOLE.OBJ: gtalk.cfg CONSOLE.C 
+  $(CC) -c console.c
+
+OBJ\USEREDIT.OBJ: gtalk.cfg USEREDIT.C 
+  $(CC) -c useredit.c
+
+OBJ\USER.OBJ: gtalk.cfg USER.C 
+  $(CC) -c user.c
+
+OBJ\TERMINAL.OBJ: gtalk.cfg TERMINAL.C 
+  $(CC) -c terminal.c
+
+OBJ\TASK.OBJ: gtalk.cfg TASK.C 
+  $(CC) -c task.c
+
+OBJ\SYSOP.OBJ: gtalk.cfg SYSOP.C 
+  $(CC) -c sysop.c
+
+OBJ\OS2SER.OBJ: gtalk.cfg OS2SER.C 
+  $(CC) -c os2ser.c
+
+OBJ\STRING.OBJ: gtalk.cfg STRING.C 
+  $(CC) -c string.c
+
+OBJ\SCHEDULE.OBJ: gtalk.cfg SCHEDULE.C 
+  $(CC) -c schedule.c
+
+OBJ\ROTATOR.OBJ: gtalk.cfg ROTATOR.C 
+  $(CC) -c rotator.c
+
+OBJ\PROTOCOL.OBJ: gtalk.cfg PROTOCOL.C 
+  $(CC) -c protocol.c
+
+OBJ\MAIL.OBJ: gtalk.cfg MAIL.C 
+  $(CC) -c mail.c
+
+OBJ\LINK.OBJ: gtalk.cfg LINK.C 
+  $(CC) -c link.c
+
+OBJ\ABUF.OBJ: gtalk.cfg ABUF.C 
+  $(CC) -c abuf.c
+
+OBJ\SYSLOG.OBJ: gtalk.cfg SYSLOG.C 
+  $(CC) -c syslog.c
+
+OBJ\OUTPUT.OBJ: gtalk.cfg OUTPUT.C 
+  $(CC) -c output.c
+
+OBJ\INPUT.OBJ: gtalk.cfg INPUT.C 
+  $(CC) -c input.c
+
+OBJ\INIT.OBJ: gtalk.cfg INIT.C 
+  $(CC) -c init.c
+
+OBJ\GT.OBJ: gtalk.cfg GT.C 
+  $(CC) -c gt.c
+
+OBJ\GLINK.OBJ: gtalk.cfg GLINK.C 
+  $(CC) -c glink.c
+
+OBJ\GFILES.OBJ: gtalk.cfg GFILES.C 
+  $(CC) -c gfiles.c
+
+OBJ\FUNCTION.OBJ: gtalk.cfg FUNCTION.C 
+  $(CC) -c function.c
+
+OBJ\EVENT.OBJ: gtalk.cfg EVENT.C 
+  $(CC) -c event.c
+
+OBJ\EDITOR.OBJ: gtalk.cfg EDITOR.C 
+  $(CC) -c editor.c
+
+OBJ\DIAGS.OBJ: gtalk.cfg DIAGS.C 
+  $(CC) -c diags.c
+
+OBJ\COMMAND.OBJ: gtalk.cfg COMMAND.C 
+  $(CC) -c command.c
+
+OBJ\COM.OBJ: gtalk.cfg COM.C 
+  $(CC) -c com.c
+
+OBJ\CHANNEL.OBJ: gtalk.cfg CHANNEL.C 
+  $(CC) -c channel.c
+
+OBJ\BBS.OBJ: gtalk.cfg BBS.C 
+  $(CC) -c bbs.c
+
+OBJ\ALLOC.OBJ: gtalk.cfg ALLOC.C 
+  $(CC) -c alloc.c
+
+OBJ\DOS.OBJ: gtalk.cfg DOS.C 
+  $(CC) -c dos.c
+
+OBJ\filesec.OBJ: gtalk.cfg filesec.c 
+  $(CC) -c filesec.c
+
+OBJ\automenu.obj: gtalk.cfg automenu.c
+  $(CC) -c automenu.c
+
+OBJ\newuser.obj: gtalk.cfg newuser.c
+  $(CC) -c newuser.c
+
+OBJ\tcpip.obj: gtalk.cfg tcpip.c
+  $(CC) -c tcpip.c
+
+OBJ\feedback.obj: gtalk.cfg feedback.c
+  $(CC) -c feedback.c
+
+OBJ\except.obj: gtalk.cfg except.c
+  $(CC) -c except.c
+
+
+.ignore
+clean:
+    erase obj\*.obj
+    erase gtalk.exe
+    erase *.obj
+    echo  **** CLEAN ****
+
+.noignore
+
+
+#=============================================================
+#		Compiler Configuration File
+#=============================================================
+gtalk.cfg: makefile
+  copy &&|
+-L$(LIBPATH)
+-I$(INCLUDEPATH)
+-H=D:\gtalk\os2\gt200\gtalk.CSM
+-vi-
+-sm
+-d
+-nOBJ
+-y
+-v
+-C
+-w-rch
+-w-aus
+-w-eff
+-w-rvl
+-w-par
+| gtalk.cfg
+
+

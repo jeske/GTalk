@@ -1,0 +1,878 @@
+
+
+
+
+
+                                 "P"
+
+                    The transfer protocol package
+
+                             version 2.04
+
+                  Copyright (c) 1994 by Jyrki Salmi
+
+                         All rights reserved.
+
+
+
+
+
+
+1. Introduction
+
+        This is a transfer protocol package providing Zmodem,
+        Ymodem-g, Ymodem and Xmodem protocols for Bulletin Board
+        Systems, Terminal programs and where ever reliable high speed
+        file transfer protocols are needed.
+
+        Package consists of two parts:
+
+          P.DLL - A dynamic link library that contains the transfer
+                  protocol routines.
+
+          P.EXE - The front-end for P.DLL. A program that processes
+                  user options and then calls the DLL to do the actual
+                  transfer.
+        
+        During development the main goal has been achieving the maximum
+        performance possible under OS/2. Not much time has been spent
+        on creating a beautiful and 'friendly' user interface. If you
+        aren't happy with P.EXE, you can always make your own
+        front-end for the DLL.
+                
+        The author takes no responsibility whatsoever for any damage
+        caused by P. If you decide to use this package or parts of it,
+        you do it at your own risk!
+
+
+2. Credits
+
+        Chuck Forsberg for creating Zmodem and documenting it.
+        Public domain sources of rzsz were used as a reference during
+        the development of P.DLL.
+
+        Ward Christensen for creating Xmodem and Ymodem.
+
+        Gary S. Brown for the CRC calculation routines. These were
+        found from the public domain rzsz sources.
+
+	Jeffrey Altman for making the CKOP200.INI file.
+
+        Many people who reported about bugs in the previous versions
+        of P and gave me lots of new ideas.
+
+
+3. Distribution policy
+
+        P.EXE - the front-end for the DLL is distributed as public
+        domain, meaning that anyone can modify and recompile the
+        sources and do whatever they want with it. However, credits to
+        the original author (me) would be highly appreciated but not
+        required, if found so repugnant.
+
+        P.DLL - the transfer protocol engine is distributed as
+        freeware, meaning that the author (me) wants to keep his
+        copyright to the program but gives everyone the right to use
+        and copy it freely, without of charge.
+        
+
+4. Supported protocols and their variations
+
+4.1 Xmodem
+
+        This is one of the oldest transfer protocols ever. It was
+        developed by Ward Christensen in 1977. It proved to be an
+        excellent file transfer protocol because of its robustness and
+        reasonable performance.
+
+        The basic Xmodem used 128 byte blocks and one byte Checksum
+        for error checking. There has been many extension to Xmodem
+        over the years. One is CRC-16 checking and one is the use of
+        1024 byte blocks. Both of these extensions are support by P
+        (-alternative option and -kilo option).
+
+4.2 Ymodem
+
+        Ymodem is one of many extensions to Xmodem. It adds one block
+        in front of every transferred file, providing file name, size
+        and date information, you don't have to enter the file name at
+        both ends of transmission like with Xmodem. Ymodem
+        also made it possible to transfer many files with just one
+        command. Ymodem uses CRC-16 as its default error checking
+        method, however Checksum is still supported (-alternative
+        option). P uses 128 blocks with Ymodem as the default, you
+        might want to use 1024 byte blocks (-kilo option) to improve
+        the throughput.
+
+        Xmodem and Ymodem were very efficient with low speed
+        connections, but due to introduction of new high speed and
+        buffered modems we found that it wasn't enough.
+
+4.3 Ymodem-g
+
+        Ymodem-g is an extension to Ymodem protocol. All it adds is a
+        continuous data transfer. Transferred blocks don't wait for
+        acknowledge before transferring the next one. Ymodem-g made it
+        possible to take out virtually all of the throughput provided
+        by hardware. However, it had one downgrade: It didn't have any
+        kind of error recovery. CRC-16 checking was still done, but in
+        case of an error the transfer was simply aborted instead of
+        retransmission of the broken block.
+
+        There were also many other problems with all of the Xmodem
+        derived implementations. They needed a totally transparent
+        data path, making it impossible to use them over connections
+        which used software flow control (XON/XOFF).
+
+        The error recovery / speed tradeoff was also one of the main
+        reasons for the development of new de facto protocol: Zmodem.
+
+4.4 Zmodem
+
+        Zmodem was developed by Chuck Forsberg at Omen Technology,
+        Inc. in 1986. It wasn't based on the old Xmodem engine and
+        that made it possible to implement many new features. The
+        major feature was its possibility to send data in continuous
+        stream and still recover from possible errors. Zmodem also
+        introduced escaping, making it possible to transfer binary
+        files over non-transparent connections.
+
+        User convenience was also taken in consideration in
+        development of Zmodem. Transmission parameters needed to be
+        specified only at the one end. File name, size, and date
+        information is of course also transferred, just like in
+        Ymodem. Automatic start of receiving is also made possible by
+        sending a ZRQINIT sequence at the beginning of the transfer,
+        allowing terminal programs to monitor for it.
+
+        Zmodem supports 32-bit CRC frame checking (frames are
+        equivalent to Xmodem and Ymodem blocks) which increases the
+        reliability remarkably.
+
+        With Zmodem you don't have to transfer files right from the
+        beginning in case connection was lost for some reason. Zmodem
+        offers a crash recovery which you can use to continue the
+        transfer from right there where it got interrupted.
+
+        Since the late 1980s Zmodem has remained as the de facto
+        transfer protocol and is still going strong.
+
+
+5. Installation
+
+        To transfer files you will need only P.EXE and P.DLL. The
+        DLL will be searched from the directories on your LIBPATH and
+        if not found there, it's looked up from the directory where
+        your P.EXE resides.
+
+5.1 C-Kermit
+
+	Included in this package is file CKOP200.INI which is an
+	initialization file for C-Kermit. Copy it to your C-Kermit
+	directory and add the following line in your CKERMOD.INI file:
+
+	take ckop200.ini
+
+        Next time you'll start your C-Kermit you'll have following
+        commands added to it:
+
+        rz - Receive with Zmodem
+        sz - Send with Zmodem
+        ry - Receive with Ymodem
+        sy - Send with Ymodem
+        rg - Receive with Ymodem-g
+        sg - Send with Ymodem-g
+        rx - Receive with Xmodem
+        sx - Send with Xmodem
+
+        The connect type will be automatically detected and therefore
+        same commands work for asynchronous, named pipe and TCP/IP
+        stream socket connections.
+
+	Check the CKOP200.INI file and change the paths and options if
+        necessary.
+
+5.2 LiveWire
+
+        Included in this package is a file named LW_P.CMD. It is an
+        OS/2 command file that is meant to be called from LiveWire.
+
+        First, copy that LW_P.CMD to your LiveWire directory and then
+        start LiveWire.
+
+        Go to Protocol menu and choose first blank entry from the
+        list. Fill the fields with following information:
+
+’ÕÕÕÕ External Protocol ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕ∏
+≥ Name                  Zmodem (P)∞∞∞∞∞∞∞∞∞∞                               ≥
+≥ Hotkey                P                                                  ≥
+≥ Prompt filename       Yes                                                ≥
+≥ Auto-receive string   B00∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ ≥
+≥ Receive command 1     LW_P.CMD async receive Zmodem %0 %1 %2 %3∞∞∞∞∞∞∞∞∞ ≥
+≥ Receive command 2     ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ ≥
+≥ Send command 1        LW_P.CMD async send Zmodem %0 %1 %2 %3∞∞∞∞∞∞∞∞∞∞∞∞ ≥
+≥ Send command 2        ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ ≥
+‘ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕæ
+
+        Note that you'll get the arrow pointing upwards by pressing
+        CTRL-X.
+
+        Now choose Zmodem-32 batch from the list and set the
+        Auto-download to Off. From now on P's Zmodem will
+        automatically start Zmodem receiving when needed.
+
+        Other protocols are added just like but by replacing
+        occurrences of "Zmodem" with the name of corresponding
+        protocol: "Ymodem", "Ymodem-g" or "Xmodem". Also remember to
+        remove the Auto-receive string for other protocols.
+
+        To use P with named pipe connection you have to have separate
+        protocol entries. Add protocols just like above but change the
+        "async" text to "pipe" in each protocol command.
+
+        See also LW_P.CMD if you want to change the options passed to
+        P.EXE.
+
+
+6. Command-line parameters of P.EXE
+
+        When you run P.EXE without any parameters you will get an usage
+        that lists all of the available options. Here they are once again,
+	with detailed descriptions:
+
+6.1 -type {async | pipe | socket}
+
+        Select the type of communications to be used.
+
+        async  = OS/2 Asynchronous device (RS-232C)
+        pipe   = OS/2 Named pipe (Local or network)
+        socket = TCP/IP stream socket
+
+        If not specified, async will be assumed.
+
+6.2 -device <name | path>
+
+        Specify the name of asynchronous device (e.g. COM1), or path
+        to the named pipe (e.g. \PIPE\P).
+
+        Affects only to async and pipe communications.
+
+6.3 -host <address>
+
+        Internet address of host to connect to. This can be a
+        resolvable name or plain IP number.
+
+        Affects only to socket communications.
+
+6.4 -port <port>
+
+        Number of stream socket port to use. Choose this number to be
+        big enough to not collide with other ports. See your
+        TCPIP\ETC\PROTOCOLS file for reserved ports.
+
+        Affects only to socket communications.
+
+6.5 -server
+
+        Specifies that we act as a server for the file transfer. We'll
+        create a named pipe or stream socket and wait for a client to
+        connect to it. The wait time can specified with the -wait
+        option.
+
+        Has an effect only when type of communications is pipe or socket,
+        and no already open handle is available.
+
+6.6 -wait <seconds>
+
+        Specifies the number of seconds to wait for the client to connect to
+        us. While waiting a beep can be heard every second, to disable
+        the noise specify -quiet option.
+
+        Has an effect only when acting as a server.
+
+6.7 -share
+
+        Open the communication device in shared mode. Specify this
+        option if you can't pass a handle to P and you have to "steal"
+        the communication device from a suspended process. With this
+        option it is also possible to use P.EXE from a DOS program.
+
+        Affects only to async and pipe communications, when no already open
+        handle is available.
+
+6.8 -handle <handle>
+
+        Specifies a handle for an already open asynchronous device,
+        pipe or socket. If specified and connection is asynchronous or
+        pipe, the -device option should also be specified to make the
+        error messages report possible errors on the correct
+        device. If -device is not specified, error messages could be
+        something like this:
+
+        Failed to control device: "(null)"
+
+        But if for example "-device com1" option was specified the
+        error message would be:
+
+        Failed to control device: "com1"
+
+        That's all the -device option is used for when handle is
+        available, therefore it's not required for transfer to work.
+
+        For stream socket connections -host and -port option are not
+        needed at all. Socket numbers are used with error messages
+        instead of device name.
+
+6.9 -loose
+
+        If specified, the state of carrier signal will be ignored during the
+        the file transfer. You might need to specify this option if
+        your modem fails to maintain the state of carrier signal, or
+        if you're transferring files with a null-modem cable.
+
+        Affects only to async communications.
+
+6.10 -telnet
+
+        Escape telnet IAC characters and CR NUL sequences in the data stream
+        and process possible incoming telnet commands. Use this option
+        when you're transferring files through a telnet
+        session. However, this can be used with other types of
+        communication too.
+
+6.11 -receive
+
+        Specifies that we are receiving files.
+
+6.12 -send
+
+        Specifies that we are sending files.
+
+6.13 -protocol {xmodem | ymodem | ymodem-g | zmodem}
+
+        Specifies the transfer protocol to be used. See section 4 in
+        this document for further information about the transfer
+        protocols.
+
+        If not specified, Zmodem will be assumed.
+
+6.14 -escape {controls | minimal}
+
+        Specify the escaping to be done during the file transfer.
+
+        By default P escapes following characters in the data flow
+        when transferring with Zmodem:
+
+        ASCII 16        (Ctrl-P)
+        ASCII 144       (Ctrl-P with 8th bit set)
+        ASCII 17   (*)  (XON)
+        ASCII 145  (*)  (XON with 8th bit set)
+        ASCII 19   (*)  (XOFF)
+        ASCII 147  (*)  (XOFF with 8th bit set)
+        ASCII 24   (*)  (Ctrl-X)
+        ASCII 152       (Ctrl-X with 8th bit set)
+
+        And these if they follow an ASCII 64 ('@') or
+        ASCII 192 ('@' with 8th bit set):
+
+        ASCII 13        (Carriage return)
+        ASCII 141       (Carriage return with 8th bit set)
+
+        control - This makes us to escape all control characters
+                  (ASCII 0 to 31). Escaping generates overhead by
+                  transmitting two bytes to represent every control
+                  character. Use it only if your connection can't pass
+                  them through. 
+
+        minimal - This makes us to escape as few characters as
+                  possible so that the protocol still works with
+                  standard implementations (marked with asterisks in
+                  the list above).
+
+        Affects only to Zmodem transfers.
+
+6.15 -alternative
+
+        Specifies that an alternative error checking method should be used.
+
+        Here is the list of supported protocols with their default and
+        alternative checking methods:
+
+        Protocol        Default         Alternative
+        --------        -------         -----------
+        Zmodem          CRC-32          CRC-16
+        Ymodem-g        CRC-16          N/A
+        Ymodem          CRC-16          Checksum
+        Xmodem          Checksum        CRC-16
+
+        See the following sections for detailed information about the
+        checking methods.
+
+        This option has no meaning when sending files with Ymodem-g,
+        Ymodem or Xmodem, it is up to the receiver to choose the error
+        checking method to be used.
+
+6.15.1 CRC-32
+
+        32-bit CRC is the most effective error checking method
+        supported by P. It's based on a 32-bit number (4 bytes)
+        calculated with a polynomial specified by ANSI X3.66
+        specification.
+
+        This 32-bit number is calculated by the sender and
+        transferred with every 1024 (or less) bytes. The receiver does
+        the same calculation on received data and if the results
+        are different the data is requested to be sent again. The
+        probability of garbled data getting through is practically
+        nil.
+
+6.15.2 CRC-16
+
+        This is based on a 16-bit number (2 bytes) calculated with a
+        similar polynomial to one used with 32-bit CRC. The
+        probability of garbled data getting through is much higher
+        than with CRC-32, but it's still very very small.
+
+6.15.3 Checksum
+
+        This an ancient checking method used by the first versions of
+        Xmodem. It's based on a 8-bit (1 byte) number calculated from
+        transferred data by summing up all bytes in it.
+
+        For example, Checksum of three bytes: 'a' (ASCII decimal 97),
+        'b' (ASCII decimal 98) and 'c' (ASCII decimal 99) is '&'
+        (ASCII decimal 38). It comes from 97 + 98 + 99 = 294 saved in
+        8-bit number, which cuts it to 38.
+
+        With Checksum checking the probability of garbled data getting
+        acknowledged is relatively high, so whenever possible you
+        should use CRC-16 instead. 
+
+6.16 -kilo
+
+        If specified, 1024 byte blocks will be used instead of default
+        128 byte. This speeds up the transfer considerably on high
+        speed connections. However, the probability of garbled data
+        getting through grows when there is more data to calculate the
+        check value from, thus you should avoid using 1024 byte blocks
+        with Checksum checking.
+
+        Affects only to Ymodem-g, Ymodem and Xmodem sending, when
+        receiving it's up to the sender to define the block size.
+
+6.17 -window <bytes>
+
+        Specifies the size of transfer window to be used. Valid range is
+        from 256 to 65472, and the size must be a multiple of 64.
+
+        By specifying a window size you make P to wait for acknowledge
+        from the remote for every <bytes> transferred, when the
+        default is sending data in full streaming, without any
+        acknowledges.
+
+        Using this option might be necessary if you're sending data through a
+        network where some nodes might timeout if data isn't
+        transferred to one direction for a certain time.
+
+        Using a small window size slows down the transfer somewhat.
+
+        Affects only to Zmodem transfers.
+
+6.18 -automatic
+
+        Specifies that we should send a string "rz" followed by a carriage
+        return to the remote before starting the transfer. If there's
+        an UNIX shell running at the other end it will be interpreted
+        as the user has just typed "rz" and then pressed enter, and
+        the UNIX rz program will be run.
+
+        If you're not transferring files to an UNIX system this option
+        just generates more garbage to remote screen at the
+        initialization phase, in case it hasn't started the receiving
+        program yet.
+
+        Affects only to Zmodem sending.
+
+6.19 -serial
+
+        If specified, the serial number of the remote will we queried and
+        displayed. This option is meant for informational purposes
+        only.
+
+        Affects only to Zmodem sending.
+
+6.20 -attention <string>
+
+        Specifies an attention string that will be sent when receiving
+        files with Zmodem and you would like to get the attention of the
+        sender. 
+
+        Following characters have a special meaning in the attention string:
+
+        ASCII 221 -- Break signal
+        ASCII 222 -- One second pause
+
+6.21 -commbufs <bytes>
+
+        Specifies the size of both, input and output communication buffer.
+        Default is 2048 bytes.
+
+        Specifying a bigger buffer has an effect only to protocols
+        sending and receiving data in continuous streams: Zmodem and
+        Ymodem-g.
+
+        With a bigger buffer and a reliable connection you can speed up
+        the throughput considerably. But if the connection requires
+        retransmits, a big buffer can slow down the throughput much
+        more and generate a lot of annoying garbage to the remote
+        screen if the transfer gets cancelled.
+
+        For example if you specify 32768 bytes long buffers, we will
+        block in read or write routines until all data is read or
+        written. If you're sending with Zmodem and there is an error
+        in transmission, it won't be recovered until all data in the
+        buffers is transferred. And if you're using Ymodem-g the
+        transfer will be aborted in case of an error, all data in
+        buffers will be written to the remote screen until we
+        recognize the abortion.
+
+        And when receiving with Zmodem or Ymodem-g, we won't check for
+        possible transmission errors until whole buffer is received,
+        making it possible for us to transfer a lot of data that's to
+        be resent.
+
+        There's no maximum limit for the buffer sizes. The bigger you
+        specify the more memory will be eaten. Under multitasking
+        environments like OS/2, with bigger buffers a bit less
+        processor time will be consumed during the transfer.
+
+6.22 -comminbuf <bytes>
+
+        Specifies explicitly the size of communication input
+        buffer. See -commbufs option for further information.
+
+6.23 -commoutbuf <bytes>
+ 
+        Specifies explicitly the size of communication output
+        buffer. See -commbufs option for further information.
+
+6.24 -filebuf <bytes>
+
+        Specifies the size of file read and write buffer. If not specified,
+        no internal file buffering will be done.
+
+        By specifying a bigger file buffer it is possible to speed up
+        considerably file transfers to or from slow media, like
+        CD-ROMs or floppy drives.
+
+        It's also possible to send contents of a floppy without needing
+        to keep it in the drive all the time. Just specify big enough
+        buffer for files to be sent and all data will be read into
+        memory in the beginning of the transfer and send from there.
+
+        Transfers using an asynchronous device (cps < 10000) are not
+        likely to benefit from a bigger file buffer, but if the
+        communication device is either named pipe or stream socket,
+        bigger buffer is most likely to improve the throughput.
+
+        There's no maximum limit for the size of file buffer, you
+        could even transfer contents of a whole hard drive if you
+        wanted to (and had enough memory for the buffer).
+
+        The optimal buffer size is best found by experimenting. You
+        could start for example by specifying a 32k byte buffer and
+        compare the CPSs to what you get without a buffer at all.
+
+6.25 -speed <bps>
+
+        Specifies the throughput speed in bits per second. This
+        value will be used only to calculate the transfer time
+        estimates. If not specified or <bps> is 0, time estimates
+        will not be shown.
+
+6.26 -mileage
+
+        If specified, the number of files and bytes left to transfer
+        (and estimated time) is displayed before each file.
+
+        Affects only to batch transfers and works only when receiving
+        and the sender provides such information.
+
+6.27 -options
+
+        If specified, the conversion, management and transport options
+        received from the sender will be shown on the screen in a
+        verbal form. This option is meant mainly to aid problem
+        determination.
+
+        Affects only to Zmodem receiving.
+
+6.28 -headers
+
+        Specifies that received Zmodem headers and their contents
+        should be shown on the screen in a verbal form during the
+        transfer. This option is meant mainly to aid problem
+        determination.
+
+        Affects only to Zmodem transfers.
+
+6.29 -frameends
+
+        Specifies that received Zmodem frame ends should be shown on
+        the screen in verbal form during the transfer. This option is
+        meant mainly to aid problem determination. 
+
+        Affects only to Zmodem transfers.
+
+6.30 -quiet
+
+        Do not beep after the file transfer and when acting as a communication
+        server and waiting for a client to connect to us.
+
+6.31 -priority <class> <delta>
+
+        Specifies the priority of file transfer process.
+
+        Valid values for priority class are:
+
+        0 - No class change
+        1 - Idle-time
+        2 - Regular
+        3 - Time-critical
+        4 - Server
+
+        Priority delta can be any value in range of -31 to 31.
+
+        You might want to specify a higher priority for the file
+        transfer process if you are running simultaneously something
+        that is consuming lot of CPU time, like playing DOS games, etc.
+
+        Lower priority might come into consideration if you're
+        transferring files on the background and don't want the
+        foreground process to get effected by the transfer.
+
+6.32 -dszlog <path>
+
+        If specified, a DSZ compatible log about files transferred
+        will be created in the file pointed by the <path>. This option
+        is essential for most of the Bulletin Board Systems.
+
+6.33 -pause
+
+        Wait for a key press after the transfer, before exiting. This
+        option might became useful if you're using P.EXE as an
+        external protocol provider for some software that clears the
+        screen after we exit. By clearing the screen it prevents the
+        user from reading the messages displayed by P.EXE at the end
+        of the transfer.
+
+6.34 -directory <directory>
+
+        Specifies the directory where received files are to be saved.
+        If not specified, files will be saved to the current
+        directory. Directory path can be trailed by a backslash or not.
+
+6.35 -paths
+
+        Do not strip drive and directory components from the file
+        paths sent and received.
+
+        Be careful with this option if you're receiving files, it
+        would be possible for the other end to send files to any drive
+        and directory on your system.
+
+        Has no meaning to Xmodem transfers.
+
+6.36 -create
+
+        If specified, non-existing directory structures will be
+        created.
+
+        Has meaning only when receiving files and -paths option is
+        specified.
+
+6.37 -clean
+
+        Delete files from failed transfers. If specified, transfers cannot
+        be resumed later on. This option is useful for keeping your
+        disks clean from garbage files.
+
+6.38 -touch
+
+        If specified, the date information received with files will be
+        ignored. The date of received files will correspond to the
+        time of transfer.
+
+6.39 -recursive
+
+        If specified, files specified on the command-line are searched
+        recursively, making it possible to send contents of whole
+        directory structure.
+
+        Affects only to Zmodem, Ymodem-g and Ymodem sending.
+
+6.40 -text
+
+        If specified, a text conversion will be done on received and sent
+        files. Meaning that CR LF line end sequences will be
+        translated to the convention used by the remote system and
+        vice versa.
+
+        Note that this option should be used only when transferring
+        text files.
+
+        With Zmodem, this option is passed also to the remote at the
+        initialization phase.
+
+6.41 -resume
+
+        Specifies that we should try to resume aborted file transfers
+        i.e. when file already exists and its size is smaller than the
+        size of the new file.
+
+        With Zmodem, this option is passed also to the remote at the
+        initialization phase.
+
+        Affects only to Zmodem transfers.
+
+6.42 -existing
+
+        If specified, no new files will be created. Only the already
+        existing files will be updated or re-transferred.
+
+        With Zmodem, this option is passed also to the remote at the
+        initialization phase.
+
+6.43 -update
+
+        If specified, already existing files will be replaced only if the
+        new file is longer or newer.
+
+        With Zmodem, this option is passed also to the remote at the
+        initialization phase.
+
+6.44 -append
+
+        If specified, already existing files will get the new data appended
+        to them.
+
+        With Zmodem, this option is passed also to the remote at the
+        initialization phase.
+
+6.45 -replace
+
+        If specified, already existing files will be replaced by the new
+        ones.
+
+        With Zmodem, this option is passed also to the remote at the
+        initialization phase.
+
+6.46 -newer
+
+        If specified, already existing files will be replaced only if the
+        new one has a later date.
+
+        With Zmodem, this option is passed also to the remote at the
+        initialization phase.
+
+6.47 -different
+
+        If specified, already existing files will be replaced only if
+        dates or lengths are different.
+
+        With Zmodem, this option is passed also to the remote at the
+        initialization phase.
+
+6.48 -protect
+
+        If specified, already existing files won't be replaced at any
+        situation.
+
+        With Zmodem, this option is passed also to the remote at the
+        initialization phase.
+
+6.49 -rename
+
+        If specified, files will be renamed if one with an identical name
+        already exists.
+
+        With Zmodem, this option is passed also to the remote at the
+        initialization phase.
+
+6.50 [<file> | <@listfile> ...]
+
+        The rest of the command-line is for paths to files to be sent
+        or received. If you have a lot of files to transfer you might
+        want to use a listfile instead of specifying them all on the
+        command-line. Listfiles are plain ASCII files containing file
+        paths on separate lines.
+
+        Listfiles are distinguished from the normal file paths on the
+        command-line by the preceding '@' character. You can mix up
+        any number of paths and listfiles on the command-line.
+
+        Either backslash ('\') or slash ('/') characters can be used
+        as a directory and name separator.
+
+        If the name of first file to be transferred begins with a
+        character '-', it should be preceded by a plain '-' separated
+        by space from the last option and this file name.
+
+        When sending files, the use of these file paths is obvious,
+        those files are to be sent. If the file specified can't be
+        opened, either it doesn't exist or it's being used by some
+        another application, it will be skipped.
+
+        You can specify any number of files to be transferred with
+        protocols that support batch transmissions, that is all but
+        Xmodem. With Xmodem you can specify only one file, whether you
+        are receiving or sending.
+
+        When receiving with a protocol supporting batch transfers you
+        don't have to specify any files at all. However, if you do,
+        only those files specified will be received. If you are
+        receiving with Zmodem, the files not found on the command-line
+        will be skipped. With Ymodem, the transfer will be aborted,
+        because the protocol does not support skipping.
+
+
+7. Using P.DLL with your own applications
+
+        The whole protocol engine itself resides in P.DLL. P.EXE only
+        acts as a front-end. Anyone can use the DLL with their
+        application to provide file transfer protocols. User interface
+        is not limited anyway, the calling program can be either PM
+        based or plain VIO text application.
+
+        P.DLL can be linked to your application by using an import
+        library or by dynamically loading and freeing the library when
+        needed. For more information about import libraries see your C
+        compiler's manual or IMPLIB section of OS/2 Toolkit's Tools
+        Reference. No import library is included in this distribution,
+        you have to create one from the DLL with IMPLIB or similar
+        utility.
+
+        P.DLL has only one entry function: p_transfer(). A pointer to a
+        configuration structure is passed as a parameter to the entry
+        function. The configuration structure contains transfer
+        parameters and pointers to callback functions which are used
+        to give information about the progress of the transfer back to
+        the calling application, and to handle files being
+        transferred. For detailed description of the configuration
+        structure and callback functions see P.H header file in the
+        "exesrc" directory.
+
+        The best way to get hold of it is probably by studying the
+        sources of P.EXE, especially callback.c.
+
+
+8. Afterword
+
+        I hope you find some use for all this. If you have any problems,
+        questions or you just want to give a comment, drop me a note:
+
+        Internet: jytasa@jyu.fi
+        FidoNet: Jyrki Salmi (2:225/12)
+
+
+                                * * *

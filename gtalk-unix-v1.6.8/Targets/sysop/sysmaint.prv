@@ -1,0 +1,7 @@
+System Maintaniance Commands
+5
+CMD_DOS*/DOS
+CMD_SYSTEM*/SYSTEM
+CMD_MEMUD*Update Member List
+CMD_SHUTDOWN*Shutdown System
+CMD_SYSMON*Monitor System Messages

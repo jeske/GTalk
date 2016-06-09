@@ -1,0 +1,166 @@
+ 0003:0000002B		 __c0_heaps 				none
+ 0003:0000002F		 __c0_nheaps				none
+ 0003:00000048		 __os2hmod					none
+ 0003:00000060	Idle _cur_console				global
+ 0003:00000064	Idle _is_mono					global
+ 0003:00000068	Idle _color_lookup				static data
+ 0003:00000154	Idle _um_main_prompt			static data
+ 0003:00000174	Idle _edit_user_prompt			static data
+ 0003:00000193	Idle _real_name_field_info		static data
+ 0003:0000019F	Idle _handle_field_info 		static data
+ 0003:000001AB	Idle _password_field_info		static data
+ 0003:000001B7  Idle _address_field_info        static data
+ 0003:000001C3  Idle _banner_field_info         static data
+ 0003:00000884  Idle _class_field_info          static data
+ 0003:000020E8  Idle _userfile                  static data
+ 0003:000020F1  Idle _classfile                 static data
+ 0003:000020FB  Idle _user_member_list          static data
+ 0003:0000210C  Idle _sysop_member_list         static data
+ 0003:000029D4  Idle _emm_page_mapping          remove this
+ 0003:000029F4  Idle _last_pid                  global
+ 0003:000029F8       _dans_counter              doesn't matter
+ 0003:000029FC       _tasking                   doesn't matter
+ 0003:000029FD  Idle _timer_section             remove this
+ 0003:000029FE  Idle _num_task_switches         remove this
+ 0003:00002A02       _max_task_switches         remove this
+ 0003:00002A06       _system_load               remove this
+ 0003:000033E4  Idle _flag                      remove this
+ 0003:00003458  Idle _info_string               static data
+ 0003:00003483       _by_line                   static data
+ 0003:000034A3       _ginsutalk_line            static data
+ 0003:000034AD       _copyright_mesg            static data
+ 0003:000034E6       _po_box_line               static data
+ 0003:000034F4       _glenview_il               static data
+ 0003:00003507       _system_startup            static data
+ 0003:00003516       _company_name              static data
+ 0003:00003529       _nuke_greenhouse           static data
+ 0003:00003574       _information_question      static data
+ 0003:000035C8       _num_schedule              global
+ 0003:000035CC  Idle _next_scheduled_event      global
+ 0003:000035D0  Idle _which_next_event_id       global
+ 0003:000035D4  Idle _next_id                   global
+ 0003:000035D8  Idle _rotate_file               static data
+ 0003:000035E9  Idle _rotator_on                global
+ 0003:00003D0C  Idle _crctab                    static data
+ 0003:0000492C  Idle _ddial_commands            static data
+ 0003:00004C28       _system_arrow              static data
+ 0003:00004C2D  Idle _ascii_convtable           static data
+ 0003:00004CAE  Idle _barred_controls           static data
+ 0003:00004D38       _vt100_key_list            static data
+ 0003:00004DEC  Idle _gtalk_exit_now            global
+ 0003:00004DF0  Idle _dv_loaded                 remove this
+ 0003:00004DF1  Idle _multitasking_os           remove this
+ 0003:00004DF2  Idle _os_type                   remove this
+ 0003:00004DF3  Idle _num_ports_loaded          not global
+ 0003:00004DF7  Idle _num_consoles_loaded       not global
+ 0003:00004DFB  Idle _initial_serial_config_file static data
+ 0003:00004E06       _serial_config_file        not global
+ 0003:00004E0A  Idle _have_ems                  remove this
+ 0003:00004E0B  Idle _have_com                  remove this
+ 0003:00004E0C  Idle _have_key_int              remove this
+ 0003:00004E0D  Idle _have_error                remove this
+ 0003:00004E0E  Idle _have_break                remove this
+ 0003:00004E0F       _compile_time              static data
+ 0003:00004E18       _compile_date              static data
+ 0003:000056C4       _backspacestring           static data
+ 0003:000056C8  Idle _welcome                   static data
+ 0003:000056DA  Idle _cr_lf                     static data
+ 0003:000056DD  Idle _string_table              static data
+ 0003:00005881  Idle _modem_results             static data
+ 0003:000058F1  Idle _guest_login_checks        static data
+ 0003:00005905  Idle _user_login_checks         static data
+ 0003:00005925       _version_title             static data
+ 0003:00006708  Idle _sys_glinks_ready          global
+ 0003:00006709  Idle _packet_start              static data
+ 0003:0000691C  Idle _file_dir                  static data
+ 0003:00006923  Idle _file_list                 static data
+ 0003:0000692C  Idle _help_dir                  static data
+ 0003:00006934  Idle _help_list                 static data
+ 0003:00006A84  Idle _valid_class_chars         static data
+ 0003:00006AAB  Idle _conv_to_6bit              static data
+ 0003:00007100  Idle _illegal_command           static data
+ 0003:00007117       _NotOnLine                 static data
+ 0003:00007123       _NodeOutOfRange            static data
+ 0003:00007135       _InvalidFormat             static data
+ 0003:0000714C  Idle _InvalidCommand            static data
+ 0003:0000716F  Idle _InvalidSyntax             static data
+ 0003:0000717E  Idle _ON_str                    static data
+ 0003:00007182  Idle _OFF_str                   static data
+ 0003:00007186  Idle _commands                  global
+ 0003:000078CA  Idle _board_types               static data
+ 0003:0000AE78       _max_channels              static data
+ 0003:0000B8E8       _mem_handles               global
+ 0003:0000B8EC       _file_handles              global
+ 0003:0000B8F0  Idle _fileblacklist             static data
+ 0003:0000B930  Idle _mode_table                static data
+ 0003:0000BAC0  Idle _cmd_list                  static data
+ 0003:0000CA18  Idle _menu_info                 static data
+ 0003:0000CAAC  Idle _file_sec_config_file      static data
+ 0003:0000EC48       _is_a_console              not global
+ 0003:0000EC7A  Idle _base_seg                  remove this
+ 0003:0000EC7E  Idle _cur_pos1                  remove this
+ 0003:0000EC82  Idle _cur_pos2                  remove this
+ 0003:0000EC86  Idle _screens                   global
+ 0003:0000F146  Idle _port_screen               global
+ 0003:0000F20E  Idle _local_os2_video           not global
+ 0003:0000F258       _user_lines                global
+ 0003:00019B54       _user_options              global
+ 0003:0001E30C  Idle _switchTasks               remove this
+ 0003:0001E310       _numTasksOpen              remove this
+ 0003:0001E314  Idle _task_fast                 global
+ 0003:0001E3DC  Idle _tasks                     global
+ 0003:0001EC74  Idle _begin_task_struct         remove this
+ 0003:0001EC78  Idle _end_task_struct           remove this
+ 0003:0001EC7C  Idle _lock_dos_offset           remove this
+ 0003:0001EC80  Idle _oldss                     remove this
+ 0003:0001EC84  Idle _oldsp                     remove this
+ 0003:0001EC88  Idle _old_tswitch               remove this
+ 0003:0001EC8C  Idle _curMaxTasks               remove this
+ 0003:0001EC90  Idle _semaphores                remove this
+ 0003:0001ED90  Idle _dontKeepNextTask          remove this
+ 0003:0001ED94  Idle _lock_dos_record           remove this
+ 0003:0001EDD0       _schedule_data             global
+ 0003:0001EE98       _schedule                  global
+ 0003:0001F30C  Idle _rotator_bit_array         global
+ 0003:0001F38C  Idle _rotator_delay             global
+ 0003:0001F390  Idle _cur_rot_message           global
+ 0003:0001F394  Idle _last_rot_message          global
+ 0003:0001F398  Idle _rotator_id                global
+ 0003:0001F39C       _abuf_status               global
+ 0003:0001F84C  Idle _ext_mode                  global
+ 0003:0001F978       _os_name                   not global
+ 0003:0001F9B4  Idle _major_version             not global
+ 0003:0001F9B5  Idle _minor_version             not global
+ 0003:0001F9B6  Idle _old_break_value           remove this
+ 0003:0001F9BC       _line_status               global
+ 0003:0002228E       _sync_status               global
+ 0003:00022482       _server                    global
+ 0003:00022486       _timeout_server            global
+ 0003:0002248A       _sys_info                  global
+ 0003:000226B9       _sys_toggles               global
+ 0003:000226D3       _system_number             global
+ 0003:000226D9  Idle _number_till_core          not global
+ 0003:000226E0  Idle _sys_glinks                global
+ 0003:0002286E  Idle _this_system               global
+ 0003:00022878  Idle _conv_from_6bit            static data
+ 0003:000228F8       _port                      global
+ 0003:00025D78       _port_fast                 static global
+ 0003:00025DF0  Idle _port_input                global
+ 0003:0002D7EE       _num_ports                 static global
+ 0003:0002D7F2  Idle _a_chars_in_buffer         static global
+ 0003:0002D86A       _a_dcd_detect              static global
+ 0003:0002D8E2  Idle _a_put_char_in_buffer      static global
+ 0003:0002D95A       _a_get_char                static global
+ 0003:0002D9D2       _a_send_char               static global
+ 0003:0002DA4A       _a_send_chars              static global
+ 0003:0002DAC2       _a_empty_inbuffer          static global
+ 0003:0002DB3A       _a_char_in_buf             static global
+ 0003:0002DBB2       _a_get_first_char          static global
+ 0003:0002DC2A       _a_get_nchar               static global
+ 0003:0002DCA2       _a_wait_for_xmit           static global
+ 0003:0002DD1A       _a_empty_outbuffer         static global
+ 0003:0002DD92       _a_change_dtr_state        static global
+ 0003:0002DE0C       _channels                  global
+ 0003:0002ECF4       _mem_array                 global
+ 0003:0002F780       _file_array                global
+ 0003:0002FF28  Idle _filesec_ops               global

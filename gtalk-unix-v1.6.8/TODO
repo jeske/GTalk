@@ -1,0 +1,9 @@
+
+
+- fix relog
+- fix /kBOOM, /rlBOOM
+- fix UNKNOWN class
+- fix mail (comparse.c)
+- make mailx available
+- extended help
+

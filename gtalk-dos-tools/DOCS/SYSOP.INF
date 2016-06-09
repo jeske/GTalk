@@ -1,0 +1,564 @@
+
+
+************************************************************
+****                                                    ****
+****     GTalk - official Documemtation Release 0.1     ****
+****               Sysop System Commands                ****
+****                                                    ****
+************************************************************
+
+
+Sysop System Commands    - Written 04/05/93 by David W Jeske
+---------------------      Copyright 1993 by David W. Jeske and
+                                             Daniel L. Marks
+
+
+The Following is a list of GTalk SYSOP commands:
+
+GTalk Kernal/Serial Info Commands:
+  /CHK                  - checksum util
+  /MEMORY               - memory
+  /FILES                - gtalk file usage
+  /SCHED                - scheduled task list
+  /SERIAL               - serial configuration list
+  /DCD                  - Toggle DCD detect for node on/off
+  /QUICK                - Quick system shutdown
+  /SHUTDOWN             - Shutdown system
+  /RESETn               - Reset node #n
+
+Sysop Utilities:
+  /SYSTEM               - General Sysop Utilities menu
+  /SYSOP                - Sysop FILE utilities
+  /COMMAND              - Global Toggle commands on/off
+  /EF                   - Edit File
+  /VIEW                 - View file
+  /ROT                  - Enter rotator menu
+  /TERMn                - Enter terminal node #n
+  /U                    - Enter user editor
+  /WALL <text>          - Send broadcast message
+  /WALLA <text>         - Send anonymous broadcast message
+  /WATCH                - watch utility
+
+
+Sysop General Use Commands:
+  /SYSMON               - System Monitoring (auto monitoring of channel 0)
+  /Fn                   - "Force" another node
+  /LURK+,-              - Set lurk on/off
+  /SAFE+,-              - Set safe mode for lurk on/off
+  /LOCKxx               - Set priority lock for system
+  /RLn                  - Relog node #n
+  /SM+                  - Display sysop user list
+
+Time/Access Related Commands
+  /Vn                   - Validate node #n
+  /Gn(+,-,=)xx          - +/-/set time (xx/min) for #n
+  /Kn                   - Kill node #n
+  /MAKEn(GRUBCS*)       - Set Temporary Access Priviliges
+
+Link Related Commands:
+  /LINKn                - Set node #n as a link
+
+System Update Commands:
+  /MEMUD                - Member list update
+  /SYSUD                - Update system information file
+
+
+********************************
+*  Kernel/Serial Info Commands *
+********************************
+
+ /CHK            The CHecKsum Command allow users to utilize GTalk's self
+                 checksum utilities.
+
+                 /CHK *
+                    Will tell the system to do an immediate checksum
+                    of the "program" in RAM. NOTE: This is a background task
+                    so output may not appear immediately. When the checksum is
+                    finished, both the INITIAL checksum of the program RAM
+                    (which was taken when the system started up) and the
+                    CURRENT checksum of the program RAM are printed. If they
+                    differ, Rebooting of the system is suggested, for the
+                    integrity of the program has been breeched.
+
+                 /CHK+  or /CHK-
+                    Will ENABLE or DISABLE the operation of the AUTOMATIC
+                    checksum.
+
+                    If enabled, this will checksum the Program in RAM every
+                    minute. If they checksum fails. It will alert all users.
+                    Log an error to the file <gtalk>\LOG\ERROR.LOG and
+                    reboot the system.
+
+                 /CHK
+                    Will print whether the above AUTO-checksum feature is
+                    currently enabled.
+
+                 NOTE: the auto-checksum feature saves to the system
+                       information file. So if it is enabled, it will
+                       continue to be enabled when the system is shutdown
+                       and restarted. Until the /CHK- command is executed.
+
+/MEMORY         The /MEMORY command prints a detailed memory map of
+                GTalk memory. It will print the amount of memory allocated
+                to DOS, as well as the amount of memory GTalk is using itself.
+
+                 - Spaces marked as EMPTY are available for allocation.
+
+                 - The DOS CoreLeft should be around 32k, that is memory left
+                   for dos C functions to allocate from.
+
+/FILES          The /FILES command prints a detailed map of the files which
+                are currently open.
+
+                   NOTE: files are not usually left open very long, so this
+                         list is usually empty. Files which are being Xferred
+                         are usually open for an extended period of time, and
+                         thus can been seen while the Xfer is in progress.
+
+/SCHED          The /SCHED command prints a detailed map of events which are
+                currently scheduled. These tasks are NOT running, they are
+                WAITING to be run. When they are actually run, they no longer
+                appear in this list.
+
+/SERIAL         The /SERIAL command prints a list of the currently installed
+                serial devices. No serial configuration data can be modified
+                from withen the GTalk program.
+                    - See the program SERIALCF.EXE
+
+/DCD            The /DCD command toggles the use of the Data Carrier Detect
+                line for a specific Node. This should be left alone in
+                normal situations.
+
+                Initially DCD detect is set to ON.
+
+                /DCD<line>
+                   Will toggle the DCD detect for that line. The main use of
+                   this command is to allow NULL MODEM connections to specific
+                   lines. if /DCD<line> and that line is connected to a modem
+                   GTalk will no longer realize which someone Hangs Up on the
+                   modem. (The Gtalk program will think there is ALWAYS DCD)
+
+                 NOTE: Currently, to log into another node you must set the
+                       baud rate to the configured baud rate, and type
+                       CON <baud><return>.
+
+                        Ex. CON 2400<return>
+
+/QUICK          This feature is available from CONSOLE only. Console cannot
+                be forced to issue this command in any way.
+
+                This command does an IMMEDIATE drop to DOS. It does not
+                deallocate anything, or deinit the serial ports. This
+                feature is currently for debugging purposes only and will
+                be removed. It may be initially "disabled" in the /command
+                menu. When configuring the system, this is the quickest
+                way to exit the software, and should have no ill-effects
+                other than, the modems will be left at auto-answer.
+
+/SHUTDOWN       This command will de-init all modems with the "de-init string"
+                which was preconfigured in the SERIAL.CFG. Normally this
+                is set for "ats0=0" to set the modem to no longer answer.
+
+                It will carefully close all files, and kill all processes.
+                Then it will automatically  ** REBOOT YOUR COMPUTER **.
+
+                <note, this command will soon ask for a shutdown password,
+                 which can be set via the <P>assword section of the /SYSTEM
+                 menu.
+
+/RESET<task#>   This command will blindly KILL the task at the specified
+                task number. Note that each port's number is the same
+                as it's task number. This command is also provided as a
+                debug utility, and should not be used for general purposes.
+                Use /K<line> instead. <This will not save the information
+                of the user logged into the node.>
+
+                USAGE: if a modem needs to be reset and there is NO USER
+                       on that line. /RESET<line> will hang-up and re-init
+                       the modem.
+
+                       If you add a modem to an active serial port, it should
+                       automatically be initted when it is turned on. If it
+                       is not initted, switch it off, count to 2 and switch
+                       it back on. If this still does not re-init the modem.
+                       type /reset<line>. If THAT does not init the modem,
+                       something is wrong with either the SERIAL.CFG or
+                       the line the modem is connected to.
+
+
+***************************
+*  Sysop Utility Commands *
+***************************
+
+
+/SYSTEM         This menu is the Easiest entry to the sysop utilities.
+                It has menu entries for all of the following functions:
+
+                        /SYSOP          - sysop file utilities
+                        /EF             - File Editor
+                        /VIEW           - File Viewer
+                        /U              - User Editor
+
+                From this menu you may enter  "U###" where ### is the
+                user number you wish to edit or create.
+
+/SYSOP          Sysop FILE utilities. This menu contains file
+                functions such as COPY,DELETE,RENAME,Create DIR,
+                Remove DIR, Edit file, View File.
+
+                Due to GTalk's multitasking nature, none of these
+                operaitons will hault the operation of the system.
+
+                The more intensive operations, such as copying files
+                may cause slight delays to users on slower computers.
+
+                Copying to floppy is entirely possible, altough expect
+                serious delays to users during these operations.
+
+                  WARNING: These utilities are not foolproof, you can
+                           seriously harm your GTalk setup unless you
+                           are careful.
+
+                           ALSO: as of right now, if a DOS error occurs
+                                 during operations (such as DRIVE NOT
+                                 READY), GTalk ***WILL*** die.
+                                  <This will be fixed at a later date>
+
+                                 So be VERY careful when operating to and
+                                 from floppies, be sure the disk is in the
+                                 drive when you initiate a floppy operation.
+
+/COMMAND        The /COMMAND - Command Toggle Utility allows sysops to
+                disable any commands which they do not want to be available.
+                This will disable the command on a SYSTEM wide basis. NOBODY
+                will be able to use the command, NO MATTER WHAT, unless
+                they reenable the command with the /COMMAND utility.
+
+                NOTE: when the system reboots, all commands will be reset
+                      to their original state. SOON, the system will save
+                      the commands which are disabled, and restore them when
+                      the system is restarted.
+
+/EF             Edit File. This command allows a sysop to edit any file on
+                the hard drive. If no path is given, it will assume the
+                <Gtalk> path. Otherwise, you can specify a full pathname.
+                files must be under 16k using the current Line Editor.
+
+/VIEW           View File. This command will print any file, if no path
+                is given, it will assume the <gtalk> path. Otherwise, the
+                user may specify the full path.
+
+/ROT            Rotated Message Utility. This utility is used to modify
+                the ownership and properties of /m boxes.
+
+                  [M]odify Box, will let you set the OWNER, SIZE in bytes,
+                                ACTIVE, and SHOULD ROTATE characteristics.
+                          Press RETURN to exit this menu
+
+                  SIZE: The size of a message can be defined by the sysop, and
+                        the user will not be allowed to make his /m longer than
+                        the specified legnth. The Maximum legnth is currently
+                        16k.
+
+                  ACTIVE: a non-active box may not be viewed, or edited. It is
+                          disabled and does not exist.
+
+                  SHOULD ROTATE: if this is set to YES, the message will be
+                                 automatically rotated by the system at the
+                                 interval specified by the system
+                                 administrator.
+
+                                 THE OWNER OF THE BOX MAY ALSO TOGGLE THIS
+                                 FUNCTION.
+
+                                   <soon the sysop will be able to specify
+                                     "able to rotate" so that you can
+                                     set users messages in such a way, that
+                                     the user can NEVER make it rotate.>
+
+
+
+                  [W]rite Message, will let you modify an actual message box.
+
+                  [T]une Rotator, this allows the sysop to set up the
+                                  system rotator. The sysop may turn off
+                                  the rotator all togeather, or he may
+                                  turn it on, and specify the frequency at
+                                  which messages are printed to the system.
+
+/TERM<line>     Modem Terminal. This allows sysops to connect directly
+                to a serial or console line.
+
+                This is used for dial out purposes. The GTalk console is
+                designed to have many of the functions of a simple terminal
+                program so that sysops may use their GTalk machine as a
+                general purpose terminal. The GTalk console supports Full
+                ANSI, as well as <not completely implemented as of
+                documentation date> Scrollback and xfer protocals.
+
+                The current TERMINAL commands are all prefaced by
+                  Control-E.
+
+                Control-A               EXIT TERMINAL
+                Control-B               Toggle Baud Rate
+                Control-D               Toggle DATA BITS
+                Control-P               Toggle Parity
+                Control-L               Link Node (Ddial links)
+
+                Ex. to exit terminal type Control-E Control-A
+
+/U              User Edit. This is the sysop User editor. It accepts
+                the following syntax:
+
+                 /U<return>       enter the main user edit menu
+                 /U###            Enter EDIT of CREATION of user number
+                                  ###. (system will automatically
+                                  select EDIT for user that already exist
+                                  and NEW for users which dont. If
+                                  you want to create a NEW user over
+                                  an existing one. Type /U<return> and
+                                  then select [N] for new user from the
+                                  main menu.)
+
+                See the section on the User Editor for further use
+                of the User Editor.
+
+/WALL <Text>    This will "Write to ALL users" on the system. It will
+                preface your message with a information line, which
+                contains the time, a few beeps, and the Line Number
+                and Handle of the "WALLing" party.
+
+/WALLA <text>   EXACTLY like the above /WALL command except that it
+                prints NO header information or beeps. <it's for fun!!>
+
+/WATCH<line>    The Watch command is designed to provide the convinence
+                which many BBS systems provide where a sysop can "tour"
+                a user through the system. The sysop can watch a node, and
+                then enable "typing" into that node by typing Control-W
+                Control-G. Two beeps means typing is enabled, one beep
+                means typing is disabled. Control-W Control-E will EXIT
+                watch mode.
+
+                NOTE: while watching, private info will not be seen
+                      and the person who is being watched will be informed
+                      that he is being watched. (not activated as of
+                      documentation press time)   Private Info is anything
+                      that is considered private. /p Messages, mail, etc.
+                      And note, that the "watcher" will not even see
+                      the /p when the user TYPES it to an outgoing party.
+                      This retains full privacy for the user.
+
+                Limitations:
+                  - A node can only be watched by ONE other node at a time.
+                  - Console can NEVER be typed INTO from another node.
+
+                /WATCH<return>
+                  this will print a list of what nodes are watching what
+                  nodes.
+
+         BUGS:  - when someone watches CONSOLE, the first character of
+                  each line is lost.
+                - Typing INTO Digiboard INTELLIGENT boards is not supported
+
+
+*******************************
+*  Sysop General Use Commands *
+*******************************
+
+
+/SYSMON         System Monitoring.
+                (see section on Channel 0)
+
+                Sysops can (and should) set their accounts to ALWAYS
+                monitor channel 0 with the /sysmon command. When System
+                Monitoring is ON, sysops will always be set to monitor
+                channel 0 when the login.
+
+/F              Force
+                This command allows a sysop to FORCE another node to
+                do something. The the other node will *NOT* see any
+                results of the command, but rather the issuer of the
+                /f will see the results. This can be used to Force
+                users to SAY something, or do something. Note that
+                you can not force users into menus, as they see NO results
+                of the commands which you issue.
+
+                 Ex.  /f3/hNew Handle
+                      --> Forcing [04]
+                      --> Handle Set
+
+                      /f4Hi how are you?
+                      --> Forcing [04]
+                      #04[T1:John Doe) Hi how are you?
+
+                note, that when you force a user, you will be able to
+                issue any command according to YOUR privs, not the users
+                priv. So if a User is given the /f command, he CANNOT
+                force SYSOPS to issue SYSOP commands. He will merely
+                be able to force USERS to issue SYSOP commands.
+
+/LURK(+,-)      Lurk
+                   Lurking is when a sysop can login to the system, and see
+                what is going on, as if he were logged in, but users cannot
+                see him.
+
+                   This can be done from Console *OR* a remote node. When
+                lurking you can issue any command as if you were logged in.
+                Be careful though, because some of them will reveal your
+                presence!
+
+                Safe Mode/Lurk Messages
+                -----------------------
+                   When you enter lurk mode initially you will be in what is
+                called "SAFE" mode. In this mode, when you type a normal
+                message, it will be a "LURK message". Lurk Messages are
+                purple and prefaces by a "L". Only other sysops with the
+                Lurk Privilige and who are ON THE SAME CHANNEL, will be
+                able to see the lurk messages. So sysops can effectively
+                talk "behind" those who are on the channel.
+
+                You can force someone into lurk, and he will be able to
+                see other lurkers, and talk to them with LURK messages.
+
+                - HE WILL NOT BE ABLE TO UNLURK *OR* to UNSAFE while in forced
+                  lurk mode.
+
+                PRIVATE Messages and Lurk
+                -------------------------
+                   You can send private messages to users when you are
+                lurking. But be warned. Initially they will not be able
+                to send messages BACK to you. If they try they will get
+                "--> Not On-Line". In order to let users /p BACK to you
+                simple Squelch them with the /X command. ANY user which
+                is Squelched will be able to /p you.
+
+
+/SAFE(+,-)      This is used to toggle SAFE and UNSAFE lurking modes.
+                /SAFE<return> will print the current MODE.
+
+                SAFE mode is explained above.
+
+                when in UNSAFE mode, normal messages typed will be printed
+                to the channel as if the sysop were ONLINE.
+
+                  NOTE: the sysop will still no longer appear in /s
+                        when in "unsafe" mode.
+
+/LOCKxx         Lock System.
+                  The system is locked according to priority. Only
+                users with a priority which is EQUAL TO OR LESS than
+                the given priority will be allowed on the system.
+
+/RL<line>       Relog.
+                  This allows a user to go back to the Login prompt and
+                log into the system again.
+
+/SM+            Sysops Member List
+                  This member list is the same as the /sm member list
+                but it also has the current EXPIRATION dates of the users.
+
+
+*********************************
+*  Time/Access Related Commands *
+*********************************
+
+/V<line>       Validate
+                 This command will give a GUEST on the specified line
+               the abilities and time of the predefined REGISTERED GUEST.
+
+                <see account DEFAULTS for more information>
+
+/G<parameters> Give Time
+                 This command is designed to allow sysops to set or modify
+               the time of users that are online. Any additions or changes
+               will NOT be saved when the user logs off.
+
+               /G<line>(+,-,=)xx
+
+                 sets the time for LINE according to the paramters
+
+               Example          Effect
+               -----------------------------
+               /G2-5            Remove 5 minutes from line 2
+               /G2=10           SET line 2 to have 10 minutes
+               /G2+10           Add 10 minutes to the user on line 2
+
+/K<line>        Kill
+                  This command will kill the user which is on the specified
+                line. <log him off>
+
+/MAKE<param>    Make Utility
+                  The make utility is highly flexable. It's basic function
+                is to TEMPORARILY modify the priviliges of a user who is
+                online. Any changes made to the user with /MAKE will NOT
+                be saved when the user logs off.
+
+                /MAKE<line><return>
+                   will bring up a menu of options. Any one of these
+                options may optionally be specified ON the command line
+                instead.
+
+                  *** sample /MAKE<line>  menu **********
+                  *   -- > Make User Menu <--           *
+                  *                                     *
+                  *   [G]uest                           *
+                  *   [R]egistered Guest                *
+                  *   [U]ser                            *
+                  *   [B]aby Co                         *
+                  *   [C]o                              *
+                  *   [S]ysop                           *
+                  *   [*] Edit User Privs               *
+                  *                                     *
+                  *** end sample ************************
+
+                EX: /make3g is the same as /make3 and then selecting "g"
+
+                The "*" selection allows the sysop to individually toggle
+                any priviliges with the same interface as the User Editor
+                Privilige Editor Section. Refer to the User Editor
+                Section for specifics.
+
+                /MAKE<line>(+,-)<command>
+
+                 This will add or remove any command from that user on
+                the specified. In this way, one does not have to enter the
+                Privilige Menu if they want to just add or remove one command.
+
+                Ex:
+                  /make3+f    - will give line 3 the "F" force command.
+
+
+**************************
+*  Link Related Commands *
+**************************
+
+/LINK<line>     Will turn the user on the specified line into a Link.
+
+                NOTE: if a caller is trying to link to YOUR system, he will
+                      either need a Link account, or he will need to be
+                      /LINK(ed) by a sysop online.
+
+
+***************************
+*  System Update Commands *
+***************************
+
+/MEMUD          This will update the members list </sm> and the sysop's
+                member list </sm+>.
+
+                NOTE: this is a background task. So it's results will
+                      not appear immediatly. For the most verbose information
+                      about it's progress. Turn System Monitoring ON with
+                      the /SYSMON command.
+
+/SYSUD          This will force the system to save the System Information
+                <number of calls, etc> IMMEDIATLY. Note that this is
+                automatically saved every 10 minutes by the GTalk system.
+
+
+
+
+
+
+
+

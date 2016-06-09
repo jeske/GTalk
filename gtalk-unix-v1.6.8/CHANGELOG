@@ -1,0 +1,7 @@
+v1.1.0 		- added pass_prompt and changed around user.c/userst.h/etc.
+		- some problem with initializing the fd_sets for the common
+		  data structures for nodes >74 so I reduced MAX_NODES and
+		  MAX_DEVICES to 50 to deal with the problem later. Maybe
+		  it is due to the increased size of "struct _node_struct"
+		  from common.h now that the userdata member is bigger.
+

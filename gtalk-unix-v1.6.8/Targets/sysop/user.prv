@@ -1,0 +1,14 @@
+User Privs
+12
+CMD_MAIL*Email
+CMD_PASSWD*Change Password
+CMD_MESG*M Box Edit
+CMD_MON*Channel Monitor
+CMD_H_ANSI*ANSI Handle
+CMD_BBS*BBS
+CMD_PAGE*Page
+CMD_CHAT*/chat with another user
+MAIL_SEND*Send Email
+CMD_XFER*xfer
+CMD_SI*CMD_SI
+CMD_X*Squelch another user (/X)

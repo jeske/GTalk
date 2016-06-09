@@ -1,0 +1,6 @@
+Gtalk Source code
+
+Copyright (C) 1995-2000 by David W. Jeske and Daniel L. Marks 
+
+Released to the public domain
+

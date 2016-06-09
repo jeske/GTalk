@@ -1,0 +1,47 @@
+
+
+************************************************************
+****                                                    ****
+****     GTalk - official Documemtation Release 0.1     ****
+****                    User Commands                   ****
+****                                                    ****
+************************************************************
+
+
+User Commands    - Written 04/05/93 by David W Jeske
+-------------      Copyright 1993 by David W. Jeske and
+                                     Daniel L. Marks
+
+
+The Following is a list of GTalk USER commands:
+
+User Commands:
+
+/AUTOANSI         Set ANSI default for your account  <being reworked>
+/BBS              Enter BBS area
+/Cc <text>        Send message <text> to channel #c
+/INFO             Display information about your account
+/MAIL             Enter MAIL area
+/MESG             Enter message area
+/MON(+,-,=)c,c..  Add/delete/set monitor channels
+/PAGEn            Page node #n
+/PAGE+,-          Allow/disable pages to you
+/PASSWD           Set new password
+/SIn              Silence node #n
+/Tc               Tune to channel #c
+/TS               List channel information
+/USn              Unsilence Node #n
+
+Channel Moderator Commands:
+
+/CA+,-            Set channel anonymous/identified
+/CGn              Give node #n moderator privilege
+/CIn,n..          Invite nodes (n,n) to your channel
+/CKn              Kick node #n off your channel
+/CL+,-            Set channel unlocked/locked
+/CM+,-            Channel messages (/C) allowed/disabled
+/CN<name>         Name current channel
+/CPxx             Set channel priority to xx
+
+
+

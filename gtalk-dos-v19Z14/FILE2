@@ -1,0 +1,118 @@
+File GT.C:
+                      user_options[loop].warning_prefix,
+                      loop,user_options[loop].staple[0],user_options[loop].location,
+                      user_options[loop].staple[1]);
+                   if (user_options[loop].time==0)
+                      user_options[loop].time);
+                    if (user_options[loop].time==0)
+                      user_lines[loop].number,user_options[loop].warning_prefix,
+                      loop,user_options[loop].staple[0],user_options[loop].location,
+                      user_options[loop].staple[1]);
+                   user_lines[loop].number,user_options[loop].warning_prefix,
+                   loop,user_options[loop].staple[0],user_options[loop].location,
+                   user_options[loop].staple[1]);
+                   user_options[loop].time);
+   user_options[testid].time_sec = 0;
+   user_options[testid].warning_prefix= '#';
+    user_options[tswitch[.width=80;
+    user_options[tswitch].staple[0]='[';
+    user_options[tswitch].staple[1]=')';
+    user_options[tswitch].staple[2]='[';
+    user_options[tswitch].staple[3]=']';
+    user_options[tswitch].time=60;
+    user_options[tswitch].priority=40;
+    user_options[tswitch].width=80;
+  user_options[testid].warning_prefix='*';
+                 testid,user_options[testid].time_sec -
+                 user_options[testid].time_warning_sec);
+                 testid,user_options[testid].staple[2],
+                 user_lines[testid].handle,user_options[testid].staple[3],
+                 user_options[testid].time_sec -
+                 user_options[testid].time_warning_sec);
+  user_options[testid].time_sec=(((long int)curtime-(long int)line_status[testid].time_online)+(long int)60);
+  user_options[testid].warnings = 1;
+          if ((dif>(user_options[testid].time_warning_sec)) &&
+              (!user_options[testid].warnings))
+          if (dif>((user_options[testid].time_sec)))
+          if (!user_options[testid].time_sec) operation=0;
+                              (user_options[testid].priority<40)) &&
+   user_options[portnum].warning_prefix='+';
+   user_options[portnum].warning_prefix='+';
+   user_options[tswitch].time_warning_sec = LOGIN_TIMEOUT_SEC;
+   user_options[tswitch].warnings = 0;
+   user_options[tswitch].time_sec = LOGIN_TIMEOUT_SEC;
+    now=localtime(&user_options[portnum].login_time);
+    char reason_flag=user_options[portnum].warning_prefix;
+            7,sys_info.system_number,who,portnum,user_options[portnum].staple[0],
+            user_options[portnum].location,line_status[portnum].mainchannel,
+            user_lines[portnum].handle,user_options[portnum].staple[1], line_status[portnum].baud);
+    char reason_flag=user_options[portnum].warning_prefix;
+            7,reason,sys_info.system_number,who,portnum,user_options[portnum].staple[0],
+            user_options[portnum].location,line_status[portnum].mainchannel,
+            user_lines[portnum].handle,user_options[portnum].staple[1]);
+               user_options[portnum].staple[2],user_lines[portnum].handle,
+               user_options[portnum].staple[3]);
+               user_options[portnum].staple[2],user_lines[portnum].handle,
+               user_options[portnum].staple[3]);
+   user_options[tswitch].time_sec = 0;
+   user_options[tswitch].warning_prefix= '#';
+      user_options[tswitch].system[loop]=0;
+        user_options[portnum].privs[loop]=user_lines[portnum].privs[loop];
+        user_options[portnum].toggles[loop]=user_lines[portnum].toggles[loop];
+     user_options[portnum].priority=user_lines[portnum].priority;
+       user_options[portnum].staple[loop]=user_lines[portnum].staple[loop];
+   user_options[portnum].time_sec=
+       (unsigned long int)(user_options[portnum].time)*60;
+   user_options[portnum].time_warning_sec =
+        user_options[portnum].time_sec-60;
+   user_options[portnum].warnings=0;
+   user_options[portnum].warning_prefix='#';
+   user_options[portnum].time_sec=
+       (unsigned long int)(user_options[portnum].time)*60;
+   user_options[portnum].time_warning_sec = user_options[portnum].time_sec-60;
+   if (user_options[portnum].time && full_system)
+              if ((dif>(user_options[testid].time_warning_sec)) && (!user_options[testid].warnings))
+                  user_options[testid].warning_prefix='*';
+                  sprintf(s,"|*h1|*f1--> #%02d:%c|*r1%s|*r1|*h1|*f1%c Timeout in %d seconds",testid,user_options[testid].staple[2],user_lines[testid].handle,user_options[testid].staple[3],user_options[testid].time_sec-user_options[testid].time_warning_sec);
+                  user_options[testid].warnings = 1;
+                 if (user_options[portnum].warnings)
+                  { user_options[portnum].warnings=0;
+                    user_options[portnum].warning_prefix='#';
+          if (user_options[portnum].warnings)
+          user_options[portnum].warnings=0;
+          user_options[portnum].warning_prefix='#';
+   user_options[portnum].login_time=time(NULL);
+   user_options[portnum].squelch_all=0;
+    user_options[portnum].squelched[loop]=-1;
+   user_options[portnum].warnings=0;
+   user_options[portnum].time=user_lines[portnum].time;
+   user_options[portnum].location='T';
+   if (!test_bit(user_options[tswitch].privs,ANSI_HANDLE_PRV))
+  filter_ansi(user_lines[tswitch].handle,user_options[tswitch].noansi_handle);
+   user_options[tswitch].warning_prefix='%';
+               ,"%c%02d%c%c%d:%s|*r1%c ",user_options[tswitch].warning_prefix,
+               tswitch,user_options[tswitch].staple[0], user_options[tswitch].location,
+               user_lines[tswitch].handle,user_options[tswitch].staple[1]);
+                 user_options[chat_with].staple[2],user_lines[chat_with].handle,
+                 user_options[chat_with].staple[3],7);
+                   if (!test_bit(user_options[tswitch].privs,MACRO_PRV))
+               if (!test_bit(user_options[tswitch].privs,CAN_TYPE_ANSI_PRV))
+               if (!test_bit(user_options[tswitch].privs,CAN_TYPE_FLASHING_PRV))
+               if (user_options[tswitch].priority)
+                  if (((*datas=='~')|| (*datas=='&')) && test_bit(user_options[tswitch].privs,ACTION_PRV))
+                  if ((*datas=='`') && test_bit(user_options[tswitch].privs,SHUTDOWN_PRV) && (!check_if_silenced()))
+                    if (test_bit(user_options[tswitch].toggles,DOUBLESPACE_TOG))
+                    if (test_bit(user_options[tswitch].toggles,NO_RETURN_ECHO_TOG))
+                    if (test_bit(user_options[tswitch].toggles,DOUBLESPACE_TOG))
+                    if (test_bit(user_options[tswitch].toggles,DOUBLESPACE_TOG))
+                    if (test_bit(user_options[tswitch].toggles,DOUBLESPACE_TOG))
+                    if (test_bit(user_options[tswitch].toggles,DOUBLESPACE_TOG))
+                    if (test_bit(user_options[tswitch].toggles,DOUBLESPACE_TOG))
+                    if (test_bit(user_options[tswitch].toggles,DOUBLESPACE_TOG))
+                    if (test_bit(user_options[tswitch].toggles,DOUBLESPACE_TOG))
+                    if (test_bit(user_options[tswitch].toggles,DOUBLESPACE_TOG))
+   user_options[tswitch].time_warning_sec = LOGIN_TIMEOUT_SEC;
+   user_options[tswitch].warnings = 0;
+   user_options[tswitch].time_sec = LOGIN_TIMEOUT_SEC;
+   user_options[tswitch].warnings = 0;
+   user_options[tswitch].time_sec = 0;

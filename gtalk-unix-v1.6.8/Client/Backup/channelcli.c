@@ -1,0 +1,202 @@
+
+/***********************************
+
+        Channel Client Commands
+
+ ***********************************/
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdarg.h>
+#include <signal.h>
+#include <errno.h>
+#include <netdb.h>
+#include <fcntl.h>
+#include <grp.h>
+#include <sys/types.h>
+#include <sys/time.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <termios.h>
+#include <arpa/telnet.h>
+#include <sys/wait.h>
+
+#include "str.h"
+#include "list.h"
+#include "common.h"
+#include "gtmain.h"
+#include "abuf.h"
+#include "channelcli.h"
+#include "gtmain.h"
+#include "states.h"
+#include "shared.h"
+#include "squelch.h"
+
+token_entry_type client_ch_tokens[] =
+{
+  { "BANNED", single_error, T_CH_BANNED },
+  { "CHANNELERROR", single_error, T_CH_CHANNELERROR },
+  { "INVITED", single_error, T_CH_INVITED },
+  { "JOINCHANNEL", join_channel_msg, T_CH_JOINCHANNEL },
+  { "LEAVECHANNEL", leave_channel_msg, T_CH_LEAVECHANNEL },
+  { "MESSAGE", receive_message, T_CH_MESSAGE },
+  { "NOBELONG", single_error, T_CH_NOBELONG },
+  { "NOCHANNEL", single_error, T_CH_NOCHANNEL },
+  { "NOMODERATE", single_error, T_CH_NOMODERATE },
+  { "NOPERMCREATE", single_error, T_CH_NOPERMCREATE },
+  { "NOTINVITED", single_error, T_CH_NOTINVITED },
+  { "NOWRITE", single_error, T_CH_NOWRITE },
+  { "PRIVATE", single_error, T_CH_PRIVATE },
+  { "UNBANNED", single_error, T_CH_UNBANNED },
+  { "UNINVITED", single_error, T_CH_UNINVITED }
+};
+
+token_list client_channel_tok = { 15, client_ch_tokens };
+
+int single_error(abuffer *abuf, char *message)
+{
+  char channel[CHANNEL_NAME_LEN+1];
+  
+  get_string(channel, &message, sizeof(channel)-1, 1, 0, 1);
+  message = skip_blanks(message);
+  printf_ansi("|*r1--> %s\r\n", message);
+  return (0);
+}
+
+int double_error(abuffer *abuf, char *message)
+{
+  char channel[CHANNEL_NAME_LEN+1];
+  
+  get_string(channel, &message, sizeof(channel)-1, 1, 0, 1);
+  get_string(channel, &message, sizeof(channel)-1, 1, 0, 1);
+  message = skip_blanks(message);
+  printf_ansi("|*r1--> %s\r\n", message);
+  return (0);
+}
+
+int join_channel_msg(abuffer *abuf, char *message)
+{
+  char channel[CHANNEL_NAME_LEN+1];
+  g_system_t system;
+  node_id node;
+  
+  get_string(channel, &message, sizeof(channel)-1, 1, 0, 1);
+  if (read_system_node(&message, &system, &node) < 0)
+    return (-1);
+  message = skip_blanks(message);
+  printf_ansi("|*r1--> %s\r\n", message);
+  if ((system == my_ip) && (node == mynum))
+    {
+      if (!strcmp(channel, mynode->new_chan))
+	{
+	  strcpy(mynode->cur_chan, channel);
+	  *mynode->new_chan = '\000';
+	}
+    }
+  return (0);
+}
+
+int leave_channel_msg(abuffer *abuf, char *message)
+{
+  char channel[CHANNEL_NAME_LEN+1];
+  g_system_t system;
+  node_id node;
+  
+  get_string(channel, &message, sizeof(channel)-1, 1, 0, 1);
+  if (read_system_node(&message, &system, &node) < 0)
+    return (-1);
+  message = skip_blanks(message);
+  if (*message)
+    printf_ansi("|*r1--> %s\r\n", message);
+  if ((system == my_ip) && (node == mynum))
+    {
+      if (!strcmp(channel, mynode->cur_chan))
+	*mynode->cur_chan = '\000';
+    }
+  return (0);
+}
+ 
+int receive_message(abuffer *abuf, char *message)
+{
+  char channel[CHANNEL_NAME_LEN+1];
+  g_system_t system;
+  node_id node;
+  node_struct *nd;
+  char s[ABUF_STRING_LEN];
+
+  get_string(channel, &message, sizeof(channel)-1, 1, 0, 1);
+  if (read_system_node(&message, &system, &node) < 0)
+    return (-1);
+  message = skip_blanks(message);
+  if (system == my_ip)
+    {
+      if ((node >= c_nodes_used) || 
+	  (!is_node_online(c_nodes(node))))
+	return (-1); 
+      nd = c_nodes(node);
+      sprintf(s,"#%02d:%c%s|*r1%c %s |*r1",
+	     node, nd->userdata.online_info.class_info.staple[0],
+		nd->userdata.user_info.handle, 
+		nd->userdata.online_info.class_info.staple[1],message);
+      wrap_line(s);
+    }
+  return (0);
+}
+
+int private_message(abuffer *abuf, char *message)
+{
+  g_system_t system;
+  node_id node;
+  node_struct *nd;
+  char s[ABUF_STRING_LEN];
+
+  if (read_system_node(&message, &system, &node) < 0)
+    return (-1);
+  if (find_num_squelched_node(system, node) >= 0)
+    {
+      client_abuf_writef(system, node, STATE_PRIVATE,
+			 "%lu/%ld Private Message Squelched",
+			 my_ip, mynum);
+      return (0);
+    }
+  message = skip_blanks(message);
+  if (system == my_ip)
+    {
+      if ((node >= c_nodes_used) || 
+	  (!is_node_online(c_nodes(node))))
+	return (-1); 
+      nd = c_nodes(node);
+      sprintf(s,"|*h1P|*r1#%02d:%c%s|*r1%c %s |*r1",
+	     node, nd->userdata.online_info.class_info.staple[0],
+                   nd->userdata.user_info.handle, 
+                   nd->userdata.online_info.class_info.staple[1],
+                   message);
+      wrap_line(s);
+    }
+  return (0);
+}
+
+int client_message(abuffer *abuf, char *message)
+{
+  printf_ansi("|*r1--> %s\r\n", message);
+  return (0);
+}
+
+int write_to_channel(char *channel, char *message)
+{
+  client_abuf_writef(my_ip, SERVER_PROCESS, STATE_CHANNEL,
+		     "MESSAGE %s %s", channel, message);
+}
+
+int client_channel_process(abuffer *abuf, char *message)
+{
+  channel_func ten;
+  
+  if (ten=get_token(&message, &client_channel_tok, NULL)) 
+    (ten)(abuf, message);
+}
+

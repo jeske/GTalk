@@ -1,0 +1,106 @@
+[00] (Sun) 10/11/98 09:42:19 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:42:19 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:42:19 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:42:19 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:42:19 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:42:19 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:42:19 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:42:19 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:42:19 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:42:19 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:42:19 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:42:19 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:42:19 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:42:19 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:42:19 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:42:19 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:42:19 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:42:19 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:42:19 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:42:19 Could not set attributes of /dev/tty8
+
+[01] (Sun) 10/11/98 09:43:28 num 1 pipe 9 relog 0
+[01] (Sun) 10/11/98 09:43:28 Could not set attributes of /dev/ttyp2
+
+[00] (Sun) 10/11/98 09:49:15 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:49:15 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:49:15 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:49:15 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:49:16 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:49:16 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:49:16 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:49:16 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:49:16 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:49:16 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:49:16 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:49:16 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:49:16 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:49:16 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:49:16 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:49:16 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:49:16 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:49:16 Could not set attributes of /dev/tty8
+
+[00] (Sun) 10/11/98 09:49:16 num 0 pipe 6 relog 0
+[00] (Sun) 10/11/98 09:49:16 Could not set attributes of /dev/tty8
+
+[01] (Sun) 10/11/98 09:50:24 num 1 pipe 9 relog 0
+[01] (Sun) 10/11/98 09:50:24 Could not set attributes of /dev/ttyp3
+
+[00] (Sun) 10/11/98 10:08:13 num 0 pipe 6 relog 0
+[01] (Sun) 10/11/98 10:08:18 num 1 pipe 10 relog 0
+[01] (Sun) 10/11/98 10:08:26 Cannot Access Spoolfile [/home/gtalk/ROOT/var/spool/mail/gtsys]
+[00] (Sun) 10/11/98 10:08:30 save_online_user: ERR (logged_in_flag == 0)
+[00] (Sun) 10/11/98 11:38:11 num 0 pipe 6 relog 0
+[01] (Sun) 10/11/98 11:38:18 num 1 pipe 10 relog 0
+[01] (Sun) 10/11/98 11:38:22 Cannot Access Spoolfile [/home/gtalk/ROOT/var/spool/mail/gtsys]
+[00] (Sun) 10/11/98 11:38:29 save_online_user: ERR (logged_in_flag == 0)
+[00] (Sun) 10/11/98 11:39:17 num 0 pipe 6 relog 0
+[01] (Sun) 10/11/98 11:39:18 num 1 pipe 10 relog 0
+[01] (Sun) 10/11/98 11:39:22 Cannot Access Spoolfile [/home/gtalk/ROOT/var/spool/mail/gtsys]
+[01] (Sun) 10/11/98 11:41:44 sysop/main.prc
+[01] (Sun) 10/11/98 11:42:06 num 1 pipe 10 relog 0
+[01] (Sun) 10/11/98 11:42:08 UNIX account gtgst does not exist!!
+[01] (Sun) 10/11/98 11:43:29 num 1 pipe 9 relog 0
+[01] (Sun) 10/11/98 11:43:33 Cannot Access Spoolfile [/home/gtalk/ROOT/var/spool/mail/gtgst]
+[00] (Sun) 10/11/98 11:44:49 num 0 pipe 6 relog 0
+[01] (Sun) 10/11/98 11:44:52 num 1 pipe 10 relog 0
+[01] (Sun) 10/11/98 11:44:56 Cannot Access Spoolfile [/home/gtalk/ROOT/var/spool/mail/gtsys]
+[01] (Sun) 10/11/98 11:45:21 sysop/main.prc
+[01] (Sun) 10/11/98 11:45:23 sysop/main.prc
+[01] (Sun) 10/11/98 11:45:24 sysop/main.prc
+[01] (Sun) 10/11/98 11:45:24 sysop/main.prc
+[01] (Sun) 10/11/98 11:45:25 sysop/main.prc
+[00] (Sun) 10/11/98 11:45:41 save_online_user: ERR (logged_in_flag == 0)
+[00] (Sun) 10/11/98 12:43:52 num 0 pipe 3 relog 0
+[01] (Sun) 10/11/98 12:44:43 num 1 pipe 7 relog 0
+[01] (Sun) 10/11/98 12:44:47 Cannot Access Spoolfile [/home/gtalk/ROOT/var/spool/mail/gtsys]
+[01] (Sun) 10/11/98 13:00:47 sysop/option.prv
+[01] (Sun) 10/11/98 13:01:07 sysop/option.prv
+[01] (Sun) 10/11/98 13:11:38 * Incorrect format in file sysop/options.prv
+[01] (Sun) 10/11/98 13:13:19 * Incorrect format in file sysop/user.prv
+[01] (Sun) 10/11/98 13:14:08 * Incorrect format in file sysop/options.prv
+[01] (Sun) 10/11/98 13:14:58 sysoptions.prv
+[01] (Sun) 10/11/98 13:15:05 sysoptions.prv
+[01] (Sun) 10/11/98 13:15:29 * Incorrect format in file sysop/sysoptions.prv
+[00] (Sun) 10/11/98 13:16:14 save_online_user: ERR (logged_in_flag == 0)
+[00] (Sun) 10/11/98 13:23:41 num 0 pipe 3 relog 0
+[01] (Sun) 10/11/98 13:23:49 num 1 pipe 7 relog 0
+[01] (Sun) 10/11/98 13:25:15 Cannot Access Spoolfile [/home/gtalk/ROOT/var/spool/mail/gtsys]

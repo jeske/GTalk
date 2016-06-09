@@ -1,0 +1,34 @@
+MAKE Version 3.6  Copyright (c) 1987, 1993 Borland International
+	bcc +GTALK.CFG -c mail.c
+Borland C++ Version 1.00 Copyright (c) 1993 Borland International
+mail.c:
+Warning gtalk.h 48: Redefinition of 'strncmp' is not identical
+Error mail.c 32: { expected
+Error mail.c 59: { expected
+Warning mail.c 207: Possibly incorrect assignment in function load_base
+Warning mail.c 213: Possibly incorrect assignment in function load_base
+Warning mail.c 231: Possibly incorrect assignment in function load_base
+Warning mail.c 283: Call to function 'lck_base_verbose' with no prototype in function open_mail_base
+Warning mail.c 300: Call to function 'lck_base_verbose' with no prototype in function open_bbs_base
+Warning mail.c 315: Call to function 'lck_base_verbose' with no prototype in function read_bbs_base
+Warning mail.c 337: Call to function 'lck_base_verbose' with no prototype in function read_mail_base
+Warning mail.c 362: Possibly incorrect assignment in function create_temp_file
+Warning mail.c 365: Possibly incorrect assignment in function create_temp_file
+Warning mail.c 392: Possibly incorrect assignment in function copy_a_file
+Warning mail.c 394: Possibly incorrect assignment in function copy_a_file
+Warning mail.c 542: Possibly incorrect assignment in function add_msg_to_base
+Warning mail.c 655: Possibly incorrect assignment in function get_entry
+Warning mail.c 670: Possibly incorrect assignment in function get_entry
+Warning mail.c 705: Possibly incorrect assignment in function read_entry
+Warning mail.c 706: Both return and return with a value used in function read_entry
+Warning mail.c 713: Both return and return with a value used in function read_entry
+Warning mail.c 727: Possibly incorrect assignment in function read_entry
+Warning mail.c 754: Void functions may not return a value in function compress_base
+Warning mail.c 826: Both return and return with a value used in function compress_base
+Warning mail.c 873: Call to function 'is_user_online' with no prototype in function notify_user
+Warning mail.c 1162: Possibly incorrect assignment in function undelete_a_message
+Warning mail.c 1263: Possibly incorrect assignment in function do_assimilation
+Warning mail.c 1331: Call to function 'delete_files_function' with no prototype in function assimilate_old_mail
+*** 2 errors in Compile ***
+
+** error 1 ** deleting obj\mail.obj

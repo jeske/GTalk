@@ -1,0 +1,22 @@
+Loading Serial Configuration Info
+Node: 01  Speed:  38400    Board Type:   6  OS/2 Com Name: COM2
+Node: 02 <Console>
+Allocated memory starting at 005D0000
+CoreLeft Begin: 400000 asking for 400000 
+We have [400000d] bytes
+Video Width: 80 Height: 25
+Decrypting Strings
+
+                                                             GinsuTalk
+GinsuTalk                                                    P.O. Box 2721
+By David Jeske and Daniel Marks                              Glenview, IL 60025
+Copyright (C) 1993 by David W. Jeske and Daniel L. Marks    
+
+System Startup
+Loading: Channel Info,System Variables.
+
+System Number: 02    Nodes Loaded: 2   Con: 1   Registered: 2
+System Name: Nuke 2
+******************************************************
+*******   Operating System: OS/2 v2.x (native) *******
+******************************************************

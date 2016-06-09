@@ -1,0 +1,14 @@
+Cosysop Privs
+12
+CMD_K*/K Kill User
+CMD_V*/V Validate User
+CMD_G*/G Give Time
+CMD_G_ANY*/G Give any Time Amount
+CMD_RL*/RL Relog User
+CMD_LOCK*/LOCK Lock System
+CMD_SI_ANY*/SI Any User
+CMD_LINK*/LINK make my line a link
+CMD_LINK_ANY*/LINK make any line a link
+SYS_MULTIPLE_LOGIN*Login Multiple times at once
+MIL_CHANNEL_MOD*Channel Moderate
+CHN_ALLMODERATE*Moderate all channels

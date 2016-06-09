@@ -1,0 +1,36 @@
+cc  -DLINUX  -c -o dos.o dos.c
+dos.c: In function `list_files':
+dos.c:273: storage size of `ourblock' isn't known
+dos.c:294: `FA_DIREC' undeclared (first use this function)
+dos.c:294: (Each undeclared identifier is reported only once
+dos.c:294: for each function it appears in.)
+dos.c:294: `FA_HIDDEN' undeclared (first use this function)
+dos.c:297: `tswitch' undeclared (first use this function)
+dos.c: In function `erase_files':
+dos.c:341: storage size of `ourblock' isn't known
+dos.c:371: `tswitch' undeclared (first use this function)
+dos.c: In function `show_file':
+dos.c:402: `tswitch' undeclared (first use this function)
+dos.c: In function `make_dir':
+dos.c:473: too few arguments to function `mkdir'
+dos.c: In function `dos_copy_file_function':
+dos.c:499: warning: assignment makes pointer from integer without a cast
+dos.c:501: warning: assignment makes pointer from integer without a cast
+dos.c:507: warning: assignment makes pointer from integer without a cast
+dos.c:516: `tswitch' undeclared (first use this function)
+dos.c: In function `copy_files':
+dos.c:538: storage size of `ourblock' isn't known
+dos.c:549: `FA_DIREC' undeclared (first use this function)
+dos.c:562: `tswitch' undeclared (first use this function)
+dos.c: In function `rename_move_files':
+dos.c:597: storage size of `ourblock' isn't known
+dos.c:608: `FA_DIREC' undeclared (first use this function)
+dos.c:621: `tswitch' undeclared (first use this function)
+dos.c: In function `send_ymodem':
+dos.c:673: warning: initialization makes pointer from integer without a cast
+dos.c: In function `receive_ymodem':
+dos.c:709: warning: initialization makes pointer from integer without a cast
+dos.c: In function `dos_entry':
+dos.c:762: warning: initialization makes pointer from integer without a cast
+dos.c:781: `tswitch' undeclared (first use this function)
+make: *** [dos.o] Error 1

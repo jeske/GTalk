@@ -1,0 +1,64 @@
+File ALLOC.C:
+	if (tasking)
+	if (tasking)
+	if (tasking)
+  if (!tasking)
+   ((tasking && have_owner) ? tswitch : -1),
+   length,!(tasking && have_owner),description,0);
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	int now_tasking = tasking;
+	if (now_tasking)
+	if (now_tasking)
+	int now_tasking = tasking;
+	if (now_tasking)
+	if (now_tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+File init.c:
+char multitasking_os=0;
+     multitasking_os=YES;
+File OLDALLOC.C:
+	if (tasking)
+	if (tasking)
+	if (tasking)
+  if (!tasking)
+   ((tasking && have_owner) ? tswitch : -1),
+   length,!(tasking && have_owner),description,0);
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	int now_tasking = tasking;
+	if (now_tasking)
+	if (now_tasking)
+	int now_tasking = tasking;
+	if (now_tasking)
+	if (now_tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+	if (tasking)
+File sysop.c:
+    tasking=0;
+File task.c:
+/* Multitasking Kernel */
+char tasking = 0;
+/* Init the multitasking adder */
+  tasking=1;

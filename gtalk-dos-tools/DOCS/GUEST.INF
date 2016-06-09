@@ -1,0 +1,34 @@
+
+************************************************************
+****                                                    ****
+****     GTalk - official Documemtation Release 0.1     ****
+****                   Guest Commands                   ****
+****                                                    ****
+************************************************************
+
+
+Guest Commands    - Written 04/05/93 by David W Jeske
+--------------      Copyright 1993 by David W. Jeske and
+                                      Daniel L. Marks
+
+
+The Following is a list of GTalk GUEST commands:
+
+
+/ANSI             Toggle ANSI on/off
+/D                Toggle stream send on/off (for buffered chat use)
+/FB               Send feedback to sysops
+/I                Display GinsuTalk version and copyright information
+/LASTaaa          Display last call date for user #aaa
+/LOGxx            Display caller log (last xx calls)
+/Mxxx             Display message #xxx
+/Pn <text>        Send private message <text> to node #n
+/Q                Quit system
+/S                Display callers
+/SM               Display user list
+/SYSHELP          Enter detailed system help area
+/SYSINFO          Display total/daily calls and system configuration file
+/TIME             Display current date and time
+/Wxxx             Set screen width (20-256)
+/Xn               Toggle squelch node #n
+

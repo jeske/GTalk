@@ -1,0 +1,99 @@
+MAKE Version 3.6  Copyright (c) 1987, 1993 Borland International
+Borland C++ Version 1.00 Copyright (c) 1993 Borland International
+useredit.c:
+Warning useredit.c 109: Nonportable pointer conversion in function ceue_not_implemented
+Warning useredit.c 111: Nonportable pointer conversion in function ceue_not_implemented
+Warning useredit.c 124: Call to function 'erase_region' with no prototype in function ceue_not_implemented
+Warning useredit.c 125: Call to function 'do_menu_ansi' with no prototype in function ceue_not_implemented
+Warning useredit.c 126: Call to function 'erase_region' with no prototype in function ceue_not_implemented
+Warning useredit.c 138: Nonportable pointer conversion in function real_info_edit2
+Warning useredit.c 139: Nonportable pointer conversion in function real_info_edit2
+Warning useredit.c 140: Nonportable pointer conversion in function real_info_edit2
+Warning useredit.c 141: Nonportable pointer conversion in function real_info_edit2
+Warning useredit.c 142: Nonportable pointer conversion in function real_info_edit2
+Warning useredit.c 143: Nonportable pointer conversion in function real_info_edit2
+Warning useredit.c 144: Nonportable pointer conversion in function real_info_edit2
+Warning useredit.c 145: Nonportable pointer conversion in function real_info_edit2
+Warning useredit.c 168: Call to function 'erase_region' with no prototype in function real_info_edit2
+Warning useredit.c 170: Call to function 'do_menu_ansi' with no prototype in function real_info_edit2
+Warning useredit.c 186: Nonportable pointer conversion in function expiration_edit
+Warning useredit.c 187: Nonportable pointer conversion in function expiration_edit
+Warning useredit.c 188: Nonportable pointer conversion in function expiration_edit
+Warning useredit.c 189: Nonportable pointer conversion in function expiration_edit
+Warning useredit.c 211: Call to function 'erase_region' with no prototype in function expiration_edit
+Warning useredit.c 213: Call to function 'do_menu_ansi' with no prototype in function expiration_edit
+Warning useredit.c 228: Call to function 'erase_region' with no prototype in function ue_set_new_expiration_date_start
+Warning useredit.c 230: Call to function 'set_scrolling_region' with no prototype in function ue_set_new_expiration_date_start
+Warning useredit.c 235: Call to function 'erase_region' with no prototype in function ue_set_new_expiration_date_start
+Warning useredit.c 236: Call to function 'paint_info_row' with no prototype in function ue_set_new_expiration_date_start
+Warning useredit.c 244: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 245: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 247: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 248: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 249: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 250: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 251: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 252: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 253: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 254: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 256: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 256: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 256: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 256: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 256: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 256: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 256: Nonportable pointer conversion in function ue_user_edit_start
+Warning useredit.c 280: Call to function 'do_menu_ansi' with no prototype in function ue_user_edit_start
+Warning useredit.c 310: Suspicious pointer conversion in function ce_menu_class_edit
+Warning useredit.c 321: Both return and return with a value used in function ce_menu_class_edit
+Warning useredit.c 330: Call to function 'erase_region' with no prototype in function ce_menu_class_edit
+Warning useredit.c 332: Call to function 'set_scrolling_region' with no prototype in function ce_menu_class_edit
+Warning useredit.c 391: Call to function 'set_scrolling_region' with no prototype in function ce_menu_class_edit
+Warning useredit.c 404: Call to function 'erase_region' with no prototype in function ce_class_priv_edit_start
+Warning useredit.c 406: Call to function 'set_scrolling_region' with no prototype in function ce_class_priv_edit_start
+Warning useredit.c 411: Call to function 'erase_region' with no prototype in function ce_class_priv_edit_start
+Warning useredit.c 412: Call to function 'paint_info_row' with no prototype in function ce_class_priv_edit_start
+Warning useredit.c 427: Call to function 'erase_region' with no prototype in function ce_class_time_edit_start
+Warning useredit.c 429: Call to function 'set_scrolling_region' with no prototype in function ce_class_time_edit_start
+Warning useredit.c 440: Call to function 'erase_region' with no prototype in function ce_class_time_edit_start
+Warning useredit.c 441: Call to function 'paint_info_row' with no prototype in function ce_class_time_edit_start
+Warning useredit.c 451: Call to function 'erase_region' with no prototype in function ce_class_misc_edit_start
+Warning useredit.c 453: Call to function 'set_scrolling_region' with no prototype in function ce_class_misc_edit_start
+Warning useredit.c 458: Call to function 'erase_region' with no prototype in function ce_class_misc_edit_start
+Warning useredit.c 459: Call to function 'paint_info_row' with no prototype in function ce_class_misc_edit_start
+Warning useredit.c 467: Nonportable pointer conversion in function ce_class_edit_start_new
+Warning useredit.c 468: Nonportable pointer conversion in function ce_class_edit_start_new
+Warning useredit.c 469: Nonportable pointer conversion in function ce_class_edit_start_new
+Warning useredit.c 470: Nonportable pointer conversion in function ce_class_edit_start_new
+Warning useredit.c 471: Nonportable pointer conversion in function ce_class_edit_start_new
+Warning useredit.c 472: Nonportable pointer conversion in function ce_class_edit_start_new
+Warning useredit.c 472: Nonportable pointer conversion in function ce_class_edit_start_new
+Warning useredit.c 474: Nonportable pointer conversion in function ce_class_edit_start_new
+Warning useredit.c 474: Nonportable pointer conversion in function ce_class_edit_start_new
+Warning useredit.c 474: Nonportable pointer conversion in function ce_class_edit_start_new
+Warning useredit.c 474: Nonportable pointer conversion in function ce_class_edit_start_new
+Warning useredit.c 474: Nonportable pointer conversion in function ce_class_edit_start_new
+Warning useredit.c 474: Nonportable pointer conversion in function ce_class_edit_start_new
+Warning useredit.c 474: Nonportable pointer conversion in function ce_class_edit_start_new
+Warning useredit.c 498: Call to function 'do_menu_ansi' with no prototype in function ce_class_edit_start_new
+Warning useredit.c 656: Suspicious pointer conversion in function edit_main_privs
+Warning useredit.c 668: Suspicious pointer conversion in function edit_main_privs
+Warning useredit.c 1026: Call to function 'fix_classname' with no prototype in function ue_priv_time_edit
+Warning useredit.c 1027: Call to function 'class_exists' with no prototype in function ue_priv_time_edit
+Warning useredit.c 1374: Call to function 'fix_classname' with no prototype in function ue_class_edit_prompt
+Warning useredit.c 1381: Suspicious pointer conversion in function ue_class_edit_prompt
+Warning useredit.c 1429: Call to function 'fix_classname' with no prototype in function ue_class_edit_prompt
+Warning useredit.c 1462: Call to function 'erase_region' with no prototype in function ue_class_edit_prompt
+Warning useredit.c 1464: Call to function 'set_scrolling_region' with no prototype in function ue_class_edit_prompt
+Warning useredit.c 1522: Call to function 'set_scrolling_region' with no prototype in function ue_class_edit_prompt
+Warning useredit.c 1566: Suspicious pointer conversion in function ue_user_edit_prompt
+Warning useredit.c 1590: Call to function 'erase_region' with no prototype in function ue_user_edit_prompt
+Warning useredit.c 1592: Call to function 'set_scrolling_region' with no prototype in function ue_user_edit_prompt
+Warning useredit.c 1655: Call to function 'set_scrolling_region' with no prototype in function ue_user_edit_prompt
+Warning useredit.c 1726: Suspicious pointer conversion in function ce_class_edit_start
+Warning useredit.c 1776: Call to function 'fix_classname' with no prototype in function ue_new_user_prompt
+Warning useredit.c 1875: Call to function 'nu_get_phone' with no prototype in function ue_new_user_prompt
+Warning useredit.c 1878: Call to function 'nu_get_phone' with no prototype in function ue_new_user_prompt
+Warning useredit.c 1957: Call to function 'prep_user_dirs' with no prototype in function ue_new_user_prompt
+Warning useredit.c 1981: Suspicious pointer conversion in function start_user_edit
+Turbo Link  Version 1.00 for OS/2 Copyright (c) 1993 Borland International

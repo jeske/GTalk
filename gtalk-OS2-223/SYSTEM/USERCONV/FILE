@@ -1,0 +1,34 @@
+MAKE Version 3.6  Copyright (c) 1987, 1993 Borland International
+	bcc +userconv.cfg -c userconv.c
+Borland C++ Version 1.00 Copyright (c) 1993 Borland International
+userconv.c:
+Loaded pre-compiled headers.
+Error userconv.c 26: Undefined symbol 'name' in function copy_real_info
+Error userconv.c 27: Undefined symbol 'street' in function copy_real_info
+Error userconv.c 28: Undefined symbol 'city' in function copy_real_info
+Error userconv.c 29: Undefined symbol 'state' in function copy_real_info
+Error userconv.c 31: Undefined symbol 'zip' in function copy_real_info
+Error userconv.c 32: Undefined symbol 'phone' in function copy_real_info
+Error userconv.c 33: Undefined symbol 'phone2' in function copy_real_info
+Error userconv.c 39: Undefined symbol 'user_type' in function conv_class_info
+Error userconv.c 55: Undefined symbol 'privs' in function conv_class_info
+Error userconv.c 56: Undefined symbol 'staple' in function conv_class_info
+Error userconv.c 57: Undefined symbol 'time' in function conv_class_info
+Error userconv.c 58: Undefined symbol 'added_time' in function conv_class_info
+Error userconv.c 59: Undefined symbol 'line_out' in function conv_class_info
+Error userconv.c 60: Undefined symbol 'priority' in function conv_class_info
+Error userconv.c 66: Undefined symbol 'number' in function conv_to_new
+Error userconv.c 71: Undefined symbol 'handle' in function conv_to_new
+Error userconv.c 72: Undefined symbol 'password' in function conv_to_new
+Error userconv.c 74: Undefined symbol 'toggles' in function conv_to_new
+Error userconv.c 76: Undefined symbol 'reset_color' in function conv_to_new
+Error userconv.c 78: Undefined symbol 'expiration' in function conv_to_new
+Error userconv.c 79: Undefined symbol 'conception' in function conv_to_new
+Error userconv.c 80: Undefined symbol 'last_call' in function conv_to_new
+Error userconv.c 81: Undefined symbol 'credit' in function conv_to_new
+Error userconv.c 82: Undefined symbol 'starting_date' in function conv_to_new
+Error userconv.c 84: Undefined symbol 'killstats' in function conv_to_new
+Error userconv.c 84: Too many error or warning messages in function conv_to_new
+*** 26 errors in Compile ***
+
+** error 1 ** deleting obj\userconv.obj

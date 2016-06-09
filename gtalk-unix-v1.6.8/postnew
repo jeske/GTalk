@@ -1,0 +1,10 @@
+echo 'Status:'
+echo ' - Killing gtalk (HUP)'
+killall -HUP gtalk
+echo ' - Sleeping for 1 second to allow gtalk to shut down'
+sleep 1s
+echo ' - Copying GTalk server into /home/gtalk/bin'
+cp Targets/gtalk /home/gtalk/bin
+echo ' - Copying GTalk client into /home/gtalk/bin'
+cp Targets/gtclient /home/gtalk/bin
+~gtalk/bin/gtstart &

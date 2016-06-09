@@ -1,0 +1,65 @@
+Borland C++  Version 3.1 Copyright (c) 1992 Borland International
+test.c:
+Warning test.c 57: Suspicious pointer conversion
+Warning test.c 58: Suspicious pointer conversion
+Warning test.c 59: Suspicious pointer conversion
+Warning test.c 60: Suspicious pointer conversion
+Warning test.c 61: Suspicious pointer conversion
+Warning test.c 62: Suspicious pointer conversion
+Warning test.c 63: Suspicious pointer conversion
+Warning test.c 66: Suspicious pointer conversion
+Warning test.c 67: Suspicious pointer conversion
+Warning test.c 68: Suspicious pointer conversion
+Warning test.c 69: Suspicious pointer conversion
+Warning test.c 70: Suspicious pointer conversion
+Warning test.c 71: Suspicious pointer conversion
+Warning test.c 72: Suspicious pointer conversion
+Warning test.c 73: Suspicious pointer conversion
+Warning test.c 74: Suspicious pointer conversion
+Warning test.c 75: Suspicious pointer conversion
+Warning test.c 76: Suspicious pointer conversion
+Warning test.c 77: Suspicious pointer conversion
+Warning test.c 78: Suspicious pointer conversion
+Warning test.c 79: Suspicious pointer conversion
+Warning test.c 127: Parameter 'data' is never used in function help_cmds
+Warning test.c 127: Parameter 'id' is never used in function help_cmds
+Error test.c 199: Type mismatch in redeclaration of 'change_directory'
+Error test.c 200: Undefined symbol 'filename' in function change_directory
+Error test.c 202: Undefined symbol 'path' in function change_directory
+Warning test.c 204: Parameter 'id' is never used in function change_directory
+Error test.c 207: Type mismatch in redeclaration of 'list_files'
+Error test.c 210: Multiple declaration for 'files' in function list_files
+Warning test.c 210: Nonportable pointer conversion in function list_files
+Error test.c 216: Undefined symbol 'filename' in function list_files
+Error test.c 219: Undefined symbol 'path' in function list_files
+Warning test.c 250: Nonportable pointer conversion in function list_files
+Warning test.c 258: Nonportable pointer conversion in function list_files
+Warning test.c 265: Parameter 'id' is never used in function list_files
+Error test.c 268: Type mismatch in redeclaration of 'erase_files'
+Error test.c 279: Undefined symbol 'path' in function erase_files
+Error test.c 284: Undefined symbol 'new_path' in function erase_files
+Error test.c 304: Undefined symbol 'filename' in function erase_files
+Warning test.c 317: Parameter 'id' is never used in function erase_files
+Error test.c 320: Type mismatch in redeclaration of 'show_file'
+Error test.c 328: Undefined symbol 'path' in function show_file
+Error test.c 357: Type mismatch in redeclaration of 'edit_file'
+Error test.c 368: Undefined symbol 'path' in function edit_file
+Warning test.c 386: Parameter 'id' is never used in function edit_file
+Error test.c 389: Type mismatch in redeclaration of 'make_dir'
+Error test.c 397: Undefined symbol 'path' in function make_dir
+Warning test.c 400: Parameter 'id' is never used in function make_dir
+Error test.c 403: Type mismatch in redeclaration of 'remove_dir'
+Error test.c 411: Undefined symbol 'path' in function remove_dir
+Warning test.c 414: Parameter 'id' is never used in function remove_dir
+Error test.c 460: Type mismatch in redeclaration of 'copy_files'
+Error test.c 468: Undefined symbol 'path' in function copy_files
+Error test.c 470: Undefined symbol 'filename2' in function copy_files
+Warning test.c 508: Possibly incorrect assignment in function copy_files
+Warning test.c 516: Parameter 'id' is never used in function copy_files
+Error test.c 519: Type mismatch in redeclaration of 'rename_move_files'
+Error test.c 525: Undefined symbol 'filename' in function rename_move_files
+Error test.c 527: Undefined symbol 'path' in function rename_move_files
+Error test.c 527: Too many error or warning messages in function rename_move_files
+*** 26 errors in Compile ***
+
+        Available memory 4068200

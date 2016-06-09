@@ -1,0 +1,6 @@
+
+
+I'm sorry, but for some reason our software is unable to get CallerID
+info from the modem at this time. Please call back some other time or
+ask a sysop to voice validate you.
+

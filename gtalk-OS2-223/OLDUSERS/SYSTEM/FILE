@@ -1,0 +1,10 @@
+MAKE Version 3.6  Copyright (c) 1987, 1993 Borland International
+	bcc +usermk.CFG -c usermk.c
+Borland C++ Version 1.00 Copyright (c) 1993 Borland International
+usermk.c:
+Warning usermk.c 105: Void functions may not return a value in function make_default_users
+	tlink /Toe /ai /c /LC:\os2\apps\bcos2\lib @MAKE0000.$$$
+Turbo Link  Version 1.00 for OS/2 Copyright (c) 1993 Borland International
+Fatal: Unable to open file 'usermk.obj'
+
+** error 2 ** deleting gtalk.exe

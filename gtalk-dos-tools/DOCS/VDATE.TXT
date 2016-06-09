@@ -1,0 +1,47 @@
+File STDIN:
+Processing archive: TODAN.ARJ
+Archive date      : 1993-03-24 01:34:26
+Processing archive: GT18A2.ARJ
+Archive date      : 1993-03-24 01:54:18
+Processing archive: GT18A4.ARJ
+Archive date      : 1993-04-05 19:21:42
+Processing archive: GT18A1.ARJ
+Archive date      : 1993-03-22 03:44:48
+Processing archive: PRV.ARJ
+Archive date      : 1993-03-23 21:16:14
+Processing archive: DAN.ARJ
+Archive date      : 1993-03-21 05:10:58
+Processing archive: NEWSER.ARJ
+Archive date      : 1993-03-21 03:59:46
+Processing archive: GTFILES.ARJ
+Archive date      : 1993-03-22 20:05:24
+Processing archive: NEWCOM.ARJ
+Archive date      : 1993-03-21 17:55:06
+Processing archive: GTREAL.ARJ
+Archive date      : 1993-03-23 19:34:14
+Processing archive: GT18B1.ARJ
+Archive date      : 1993-04-05 22:35:10
+Processing archive: GT18A2C.ARJ
+Archive date      : 1993-03-24 14:59:36
+Processing archive: GT18B2.ARJ
+Archive date      : 1993-04-06 01:52:38
+Processing archive: GT18B4.ARJ
+Archive date      : 1993-04-08 15:16:54
+Processing archive: GT18B3.ARJ
+Archive date      : 1993-04-06 22:11:24
+Processing archive: OLDROM.ARJ
+Archive date      : 1993-04-09 21:33:30
+Processing archive: GT18B5.ARJ
+Archive date      : 1993-04-10 02:45:42
+Processing archive: VERS18B5.ARJ
+Archive date      : 1993-04-10 15:50:20
+Processing archive: GT18A3.ARJ
+Archive date      : 1993-03-30 13:35:26
+Processing archive: GT19EMSC.ARJ
+Archive date      : 1993-04-11 17:14:24
+Processing archive: GT18B6.ARJ
+Archive date      : 1993-04-11 21:05:42
+Processing archive: GT19EMSD.ARJ
+Archive date      : 1993-04-11 21:07:12
+Processing archive: GT19EMSB.ARJ
+Archive date      : 1993-04-10 16:00:10

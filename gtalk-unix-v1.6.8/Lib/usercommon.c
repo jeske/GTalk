@@ -1,0 +1,183 @@
+
+
+/*
+ * Gtalk/UNIX 
+ * Copyright (C) 1995, by David W Jeske, and Daniel L Marks 
+ * Copying or distributing this source code without written  
+ * permission of David W Jeske and Daniel L Marks is strictly forbidden 
+ *
+ * - usercommon.c
+ *
+ * This contains the code for reading and writing to the userfile as 
+ * well as general use routines for handling security checks and sets.
+ *
+ */
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <sys/file.h>
+
+#include "common.h"
+#include "usercommon.h"
+
+struct flag_map_struct flags[] = 
+{
+  { "CMD_H", 0 },
+  { "CMD_P", 2 },
+  { "CMD_Q", 3 },
+  { "CMD_?", 4 },
+  { "CMD_FB", 5},
+  { "CMD_S", 6},
+  { "CMD_D", 12 },
+  { "CMD_APPLY", 72},
+  { "CMD_T", 1  },
+  { "CMD_MAIL", 7 },
+  { "CMD_PASSWD", 8 },
+  { "CMD_M", 9 },
+  { "CMD_MESG", 10 },
+  { "CMD_ANSI", 11  },
+  { "CMD_SI", 13 },
+  { "CMD_MON", 14 },
+  { "MIL_ACTIONS", 15},
+  { "MIL_MACROS", 18},
+  { "CMD_H_ANSI", 20},
+  { "CMD_BBS", 23},
+  { "CMD_PAGE", 67},
+  { "CMD_CHAT", 24 },
+  { "CMD_P_THRULINK", 29},
+  { "MIL_DOANSI", 39},
+  { "MIL_DOFLASHING", 40},
+  { "MIL_CANMODERATE", 42},
+  { "MAIL_SEND", 43},
+  { "CMD_XFER", 45},
+  { "SYS_TIMEOUT_ONLY_WHEN_FULL", 71},
+  { "CMD_K", 16},
+  { "CMD_V", 17},
+  { "CMD_G", 22},
+  { "CMD_WALL", 21},
+  { "SYS_CMD_IMMUNE",41},
+  { "CMD_RL", 25},
+  { "CMD_ROT", 28},
+  { "CMD_TERM", 27},
+  { "CMD_TERM_OVERRIDE", 69},
+  { "CMD_LOCK", 30},
+  { "MIL_CHANNEL_MOD", 31},
+  { "CMD_G_ANY", 32},
+  { "CMD_SI_ANY", 33},
+  { "CMD_LINK", 35},
+  { "CMD_LINK_ANY", 34},
+  { "OBSOLETE_FILE_EDITOR", 50},
+  { "CMD_U", 51},
+  { "CMD_SYSTEM", 52},
+  { "CMD_DOS", 53},
+  { "CMD_F", 55},
+  { "CMD_SHUTDOWN", 56},
+  { "CMD_SYSMON", 58},
+  { "SYS_VIEW_USER_DATA", 59},
+  { "SYS_SEE_SYSOP_COMMANDS", 79},
+  { "CMD_MAKE", 26},
+  { "OBSOLETE_SYSOP_FILE_FUNCTIONS", 61},
+  { "CMD_DCD", 62},
+  { "SYS_MULTIPLE_LOGIN", 63},
+  { "MIL_CHN_GOD", 60},
+  { "CMD_MEMUD", 64},
+  { "BBS_MODERATOR", 65}, 
+  { "CMD_LURK", 66},
+  { "CMD_WATCH", 68},
+  { "CMD_X", 70 },
+
+/* scott's new commands and flags */
+  { "CMD_LISTIP", 74 }, /* list peoples ip addys */
+  { "CMD_CLEAR", 75 },  /* clear screen */
+
+/* dan's channel system privs */
+
+  { "CHN_ADDCHANNEL",100 },
+  { "CHN_MODERATE",101 },
+  { "CHN_ALLMODERATE",102},
+
+/* NEW for UNIX privs */
+
+  { "CMD_SHELL", 103},
+  { "CMD_TIME", 104}, 
+  { "CMD_L", 105},
+  { "CMD_ASCII", 106},
+  { "CMD_INFO", 107}, 
+  { "CMD_GAMECON", 108},
+  { "CMD_CI",109},
+  { "CMD_CK",110},
+  { "CMD_CG",111},
+  { "CMD_CW",112},
+  { "CMD_CL",113},
+  { "CMD_CC",114},
+  { "CMD_DEVICES", 115},
+  { "CMD_RESET", 116},
+  { "CMD_LAST", 117},
+  { "CMD_LOG", 118},
+  { "CMD_SYSINFO", 119},
+  { "CMD_BANK", 120},
+  { "CMD_CREDIT", 121},
+  { NULL, 0 }
+};
+
+void setbit(char *set, int bit, int on)
+{
+  if (on)
+    set[bit >> 3] |= (1 << (bit & 0x07));
+  else
+    set[bit >> 3] &= ~(1 << (bit & 0x07));
+}
+
+int testbit(char *set, int bit)
+{
+  return (set[bit >> 3] & (1 << (bit & 0x07)));
+}
+
+void clearset(char *set, int bits)
+{
+  bits = (bits + 7) >> 3;
+  while (bits > 0)
+    {
+      *set++ = '\000';
+      bits--;
+    }
+}
+
+int findFlagNumber(char *flag_name)
+{
+  struct flag_map_struct *ptr = flags;
+
+  if (!flag_name)
+   return -1;
+
+  while (ptr->flagname)
+    {
+
+      if (!strcmp(ptr->flagname,flag_name))
+	return ptr->flagnum;
+      ptr++;
+    }
+  return -1;
+
+};
+
+int testFlag(node_struct *node, char *flag_name)
+{
+  int number;
+
+  if (flag_name==NULL)
+    { return 1; }
+
+  number = findFlagNumber(flag_name);
+
+  if (number<0)
+    {
+      log_error("Flag not found: %s",flag_name);
+      return 0;
+    }
+
+  return (testbit(node->userdata.online_info.class_info.privs,number));
+}
+

@@ -1,0 +1,38 @@
+Borland C++  Version 3.1 Copyright (c) 1992 Borland International
+test.c:
+Warning test.c 127: Parameter 'data' is never used in function help_cmds
+Warning test.c 127: Parameter 'id' is never used in function help_cmds
+Warning test.c 127: Parameter 'files' is never used in function help_cmds
+Warning test.c 204: Parameter 'id' is never used in function change_directory
+Warning test.c 265: Parameter 'id' is never used in function list_files
+Error test.c 284: Undefined symbol 'new_path' in function erase_files
+Error test.c 304: Undefined symbol 'filename' in function erase_files
+Warning test.c 317: Parameter 'id' is never used in function erase_files
+Warning test.c 386: Parameter 'id' is never used in function edit_file
+Warning test.c 400: Parameter 'id' is never used in function make_dir
+Warning test.c 414: Parameter 'id' is never used in function remove_dir
+Error test.c 470: Undefined symbol 'filename2' in function copy_files
+Warning test.c 508: Possibly incorrect assignment in function copy_files
+Warning test.c 516: Parameter 'id' is never used in function copy_files
+Error test.c 525: Undefined symbol 'filename' in function rename_move_files
+Error test.c 529: Undefined symbol 'filename2' in function rename_move_files
+Error test.c 562: Undefined symbol 'filename4' in function rename_move_files
+Warning test.c 577: Parameter 'id' is never used in function rename_move_files
+Error test.c 583: Undefined symbol 'filename' in function send_xmodem
+Warning test.c 588: Parameter 'id' is never used in function send_xmodem
+Warning test.c 618: Parameter 'id' is never used in function send_ymodem
+Warning test.c 635: Parameter 'data' is never used in function receive_ymodem
+Warning test.c 635: Parameter 'id' is never used in function receive_ymodem
+Warning test.c 635: Parameter 'files' is never used in function receive_ymodem
+Error test.c 642: Undefined symbol 'filename' in function receive_xmodem
+Warning test.c 647: Parameter 'id' is never used in function receive_xmodem
+Error test.c 658: Improper use of typedef 'tfile' in function ginsu_main
+Warning test.c 680: Call to function 'check_for_privates' with no prototype in function ginsu_main
+Error test.c 684: Undefined symbol 'path' in function ginsu_main
+*** 10 errors in Compile ***
+
+        Available memory 4057288
+Borland C++  Version 3.1 Copyright (c) 1992 Borland International
+glmdef.c:
+
+        Available memory 4092092

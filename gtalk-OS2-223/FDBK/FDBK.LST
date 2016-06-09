@@ -1,0 +1,9 @@
+Feedback Menu
+6
+C*Comment,Suggestion, or Complaint*FDBK\SUGG.TXT*013
+I*Info (address, phone, etc) Change Request*FDBK\INFOCNG.TXT*015
+S*Subscription Status/Information*FDBK\SUBINFO.TXT*006
+H*Help! (help using NG)*FDBK\HELP.TXT*469
+E*Notification of system Error*FDBK\SYSERR.TXT*000
+R*Request for Hardware Reconfiguration*FDBK\HRDWR.TXT*000
+

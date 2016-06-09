@@ -1,0 +1,21 @@
+
+Directory Structure
+-------------------
+
+C:<Gtalk Main Diretory>
+쳐컴HELP         (help files /? type files)
+쳐컴TEXT         (text files, login, logout, timeout, etc)
+쳐컴MENU         (manu files, mail,bbs, etc)
+쳐컴CONFIG       (DOS serial config programs)
+쳐컴SYSTEM       (DOS gtalk userfile utilties/source for utils)
+쳐컴ROTATOR      (/m messages)
+쳐컴BBS
+�   읕컴BBS001   (BBS #001 files)
+쳐컴SYSHELP      ( /syshelp files)
+쳐컴USERS        ( /sm and /sm+ files)
+쳐컴MAIL
+�   읕컴MAIL000  (user #000 mail directory)
+읕컴DOC          (quick and dirty sysop documentation)
+
+
+

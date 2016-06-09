@@ -1,0 +1,187 @@
+
+.AUTODEPEND
+
+
+# Gtalk
+# Copyright (C) 1993, by David W Jeske, and Daniel L Marks
+# Copying or distributing this source code without written
+# permission of David W Jeske and Daniel L Marks is strictly forbidden
+
+
+
+
+#		*Translator Definitions*
+CC = bcc  +mkutil.cfg
+TASM = TASM
+TLIB = tlib
+#TLINK = tlink /Toe /ai /c
+TLINK = tlink /v /c /s /Toe /ap
+LIBPATH = C:\addons\bcos2\lib
+INCLUDEPATH = C:\addons\bcos2\include
+
+
+#		*Implicit Rules*
+.c.obj:
+  $(CC) -c {$< }
+
+.cpp.obj:
+  $(CC) -c {$< }
+
+#		*List Macros*
+
+
+#		*Explicit Rules*
+
+all: usermk.exe classmk.exe
+
+usermk.exe: mkutil.cfg OBJ\usermk.obj
+  $(TLINK) /L$(LIBPATH) @&&|
+c02.obj+
+obj\usermk.obj
+usermk
+		# no map file
+c2mt.lib+
+os2.lib
+|
+
+classmk.exe: mkutil.cfg OBJ\classmk.obj
+  $(TLINK) /L$(LIBPATH) @&&|
+c02.obj+
+obj\classmk.obj
+classmk
+		# no map file
+c2mt.lib+
+os2.lib
+|
+
+
+clean:
+    erase OBJ\*.obj
+    erase usermk.exe
+    erase classmk.exe
+
+
+
+#		*Individual File Dependencies*
+
+OBJ\usermk.obj: mkutil.cfg usermk.c
+       $(CC) -c usermk.c
+
+OBJ\classmk.obj: mkutil.cfg classmk.c
+       $(CC) -c classmk.c
+
+#		*Compiler Configuration File*
+mkutil.cfg: makefile
+  copy &&|
+
+-nOBJ
+-C
+-d
+
+# Borland C keywords
+-A-
+
+#Byte Align (default)
+-a-
+#-b-
+
+
+# disable floating point (-f-)
+-f-
+# disable "fast" huge pointer arithmetic (-h-)
+#-y-
+-zHFSTUFF
+
+# -G- is in favor of size, -G is in favor of speed
+-G
+# -O1 is for SIZE  -O2 is for speed
+-O2
+# optimize Jumps (-O)  or DISABLE (-O-)
+-O
+-H
+-k-
+-v-
+#-Vf
+#-vi-
+-N-
+-w-
+# warning config
+
+-wamb
+-wpro
+-wret
+-wwccc
+-wcln
+-wnci
+-wrng
+#Conversion may lost significant digits
+-wsig
+-wzdi
+-whid
+-wrvl
+-winl
+-wbig
+-wuse
+-waus
+-wext
+-will
+-wpin
+-wbei
+-wmpd
+# signed and unsigned char
+-wucp
+#no declaration
+-wnod
+
+#non portable pointer comparison
+#-wcpt
+#non portable pointer conversion
+#-wrpt
+
+-wpar
+-wdef
+-wpia
+-wdup
+-wstv
+-wofp
+-wamp
+# suspicious pointer conversion
+-wsus
+-wlvc
+-wlin
+-wstu
+-wasm
+#unreachable code
+-wrch
+-wnst
+-wvoi
+-w-ret
+-w-nci
+-w-inl
+-wpin
+-wamb
+-wamp
+-w-par
+-wasm
+-wcln
+-w-cpt
+-wdef
+-w-dup
+-w-pia
+-wsig
+-wnod
+-w-ill
+-w-sus
+-wstv
+-wucp
+-wuse
+-w-ext
+-w-ias
+-w-ibc
+-w-pre
+-w-nst
+-I$(INCLUDEPATH)
+-L$(LIBPATH)
+| mkutil.cfg
+
+

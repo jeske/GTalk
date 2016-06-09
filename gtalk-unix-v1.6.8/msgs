@@ -1,0 +1,27 @@
+--> |*ffLogin Node #00 (MAIN) at 01:23:45 am
+--> |*ff#015:{SC! :}
+
+--> |*f1Logout Node #00 (MAIN) at 01:23:45 am
+--> |*f1#015:{|*ffS|*r1C|*f8! |*f9:|*r1|*f1}
+
+--> |*f1Node [|*r101|*f1] |*f9*TOASTED*|*r1
+--> |*r1|*f1#015:{|*r1|*ffS|*r1C|*f8! |*f9:|*r1|*f1}
+--> |*f9Reason|*r1: You jackass
+
+--> |*r1Total Kills for #01:{|*f9Com|*r1}: 192764
+
+|*r1--> |*f9Timeout #10:{|*ffS|*r1C|*f8! |*f9:|*f9} in 60 seconds
+
+|*r1--> |*fcLogin/LURK #10:{|*ffS|*r1C|*f8! |*f9:|*fc} at 01:23:45 am
+|*r1--> |*fcLogout/LURK #10:{|*ffS|*r1C|*f8! |*f9:|*fc} at 01:23:45 am
+
+|*r1--> |*ffNode #10: Time Added
+
+|*r1|*f5L#10:{|*ffS|*r1C|*f8! |*f9:|*r1|*f5} yo dudes
+
+|*r1--> |*ffLogin Node [10] at 14400/ARQ/LAPM
+#10:*|*faLogging in...|*r1* (in the /s)
+
+### Broadcasted message from #02:{|*ffS|*r1C|*f8! |*f9:|*r1} at 01:23:45 ###
+
+

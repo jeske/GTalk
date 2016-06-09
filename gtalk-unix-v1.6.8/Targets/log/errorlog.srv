@@ -1,0 +1,46 @@
+(Sun) 10/11/98 09:43:32 (pid 6219) Gtalk shutting down on a Interrupt!
+(Sun) 10/11/98 09:49:15 (pid 6276) Executing ./gtclient: node 0, pipe_fd 6, relog 0
+(Sun) 10/11/98 09:49:15 (pid 6277) Executing ./gtclient: node 0, pipe_fd 6, relog 0
+(Sun) 10/11/98 09:49:16 (pid 6278) Executing ./gtclient: node 0, pipe_fd 6, relog 0
+(Sun) 10/11/98 09:49:16 (pid 6279) Executing ./gtclient: node 0, pipe_fd 6, relog 0
+(Sun) 10/11/98 09:49:16 (pid 6280) Executing ./gtclient: node 0, pipe_fd 6, relog 0
+(Sun) 10/11/98 09:49:16 (pid 6281) Executing ./gtclient: node 0, pipe_fd 6, relog 0
+(Sun) 10/11/98 09:49:16 (pid 6282) Executing ./gtclient: node 0, pipe_fd 6, relog 0
+(Sun) 10/11/98 09:49:16 (pid 6283) Executing ./gtclient: node 0, pipe_fd 6, relog 0
+(Sun) 10/11/98 09:49:16 (pid 6284) Executing ./gtclient: node 0, pipe_fd 6, relog 0
+(Sun) 10/11/98 09:49:16 (pid 6285) Executing ./gtclient: node 0, pipe_fd 6, relog 0
+(Sun) 10/11/98 09:50:24 (pid 6317) Executing ./gtclient: node 1, pipe_fd 9, relog 0
+(Sun) 10/11/98 09:50:54 (pid 6275) Gtalk shutting down on a Interrupt!
+(Sun) 10/11/98 10:08:13 (pid 6455) Executing ./gtclient: node 0, pipe_fd 6, relog 0
+(Sun) 10/11/98 10:08:18 (pid 6456) Executing ./gtclient: node 1, pipe_fd 10, relog 0
+(Sun) 10/11/98 10:08:30 (pid 6454) Gtalk shutting down on a Interrupt!
+(Sun) 10/11/98 11:38:11 (pid 6550) Executing ./gtclient: node 0, pipe_fd 6, relog 0
+(Sun) 10/11/98 11:38:18 (pid 6552) Executing ./gtclient: node 1, pipe_fd 10, relog 0
+(Sun) 10/11/98 11:38:29 (pid 6549) Gtalk shutting down on a Interrupt!
+(Sun) 10/11/98 11:39:17 (pid 6565) Executing ./gtclient: node 0, pipe_fd 6, relog 0
+(Sun) 10/11/98 11:39:18 (pid 6567) Executing ./gtclient: node 1, pipe_fd 10, relog 0
+(Sun) 10/11/98 11:42:06 (pid 6573) Executing ./gtclient: node 1, pipe_fd 10, relog 0
+(Sun) 10/11/98 11:43:25 (pid 6587) Unsuccessful TIOCSCTTY
+(Sun) 10/11/98 11:43:25 (pid 6588) Unsuccessful TIOCSCTTY
+(Sun) 10/11/98 11:43:25 (pid 6589) Unsuccessful TIOCSCTTY
+(Sun) 10/11/98 11:43:25 (pid 6590) Unsuccessful TIOCSCTTY
+(Sun) 10/11/98 11:43:25 (pid 6591) Unsuccessful TIOCSCTTY
+(Sun) 10/11/98 11:43:25 (pid 6592) Unsuccessful TIOCSCTTY
+(Sun) 10/11/98 11:43:25 (pid 6593) Unsuccessful TIOCSCTTY
+(Sun) 10/11/98 11:43:25 (pid 6594) Unsuccessful TIOCSCTTY
+(Sun) 10/11/98 11:43:25 (pid 6595) Unsuccessful TIOCSCTTY
+(Sun) 10/11/98 11:43:25 (pid 6596) Unsuccessful TIOCSCTTY
+(Sun) 10/11/98 11:43:29 (pid 6599) Executing ./gtclient: node 1, pipe_fd 9, relog 0
+(Sun) 10/11/98 11:43:47 (pid 6586) Gtalk shutting down on a Interrupt!
+(Sun) 10/11/98 11:44:04 (pid 6605) Server: Could not create new shared memory block
+(Sun) 10/11/98 11:44:04 (pid 6605) Could not create shared memory block
+(Sun) 10/11/98 11:44:31 (pid 6609) Server: Could not create new shared memory block
+(Sun) 10/11/98 11:44:31 (pid 6609) Could not create shared memory block
+(Sun) 10/11/98 11:44:49 (pid 6613) Executing ./gtclient: node 0, pipe_fd 6, relog 0
+(Sun) 10/11/98 11:44:52 (pid 6614) Executing ./gtclient: node 1, pipe_fd 10, relog 0
+(Sun) 10/11/98 11:45:41 (pid 6612) Gtalk shutting down on a Interrupt!
+(Sun) 10/11/98 12:43:52 (pid 6958) Executing ./gtclient: node 0, pipe_fd 3, relog 0
+(Sun) 10/11/98 12:44:43 (pid 6966) Executing ./gtclient: node 1, pipe_fd 7, relog 0
+(Sun) 10/11/98 13:16:14 (pid 6957) Gtalk shutting down on a Terminated!
+(Sun) 10/11/98 13:23:41 (pid 7039) Executing ./gtclient: node 0, pipe_fd 3, relog 0
+(Sun) 10/11/98 13:23:49 (pid 7040) Executing ./gtclient: node 1, pipe_fd 7, relog 0

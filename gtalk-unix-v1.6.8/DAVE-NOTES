@@ -1,0 +1,7 @@
+
+We should add modules, using dld, so that usereditor and gamecon and such
+can be loaded modules, and don't have to be totally "external". At the
+same time, there should be a flag which says whether the gtalk client will
+fork() beforing running the module entry point. If we fork() then the 
+address space is partially protected (i.e. except for the shared memory).
+

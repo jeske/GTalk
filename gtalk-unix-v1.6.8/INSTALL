@@ -1,0 +1,155 @@
+
+* Compile
+
+type "make"
+
+It should compile cleanly on Linux systems circa RedHat 5.0...
+
+* Create Accounts
+
+You need to do some setup for Gtalk to work and this includes creating 
+some UNIX accounts. You should create three accounts for gtalk use,
+"gtsys", and "gtgst". Gtalk has a unix account for every gtalk
+account. When setup correctly, it will automatically create the unix
+accounts for users on gtalk. However, these two special accouts must be
+setup beforehand:
+
+gtsys: this will be the UNIX account for the gtalk sysop account #0
+       Be sure to set the password, as this password will be used to
+       login to the system for the first time with accout #0
+
+gtgst: this will be the UNIX accoutn for the gtalk "guest" account. The
+       password for this account will not be used by gtalk. Gtalk will
+       change into this account when a guest user logs in...
+
+You may also wish to create a "gtalk" account and change the ownership
+of all the gtalk files to this account for orginization sake. This is not
+required.
+
+* Startup Gtalk
+
+After you've done the above, su to root, go into the Targets directory, and
+type "./gtalk". This should launch the gtalk server, and a few gtalk clients.
+The clients will begin accepting connections on higher virtual consoles
+above your normal virtual consoles. You can also telnet into gtalk on 
+port 4000 (by default, you can do ./gtalk -p <port> to change the port).
+
+* Login for the first time
+
+When you telnet in or login on a virtual console, you should see a login
+prompt like this:
+
+|  home:~> telnet mozart 4000
+|  Trying 204.94.139.92...
+|  Connected to mozart.chat.net.
+|  Escape character is '^]'.
+|  Welcome to GTalk, Detecting ANSI...
+|
+|  [ ANSI Detected ]
+|
+|  
+|  Press <RETURN> for Guest access.
+|
+|  User ID: _
+
+Type "0" as your user ID and you will see this:
+
+|  User ID: 0
+|  Password: _
+
+Type in the password that you set for the "gtsys" account above, and you
+should see the following:
+
+|  Password: .......
+|  Your account has no active days!
+|     Account Balance: 0cr              Overdraft Limit: 0cr
+|   Spendable Credits: 0cr
+|          Class Cost: 0cr (monthly), 0cr (yearly)
+|   Insufficient Credits to purchase more active days.
+|   [ No Email Information Available ]
+|
+|  Welcome to Gtalk/UNIX!
+|  Your IP is: 204.94.139.85
+|  --> Node [01]: Login (MAIN) at 13:25:15
+|  --> #000:(The Sysop)
+
+You are now at the basic command prompt.... Type /? for a list of commands:
+
+|  /?
+|  Gtalk Command List
+|  [53] Commands
+|  
+|  /?             :Display Command List (type /? <command> for more help)
+|  /ANSI          :Toggle ANSI color ON/OFF
+|  /ASCII         :Toggle High-Bit ASCII ON/OFF
+|  /BANK          :Enter Online Bank
+|  /BBS           :Enter BBS subsystem
+|  /CC            :Channel Lineout Counter
+|  /CG            :Channel Give Moderator
+|  /CI            :Channel Invite
+
+[.. snip ..]
+
+|  /T             :Change Channel
+|  /TERM          :Terminal Command
+|  /TIME          :Display Current Time
+|  /U             :User Editor
+|  /WALL          :Broadcast a message to users
+|  /WALLA         :Broadcast an anonymous message to users
+|  /X             :Squelch Private Messages
+
+* Setting up the default classes
+
+From here you will want to setup the basic classes, type /U, and enter
+the default user edit password "jomama!" (it's currently compiled in,
+this will be fixed ASAP).
+
+|  /u
+|  Enter UE Pass: .......
+|
+|  Useredit main menu
+|
+|  (N)ew User
+|  (E)dit User
+|  (D)elete Users
+|  (U)ndelete Users
+| 
+|  (C)lass Edit
+|  (L)ist Classes
+| 
+|  User Maintenance (? for Help): 
+
+Type "C" to enter the class editor:
+
+|  User Maintenance (? for Help): C
+|
+|  Class Edit
+|
+|  CLASS: UNKNOWN
+|  CLASS: GUEST
+|  CLASS: SYSOP
+|  CLASS Name or Number to Edit :
+
+Type "GUEST" to edit the GUEST class...the full screen class editor will
+come up:
+
+|   Class [N]ame   : GUEST
+|   [P]riority     
+|
+|
+|   <Time/Priorities>   <Privs>             <Misc>              <Logs>
+|
+|   Main           | Class Name                                | GT-CE v1.00  
+|
+|
+|
+|  -> Ctrl-W to Write, Ctrl-A to abort, Ctrl-P for previous, Ctrl-N for next <-
+
+Hit "Ctrl-N" until "Privs" is highlighted, and then hit enter.. from here
+you can edit the privileges of the GUEST account so that guests will be 
+able to login.
+
+Be sure to give them the ability to /Q or they won't be able to logout!
+
+
+

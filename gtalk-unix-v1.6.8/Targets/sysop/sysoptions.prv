@@ -1,0 +1,7 @@
+Sysop Options
+5
+MIL_CHN_GOD*Channel GOd
+BBS_MODERATOR*BBS Moderator
+SYS_VIEW_USER_DATA*View Full User Info in /INFO
+SYS_SEE_SYSOP_COMMANDS*See Sysop Commands (legacy)
+SYS_CMD_IMMUNE*SYS_CMD_IMMUNE

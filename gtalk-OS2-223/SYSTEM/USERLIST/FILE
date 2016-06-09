@@ -1,0 +1,10 @@
+MAKE Version 3.6  Copyright (c) 1987, 1993 Borland International
+	bcc +userlist.cfg -c userlist.c
+Borland C++ Version 1.00 Copyright (c) 1993 Borland International
+userlist.c:
+Warning userlist.c 129: Void functions may not return a value in function make_default_users
+Warning userlist.c 138: Void functions may not return a value in function make_default_users
+Warning userlist.c 173: 'loop' is declared but never used in function make_default_users
+Warning userlist.c 173: 'point' is declared but never used in function make_default_users
+	tlink /v /c /s /Toe /ap /LC:\addons\bcos2\lib @MAKE0000.$$$
+Turbo Link  Version 1.00 for OS/2 Copyright (c) 1993 Borland International

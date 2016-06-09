@@ -1,0 +1,34 @@
+cc -ggdb  -DLINUX -DDEBUG -DGT_SHADOW -I../include/ -c -o rotator.o rotator.c
+rotator.c: In function `rotator_entry_name':
+rotator.c:38: warning: passing arg 1 of `sprintf' from incompatible pointer type
+rotator.c:39: warning: return from incompatible pointer type
+rotator.c: At top level:
+rotator.c:85: parse error before `rotator_file_entry'
+rotator.c: In function `new_rotator_file_entry':
+rotator.c:87: `rie' undeclared (first use this function)
+rotator.c:87: (Each undeclared identifier is reported only once
+rotator.c:87: for each function it appears in.)
+rotator.c:87: `rec' undeclared (first use this function)
+rotator.c: At top level:
+rotator.c:97: parse error before `rotator_file_entry'
+rotator.c: In function `read_rotator_file_entry':
+rotator.c:99: `rfl' undeclared (first use this function)
+rotator.c:99: `rec' undeclared (first use this function)
+rotator.c:101: `rie' undeclared (first use this function)
+rotator.c: At top level:
+rotator.c:107: parse error before `rotator_file_entry'
+rotator.c: In function `save_rotator_file_entry':
+rotator.c:112: `rfl' undeclared (first use this function)
+rotator.c:114: `rec' undeclared (first use this function)
+rotator.c:114: `rie' undeclared (first use this function)
+rotator.c:127: `fp' undeclared (first use this function)
+rotator.c:128: `rotator_file_entry' undeclared (first use this function)
+rotator.c: In function `modify_message_box':
+rotator.c:137: `rotator_file_entry' undeclared (first use this function)
+rotator.c:137: parse error before `rfe'
+rotator.c: At top level:
+rotator.c:144: parse error before `*'
+rotator.c: In function `cmd_print_message_box':
+rotator.c:149: `string' undeclared (first use this function)
+rotator.c:160: `PFC_ANSI' undeclared (first use this function)
+make: *** [rotator.o] Error 1

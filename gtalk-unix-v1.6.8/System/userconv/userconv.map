@@ -1,0 +1,669 @@
+
+ Start         Length     Name                   Class
+ 0001:00000000 000004C8CH _TEXT                  CODE
+ 0002:00000000 0000011E8H _DATA                  DATA
+ 0002:000011E8 000000018H _INIT_                 INITDATA
+ 0002:00001200 000000000H _INITEND_              INITDATA
+ 0002:00001200 000000000H _EXIT_                 EXITDATA
+ 0002:00001200 000000000H _EXITEND_              EXITDATA
+ 0002:00001200 000000000H CONST                  CONST
+ 0002:00001200 0000003A8H _BSS                   BSS
+ 0003:00000000 000001000H STACKBASE              
+ 0003:00001000 00000B000H _STACK                 STACK
+
+
+Detailed map of segments
+
+ 0001:00000000 0000001A C=CODE    S=_TEXT    G=(none)   M=clib\c02.ASM ACBP=A9
+ 0001:00000020 00000485 C=CODE    S=_TEXT    G=(none)   M=userconv.c ACBP=69
+ 0001:000004B0 00000234 C=CODE    S=_TEXT    G=(none)   M=userconvwrite.c ACBP=69
+ 0001:000006F0 000000BB C=CODE    S=_TEXT    G=(none)   M=userconvread.c ACBP=69
+ 0001:000007B0 00000086 C=CODE    S=_TEXT    G=(none)   M=..\common\allocbuf.c ACBP=69
+ 0001:00000840 00000000 C=CODE    S=_TEXT    G=(none)   M=..\common\ctype.c ACBP=69
+ 0001:0000084C 00000018 C=CODE    S=_TEXT    G=(none)   M=..\common\cvtentry.ASM ACBP=A9
+ 0001:00000870 00000016 C=CODE    S=_TEXT    G=(none)   M=..\common\cvtfak.c ACBP=69
+ 0001:00000890 00000000 C=CODE    S=_TEXT    G=(none)   M=..\common\deflt87.c ACBP=69
+ 0001:000008A0 00000006 C=CODE    S=_TEXT    G=(none)   M=..\common\errno.c ACBP=69
+ 0001:000008B0 000000BC C=CODE    S=_TEXT    G=(none)   M=..\common\exit.c ACBP=69
+ 0001:00000970 000000A5 C=CODE    S=_TEXT    G=(none)   M=..\common\fclose.c ACBP=69
+ 0001:00000A20 000000AD C=CODE    S=_TEXT    G=(none)   M=..\common\fflush.c ACBP=69
+ 0001:00000AD0 00000000 C=CODE    S=_TEXT    G=(none)   M=..\common\files.c ACBP=69
+ 0001:00000AD0 00000000 C=CODE    S=_TEXT    G=(none)   M=..\common\files2.c ACBP=69
+ 0001:00000AE0 0000000F C=CODE    S=_TEXT    G=(none)   M=..\common\fmodeptr.c ACBP=69
+ 0001:00000AF0 00000208 C=CODE    S=_TEXT    G=(none)   M=..\common\fopen.c ACBP=69
+ 0001:00000D00 000000EE C=CODE    S=_TEXT    G=(none)   M=..\common\fputn.c ACBP=69
+ 0001:00000DF0 00000050 C=CODE    S=_TEXT    G=(none)   M=..\common\fputs.c ACBP=69
+ 0001:00000E40 00000193 C=CODE    S=_TEXT    G=(none)   M=..\common\fread.c ACBP=69
+ 0001:00000FE0 00000034 C=CODE    S=_TEXT    G=(none)   M=..\common\fscanf.c ACBP=69
+ 0001:00001020 0000019B C=CODE    S=_TEXT    G=(none)   M=..\common\fseek.c ACBP=69
+ 0001:000011C0 00000044 C=CODE    S=_TEXT    G=(none)   M=..\common\fwrite.c ACBP=69
+ 0001:00001210 000000C0 C=CODE    S=_TEXT    G=(none)   M=..\common\getmem.c ACBP=69
+ 0001:000012D0 00000411 C=CODE    S=_TEXT    G=(none)   M=..\common\heap.c ACBP=69
+ 0001:000016F0 00000231 C=CODE    S=_TEXT    G=(none)   M=..\common\is.c ACBP=69
+ 0001:00001930 000001AD C=CODE    S=_TEXT    G=(none)   M=..\common\lgetc.c ACBP=69
+ 0001:00001AE0 000000CC C=CODE    S=_TEXT    G=(none)   M=..\common\longtoa.c ACBP=69
+ 0001:00001BB0 0000012F C=CODE    S=_TEXT    G=(none)   M=..\common\lputc.c ACBP=69
+ 0001:00001CE0 00000020 C=CODE    S=_TEXT    G=(none)   M=..\common\memchr.ASM ACBP=A9
+ 0001:00001D00 00000026 C=CODE    S=_TEXT    G=(none)   M=..\common\memcpy.ASM ACBP=A9
+ 0001:00001D28 00000030 C=CODE    S=_TEXT    G=(none)   M=..\common\memset.ASM ACBP=A9
+ 0001:00001D60 00000088 C=CODE    S=_TEXT    G=(none)   M=..\common\mkname.c ACBP=69
+ 0001:00001DF0 0000006F C=CODE    S=_TEXT    G=(none)   M=..\common\perror.c ACBP=69
+ 0001:00001E60 00000035 C=CODE    S=_TEXT    G=(none)   M=..\common\printf.c ACBP=69
+ 0001:00001E98 0000009B C=CODE    S=_TEXT    G=(none)   M=..\common\qstrcpy.ASM ACBP=A9
+ 0001:00001F40 0000003A C=CODE    S=_TEXT    G=(none)   M=..\common\scanf.c ACBP=69
+ 0001:00001F80 000007B6 C=CODE    S=_TEXT    G=(none)   M=..\common\scanner.c ACBP=69
+ 0001:00002740 00000239 C=CODE    S=_TEXT    G=(none)   M=..\common\scantol.c ACBP=69
+ 0001:00002980 00000074 C=CODE    S=_TEXT    G=(none)   M=..\common\setvbuf.c ACBP=69
+ 0001:00002A00 00000069 C=CODE    S=_TEXT    G=(none)   M=..\common\sprintf.c ACBP=69
+ 0001:00002A70 00000385 C=CODE    S=_TEXT    G=(none)   M=..\common\startup.c ACBP=69
+ 0001:00002DF8 0000003E C=CODE    S=_TEXT    G=(none)   M=..\common\strcat.ASM ACBP=A9
+ 0001:00002E38 00000031 C=CODE    S=_TEXT    G=(none)   M=..\common\strcpy.ASM ACBP=A9
+ 0001:00002E70 000001E6 C=CODE    S=_TEXT    G=(none)   M=..\common\streams.c ACBP=69
+ 0001:00003058 0000001B C=CODE    S=_TEXT    G=(none)   M=..\common\strlen.ASM ACBP=A9
+ 0001:00003080 00000055 C=CODE    S=_TEXT    G=(none)   M=..\common\ungetc.c ACBP=69
+ 0001:000030E0 00000948 C=CODE    S=_TEXT    G=(none)   M=..\common\vprinter.c ACBP=69
+ 0001:00003A30 0000003B C=CODE    S=_TEXT    G=(none)   M=..\common\xfclose.c ACBP=69
+ 0001:00003A70 0000002D C=CODE    S=_TEXT    G=(none)   M=..\common\xfflush.c ACBP=69
+ 0001:00003AA0 00000013 C=CODE    S=_TEXT    G=(none)   M=..\common\_cfinfo.c ACBP=69
+ 0001:00003AC0 00000041 C=CODE    S=_TEXT    G=(none)   M=..\common\_flshall.c ACBP=69
+ 0001:00003B10 00000018 C=CODE    S=_TEXT    G=(none)   M=..\common\_fputc.c ACBP=69
+ 0001:00003B30 00000025 C=CODE    S=_TEXT    G=(none)   M=..\common\_stpcpy.c ACBP=69
+ 0001:00003B60 00000019 C=CODE    S=_TEXT    G=(none)   M=..\common\_umask.c ACBP=69
+ 0001:00003B80 000000BE C=CODE    S=_TEXT    G=(none)   M=..\common\__eof.c ACBP=69
+ 0001:00003C40 000001C9 C=CODE    S=_TEXT    G=(none)   M=..\common\__read.c ACBP=69
+ 0001:00003E10 000001CE C=CODE    S=_TEXT    G=(none)   M=..\common\__write.c ACBP=69
+ 0001:00003FE0 0000002A C=CODE    S=_TEXT    G=(none)   M=..\common\ctrl87.ASM ACBP=A9
+ 0001:0000400C 00000014 C=CODE    S=_TEXT    G=(none)   M=..\common\fpreset.ASM ACBP=A9
+ 0001:00004020 00000018 C=CODE    S=_TEXT    G=(none)   M=..\common\mathptr.c ACBP=69
+ 0001:00004040 00000025 C=CODE    S=_TEXT    G=(none)   M=..\common\fgetc.c ACBP=69
+ 0001:00004070 00000028 C=CODE    S=_TEXT    G=(none)   M=..\common\fputc.c ACBP=69
+ 0001:000040A0 00000047 C=CODE    S=_TEXT    G=(none)   M=..\common\thrdbuf.c ACBP=69
+ 0001:000040F0 00000000 C=CODE    S=_TEXT    G=(none)   M=..\common\fmode.c ACBP=69
+ 0001:00004100 00000039 C=CODE    S=_TEXT    G=(none)   M=..\common\matherr.c ACBP=69
+ 0001:00004140 00000043 C=CODE    S=_TEXT    G=(none)   M=..\common\matherrl.c ACBP=69
+ 0001:00004190 00000001 C=CODE    S=_TEXT    G=(none)   M=..\common\nowild.c ACBP=69
+ 0001:000041A0 0000006F C=CODE    S=_TEXT    G=(none)   M=clib\errormsg.c ACBP=69
+ 0001:00004210 000002CE C=CODE    S=_TEXT    G=(none)   M=clib\handles.c ACBP=69
+ 0001:000044E0 00000068 C=CODE    S=_TEXT    G=(none)   M=clib\ioerror.c ACBP=69
+ 0001:00004550 000000C5 C=CODE    S=_TEXT    G=(none)   M=clib\virtmem.c ACBP=69
+ 0001:00004620 0000002E C=CODE    S=_TEXT    G=(none)   M=clib\_getpid.c ACBP=69
+ 0001:00004650 00000035 C=CODE    S=_TEXT    G=(none)   M=clib\_read.c ACBP=69
+ 0001:00004690 00000035 C=CODE    S=_TEXT    G=(none)   M=clib\_write.c ACBP=69
+ 0001:000046D0 00000057 C=CODE    S=_TEXT    G=(none)   M=clib\__access.c ACBP=69
+ 0001:00004730 0000005F C=CODE    S=_TEXT    G=(none)   M=clib\__close.c ACBP=69
+ 0001:00004790 00000042 C=CODE    S=_TEXT    G=(none)   M=clib\__isatty.c ACBP=69
+ 0001:000047E0 00000093 C=CODE    S=_TEXT    G=(none)   M=clib\__lseek.c ACBP=69
+ 0001:00004880 000001BC C=CODE    S=_TEXT    G=(none)   M=clib\__open.c ACBP=69
+ 0001:00004A40 00000032 C=CODE    S=_TEXT    G=(none)   M=clib\__unlink.c ACBP=69
+ 0001:00004A80 0000008B C=CODE    S=_TEXT    G=(none)   M=clib\_lock.c ACBP=69
+ 0001:00004B10 00000173 C=CODE    S=_TEXT    G=(none)   M=clib\thrddata.c ACBP=69
+ 0001:00004C84 00000008 C=CODE    S=_TEXT    G=(none)   M=clib\threadid.ASM ACBP=A9
+ 0002:00000000 00000060 C=DATA    S=_DATA    G=DGROUP   M=clib\c02.ASM ACBP=A9
+ 0002:00000060 00000191 C=DATA    S=_DATA    G=DGROUP   M=userconv.c ACBP=A9
+ 0002:000001F4 0000009B C=DATA    S=_DATA    G=DGROUP   M=userconvwrite.c ACBP=A9
+ 0002:00000290 00000010 C=DATA    S=_DATA    G=DGROUP   M=userconvread.c ACBP=A9
+ 0002:000002A0 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\allocbuf.c ACBP=A9
+ 0002:000002A0 00000101 C=DATA    S=_DATA    G=DGROUP   M=..\common\ctype.c ACBP=A9
+ 0002:000003A4 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\cvtentry.ASM ACBP=A9
+ 0002:000003A8 00000065 C=DATA    S=_DATA    G=DGROUP   M=..\common\cvtfak.c ACBP=A9
+ 0002:00000410 00000004 C=DATA    S=_DATA    G=DGROUP   M=..\common\deflt87.c ACBP=A9
+ 0002:00000414 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\errno.c ACBP=A9
+ 0002:00000414 00000010 C=DATA    S=_DATA    G=DGROUP   M=..\common\exit.c ACBP=A9
+ 0002:00000424 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\fclose.c ACBP=A9
+ 0002:00000424 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\fflush.c ACBP=A9
+ 0002:00000424 000003C0 C=DATA    S=_DATA    G=DGROUP   M=..\common\files.c ACBP=A9
+ 0002:000007E4 000000A4 C=DATA    S=_DATA    G=DGROUP   M=..\common\files2.c ACBP=A9
+ 0002:00000888 00000004 C=DATA    S=_DATA    G=DGROUP   M=..\common\fmodeptr.c ACBP=A9
+ 0002:0000088C 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\fopen.c ACBP=A9
+ 0002:0000088C 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\fputn.c ACBP=A9
+ 0002:0000088C 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\fputs.c ACBP=A9
+ 0002:0000088C 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\fread.c ACBP=A9
+ 0002:0000088C 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\fscanf.c ACBP=A9
+ 0002:0000088C 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\fseek.c ACBP=A9
+ 0002:0000088C 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\fwrite.c ACBP=A9
+ 0002:0000088C 00000008 C=DATA    S=_DATA    G=DGROUP   M=..\common\getmem.c ACBP=A9
+ 0002:00000894 0000002F C=DATA    S=_DATA    G=DGROUP   M=..\common\heap.c ACBP=A9
+ 0002:000008C4 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\is.c ACBP=A9
+ 0002:000008C4 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\lgetc.c ACBP=A9
+ 0002:000008C4 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\longtoa.c ACBP=A9
+ 0002:000008C4 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\lputc.c ACBP=A9
+ 0002:000008C4 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\memchr.ASM ACBP=A9
+ 0002:000008C4 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\memcpy.ASM ACBP=A9
+ 0002:000008C4 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\memset.ASM ACBP=A9
+ 0002:000008C8 00000009 C=DATA    S=_DATA    G=DGROUP   M=..\common\mkname.c ACBP=A9
+ 0002:000008D4 00000475 C=DATA    S=_DATA    G=DGROUP   M=..\common\perror.c ACBP=A9
+ 0002:00000D4C 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\printf.c ACBP=A9
+ 0002:00000D4C 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\qstrcpy.ASM ACBP=A9
+ 0002:00000D4C 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\scanf.c ACBP=A9
+ 0002:00000D50 00000080 C=DATA    S=_DATA    G=DGROUP   M=..\common\scanner.c ACBP=A9
+ 0002:00000DD0 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\scantol.c ACBP=A9
+ 0002:00000DD0 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\setvbuf.c ACBP=A9
+ 0002:00000DD0 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\sprintf.c ACBP=A9
+ 0002:00000DD0 0000005B C=DATA    S=_DATA    G=DGROUP   M=..\common\startup.c ACBP=A9
+ 0002:00000E2C 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\strcat.ASM ACBP=A9
+ 0002:00000E2C 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\strcpy.ASM ACBP=A9
+ 0002:00000E30 000000A6 C=DATA    S=_DATA    G=DGROUP   M=..\common\streams.c ACBP=A9
+ 0002:00000ED8 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\strlen.ASM ACBP=A9
+ 0002:00000ED8 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\ungetc.c ACBP=A9
+ 0002:00000EDC 00000067 C=DATA    S=_DATA    G=DGROUP   M=..\common\vprinter.c ACBP=A9
+ 0002:00000F44 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\xfclose.c ACBP=A9
+ 0002:00000F44 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\xfflush.c ACBP=A9
+ 0002:00000F48 00000016 C=DATA    S=_DATA    G=DGROUP   M=..\common\_cfinfo.c ACBP=A9
+ 0002:00000F60 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\_flshall.c ACBP=A9
+ 0002:00000F60 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\_fputc.c ACBP=A9
+ 0002:00000F60 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\_stpcpy.c ACBP=A9
+ 0002:00000F64 00000004 C=DATA    S=_DATA    G=DGROUP   M=..\common\_umask.c ACBP=A9
+ 0002:00000F68 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\__eof.c ACBP=A9
+ 0002:00000F68 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\__read.c ACBP=A9
+ 0002:00000F68 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\__write.c ACBP=A9
+ 0002:00000F68 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\ctrl87.ASM ACBP=A9
+ 0002:00000F68 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\fpreset.ASM ACBP=A9
+ 0002:00000F68 00000008 C=DATA    S=_DATA    G=DGROUP   M=..\common\mathptr.c ACBP=A9
+ 0002:00000F70 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\fgetc.c ACBP=A9
+ 0002:00000F70 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\fputc.c ACBP=A9
+ 0002:00000F70 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\thrdbuf.c ACBP=A9
+ 0002:00000F70 00000004 C=DATA    S=_DATA    G=DGROUP   M=..\common\fmode.c ACBP=A9
+ 0002:00000F74 00000008 C=DATA    S=_DATA    G=DGROUP   M=..\common\matherr.c ACBP=A9
+ 0002:00000F7C 0000000A C=DATA    S=_DATA    G=DGROUP   M=..\common\matherrl.c ACBP=A9
+ 0002:00000F88 00000000 C=DATA    S=_DATA    G=DGROUP   M=..\common\nowild.c ACBP=A9
+ 0002:00000F8C 00000006 C=DATA    S=_DATA    G=DGROUP   M=clib\errormsg.c ACBP=A9
+ 0002:00000F94 000000A6 C=DATA    S=_DATA    G=DGROUP   M=clib\handles.c ACBP=A9
+ 0002:0000103C 0000012E C=DATA    S=_DATA    G=DGROUP   M=clib\ioerror.c ACBP=A9
+ 0002:0000116C 00000000 C=DATA    S=_DATA    G=DGROUP   M=clib\virtmem.c ACBP=A9
+ 0002:0000116C 00000000 C=DATA    S=_DATA    G=DGROUP   M=clib\_getpid.c ACBP=A9
+ 0002:0000116C 00000000 C=DATA    S=_DATA    G=DGROUP   M=clib\_read.c ACBP=A9
+ 0002:0000116C 00000000 C=DATA    S=_DATA    G=DGROUP   M=clib\_write.c ACBP=A9
+ 0002:0000116C 00000000 C=DATA    S=_DATA    G=DGROUP   M=clib\__access.c ACBP=A9
+ 0002:0000116C 00000000 C=DATA    S=_DATA    G=DGROUP   M=clib\__close.c ACBP=A9
+ 0002:0000116C 00000000 C=DATA    S=_DATA    G=DGROUP   M=clib\__isatty.c ACBP=A9
+ 0002:0000116C 00000000 C=DATA    S=_DATA    G=DGROUP   M=clib\__lseek.c ACBP=A9
+ 0002:0000116C 00000000 C=DATA    S=_DATA    G=DGROUP   M=clib\__open.c ACBP=A9
+ 0002:0000116C 00000000 C=DATA    S=_DATA    G=DGROUP   M=clib\__unlink.c ACBP=A9
+ 0002:00001170 00000011 C=DATA    S=_DATA    G=DGROUP   M=clib\_lock.c ACBP=A9
+ 0002:00001184 00000062 C=DATA    S=_DATA    G=DGROUP   M=clib\thrddata.c ACBP=A9
+ 0002:000011E8 00000000 C=DATA    S=_DATA    G=DGROUP   M=clib\threadid.ASM ACBP=A9
+ 0002:000011E8 00000000 C=INITDATA S=_INIT_   G=DGROUP   M=clib\c02.ASM ACBP=49
+ 0002:000011E8 00000006 C=INITDATA S=_INIT_   G=DGROUP   M=..\common\files.c ACBP=49
+ 0002:000011EE 00000006 C=INITDATA S=_INIT_   G=DGROUP   M=..\common\files2.c ACBP=49
+ 0002:000011F4 00000006 C=INITDATA S=_INIT_   G=DGROUP   M=..\common\heap.c ACBP=49
+ 0002:000011FA 00000006 C=INITDATA S=_INIT_   G=DGROUP   M=clib\thrddata.c ACBP=49
+ 0002:00001200 00000000 C=INITDATA S=_INITEND_ G=DGROUP   M=clib\c02.ASM ACBP=49
+ 0002:00001200 00000000 C=EXITDATA S=_EXIT_   G=DGROUP   M=clib\c02.ASM ACBP=49
+ 0002:00001200 00000000 C=EXITDATA S=_EXITEND_ G=DGROUP   M=clib\c02.ASM ACBP=49
+ 0002:00001200 00000000 C=CONST   S=CONST    G=DGROUP   M=clib\c02.ASM ACBP=A9
+ 0002:00001200 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\c02.ASM ACBP=A9
+ 0002:00001200 00000000 C=BSS     S=_BSS     G=DGROUP   M=userconv.c ACBP=A9
+ 0002:00001200 00000004 C=BSS     S=_BSS     G=DGROUP   M=userconvwrite.c ACBP=A9
+ 0002:00001204 00000004 C=BSS     S=_BSS     G=DGROUP   M=userconvread.c ACBP=A9
+ 0002:00001208 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\allocbuf.c ACBP=A9
+ 0002:00001208 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\ctype.c ACBP=A9
+ 0002:00001208 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\cvtentry.ASM ACBP=A9
+ 0002:00001208 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\cvtfak.c ACBP=A9
+ 0002:00001208 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\deflt87.c ACBP=A9
+ 0002:00001208 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\errno.c ACBP=A9
+ 0002:00001208 00000080 C=BSS     S=_BSS     G=DGROUP   M=..\common\exit.c ACBP=A9
+ 0002:00001288 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\fclose.c ACBP=A9
+ 0002:00001288 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\fflush.c ACBP=A9
+ 0002:00001288 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\files.c ACBP=A9
+ 0002:00001288 000000A0 C=BSS     S=_BSS     G=DGROUP   M=..\common\files2.c ACBP=A9
+ 0002:00001328 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\fmodeptr.c ACBP=A9
+ 0002:00001328 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\fopen.c ACBP=A9
+ 0002:00001328 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\fputn.c ACBP=A9
+ 0002:00001328 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\fputs.c ACBP=A9
+ 0002:00001328 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\fread.c ACBP=A9
+ 0002:00001328 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\fscanf.c ACBP=A9
+ 0002:00001328 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\fseek.c ACBP=A9
+ 0002:00001328 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\fwrite.c ACBP=A9
+ 0002:00001328 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\getmem.c ACBP=A9
+ 0002:00001328 00000220 C=BSS     S=_BSS     G=DGROUP   M=..\common\heap.c ACBP=A9
+ 0002:00001548 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\is.c ACBP=A9
+ 0002:00001548 00000001 C=BSS     S=_BSS     G=DGROUP   M=..\common\lgetc.c ACBP=A9
+ 0002:0000154C 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\longtoa.c ACBP=A9
+ 0002:0000154C 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\lputc.c ACBP=A9
+ 0002:0000154C 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\memchr.ASM ACBP=A9
+ 0002:0000154C 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\memcpy.ASM ACBP=A9
+ 0002:0000154C 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\memset.ASM ACBP=A9
+ 0002:00001550 00000002 C=BSS     S=_BSS     G=DGROUP   M=..\common\mkname.c ACBP=A9
+ 0002:00001554 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\perror.c ACBP=A9
+ 0002:00001554 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\printf.c ACBP=A9
+ 0002:00001554 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\qstrcpy.ASM ACBP=A9
+ 0002:00001554 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\scanf.c ACBP=A9
+ 0002:00001554 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\scanner.c ACBP=A9
+ 0002:00001554 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\scantol.c ACBP=A9
+ 0002:00001554 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\setvbuf.c ACBP=A9
+ 0002:00001554 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\sprintf.c ACBP=A9
+ 0002:00001558 00000030 C=BSS     S=_BSS     G=DGROUP   M=..\common\startup.c ACBP=A9
+ 0002:00001588 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\strcat.ASM ACBP=A9
+ 0002:00001588 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\strcpy.ASM ACBP=A9
+ 0002:00001588 00000008 C=BSS     S=_BSS     G=DGROUP   M=..\common\streams.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\strlen.ASM ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\ungetc.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\vprinter.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\xfclose.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\xfflush.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\_cfinfo.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\_flshall.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\_fputc.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\_stpcpy.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\_umask.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\__eof.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\__read.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\__write.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\ctrl87.ASM ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\fpreset.ASM ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\mathptr.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\fgetc.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\fputc.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\thrdbuf.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\fmode.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\matherr.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\matherrl.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=..\common\nowild.c ACBP=A9
+ 0002:00001590 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\errormsg.c ACBP=A9
+ 0002:00001590 00000008 C=BSS     S=_BSS     G=DGROUP   M=clib\handles.c ACBP=A9
+ 0002:00001598 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\ioerror.c ACBP=A9
+ 0002:00001598 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\virtmem.c ACBP=A9
+ 0002:00001598 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\_getpid.c ACBP=A9
+ 0002:00001598 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\_read.c ACBP=A9
+ 0002:00001598 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\_write.c ACBP=A9
+ 0002:00001598 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\__access.c ACBP=A9
+ 0002:00001598 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\__close.c ACBP=A9
+ 0002:00001598 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\__isatty.c ACBP=A9
+ 0002:00001598 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\__lseek.c ACBP=A9
+ 0002:00001598 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\__open.c ACBP=A9
+ 0002:00001598 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\__unlink.c ACBP=A9
+ 0002:00001598 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\_lock.c ACBP=A9
+ 0002:00001598 00000010 C=BSS     S=_BSS     G=DGROUP   M=clib\thrddata.c ACBP=A9
+ 0002:000015A8 00000000 C=BSS     S=_BSS     G=DGROUP   M=clib\threadid.ASM ACBP=A9
+ 0003:00000000 00001000 C=        S=STACKBASE G=STACKGROUP M=clib\c02.ASM ACBP=61
+ 0003:00001000 0000B000 C=STACK   S=_STACK   G=STACKGROUP M=clib\c02.ASM ACBP=75
+
+  Address         Publics by Name
+
+ 0001:000006CA  Idle _close_new_users
+ 0001:00000791  Idle _close_old_users
+ 0001:000000DA  Idle _conv_class_info
+ 0001:000001B7  Idle _conv_to_new
+ 0001:0000004A  Idle _copy_real_info
+ 0001:0000092E       _exit
+ 0001:00000970       _fclose
+ 0001:000018FF  Idle _feof
+ 0001:00001910  Idle _ferror
+ 0001:00000A20       _fflush
+ 0001:00004040       _fgetc
+ 0001:00000CC8       _fopen
+ 0001:00004070       _fputc
+ 0001:00000DF0       _fputs
+ 0001:00000F8A       _fread
+ 0001:00001345       _free
+ 0001:00000FE0       _fscanf
+ 0001:000010A9       _fseek
+ 0001:0000112F       _ftell
+ 0001:000011C0       _fwrite
+ 0001:00001803       _getc
+ 0001:00001838  Idle _getchar
+ 0001:000016F0  Idle _isalnum
+ 0001:0000171B  Idle _isalpha
+ 0001:00001704  Idle _isascii
+ 0001:0000172F  Idle _iscntrl
+ 0001:00001743  Idle _isdigit
+ 0001:00001757  Idle _isgraph
+ 0001:0000177B  Idle _islower
+ 0001:0000178F  Idle _isprint
+ 0001:000017B3  Idle _ispunct
+ 0001:000017C7  Idle _isspace
+ 0001:000017DB  Idle _isupper
+ 0001:000017EF  Idle _isxdigit
+ 0001:00000751       _load_old_user
+ 0001:000002D0       _main
+ 0001:000014ED       _malloc
+ 0001:00001CE0       _memchr
+ 0001:00001D00       _memcpy
+ 0001:00001D28       _memset
+ 0002:00001200  Idle _newfileptr
+ 0002:00001204  Idle _oldfileptr
+ 0001:00000720       _old_get_num_records
+ 0001:000004B0       _open_new_users
+ 0001:000006F0       _open_old_users
+ 0001:00001DF0       _perror
+ 0001:00001E60       _printf
+ 0001:00001870       _putc
+ 0001:000018B1  Idle _putchar
+ 0001:00000020  Idle _repeat_character
+ 0001:00000539       _save_new_user
+ 0001:00001F40       _scanf
+ 0001:00002980       _setvbuf
+ 0001:00002A26       _sprintf
+ 0001:00002DF8       _strcat
+ 0001:00002E38       _strcpy
+ 0001:00003058       _strlen
+ 0001:00003080       _ungetc
+ 0001:00002A48  Idle _vsprintf
+ 0001:00000000  Idle __acrtused
+ 0001:000007B0       __allocbuf
+ 0002:00000414       __atexitcnt
+ 0002:00001208       __atexittbl
+ 0002:00001570       __C0argc
+ 0002:00001574       __C0argv
+ 0002:00001578       __C0environ
+ 0002:0000002B       __c0_heaps
+ 0002:0000002F       __c0_nheaps
+ 0001:00000954  Idle __cexit
+ 0002:00000F48       __cfinfo_get
+ 0002:00000F50       __cfinfo_name
+ 0002:00000F4C       __cfinfo_value
+ 0001:00002D13       __cleanup
+ 0001:00003FE0       __control87
+ 0001:00004A80       __create_lock
+ 0001:00002AAE       __create_shmem
+ 0002:000002A0       __ctype
+ 0001:00000960  Idle __c_exit
+ 0002:00000410       __default87
+ 0002:00001558       __dll_table
+ 0002:0000103C  Idle __dosErrorToSV
+ 0001:000041F9       __ErrorExit
+ 0001:000041A0       __ErrorMessage
+ 0002:00001560       __ExcRegPtr
+ 0001:00000941       __exit
+ 0002:00000418       __exitbuf
+ 0002:0000041C       __exitfopen
+ 0002:00000420  Idle __exitopen
+ 0001:000019D1       __fgetc
+ 0001:00003AC0       __flushall
+ 0002:00000F70       __fmode
+ 0002:00000888       __fmodeptr
+ 0001:0000400C       __fpreset
+ 0001:00003B10       __fputc
+ 0002:00001328  Idle __free_dummy
+ 0002:00001338       __free_list
+ 0001:00001210       __getmem
+ 0001:00004620       __getpid
+ 0001:0000141A       __heapadd
+ 0002:00001344       __heaps
+ 0002:0000088C       __heap_brk
+ 0002:00001340  Idle __heap_lock
+ 0002:00000890  Idle __heap_top
+ 0001:00000AE0       __initfmode
+ 0001:00004020       __initmatherr
+ 0001:00004190       __initwild
+ 0001:00002B32       __init_exit_proc
+ 0001:000043B4       __init_handles
+ 0001:00002E70       __init_streams
+ 0001:000019E4       __lgetc
+ 0001:00004AA4       __lock
+ 0001:00004210       __lock_all_handles
+ 0001:00002F5B       __lock_all_streams
+ 0001:00004AE2       __lock_error
+ 0001:00002DD3       __lock_exit
+ 0001:00004232       __lock_handle
+ 0001:000012D0       __lock_heap
+ 0001:00002F7D       __lock_stream
+ 0001:00001BB0       __lputc
+ 0001:00004100       __matherr
+ 0001:00004140       __matherrl
+ 0002:000003AC       __nextrealptr
+ 0002:000007E4       __nfile
+ 0002:00001544       __nheaps
+ 0002:00000F64       __notUmask
+ 0002:000007E8       __openfd
+ 0002:00000048       __os2hmod
+ 0002:00001568       __oscmd
+ 0002:00001564       __osenv
+ 0002:00001288       __pidtab
+ 0002:00000F68       __pmatherr
+ 0002:00000F6C       __pmatherrl
+ 0001:00004650       __read
+ 0002:000003A8       __realcvtptr
+ 0002:0000133C       __rover
+ 0001:000013EA       __same_seg
+ 0001:00001F80       __scanner
+ 0001:0000085E       __scanrslt
+ 0002:000003B4       __scanrsltptr
+ 0001:00000858       __scantod
+ 0002:000003B0       __scantodptr
+ 0001:00002740       __scantol
+ 0001:00002BEF       __startup
+ 0002:00001584       __stkbase
+ 0001:00003B30       __stpcpy
+ 0002:00000424       __streams
+ 0002:000008D4       __sys_errlist
+ 0001:00002DBF       __terminate
+ 0001:000040A0       __thread_buf
+ 0001:00004B10       __thread_data
+ 0001:00004B1C       __thread_data_tid
+ 0002:00001550       __tmpnum
+ 0001:00003B60       __umask
+ 0001:00004AC4       __unlock
+ 0001:00004221       __unlock_all_handles
+ 0001:00002F6C       __unlock_all_streams
+ 0001:00002DE4       __unlock_exit
+ 0001:000042D0       __unlock_handle
+ 0001:000012E1       __unlock_heap
+ 0001:00003027       __unlock_stream
+ 0001:0000458D       __virt_commit
+ 0001:000045D1       __virt_decommit
+ 0001:00004550       __virt_reserve
+ 0001:00004690       __write
+ 0001:00003A30       __xfclose
+ 0001:00003A70       __xfflush
+ 0001:000046D0       ___access
+ 0001:00004730       ___close
+ 0001:000044E0  Idle ___doserrno
+ 0001:00004536       ___DOSerror
+ 0001:00003B80       ___eof
+ 0001:000008A0       ___errno
+ 0001:000041EA  Idle ___ErrorMessage
+ 0001:00000D00       ___fputn
+ 0001:00000C8A       ___getfp
+ 0001:000044E9       ___IOerror
+ 0001:00004790       ___isatty
+ 0001:00001AE0       ___longtoa
+ 0001:000047E0       ___lseek
+ 0001:00001D60       ___mkname
+ 0001:00000852       ___nextreal
+ 0001:00004880       ___open
+ 0001:00000BE0       ___openfp
+ 0001:00003CA3       ___read
+ 0001:0000084C       ___realcvt
+ 0001:00001E98       ___strcpy__
+ 0001:00004C84       ___threadid
+ 0001:00001DAC       ___tmpnam
+ 0001:00004A40       ___unlink
+ 0001:00001B94       ___utoa
+ 0001:00003171       ___vprinter
+ 0001:00003EE6       ___write
+
+  Address         Publics by Value
+
+ 0001:00000000  Idle __acrtused
+ 0001:00000020  Idle _repeat_character
+ 0001:0000004A  Idle _copy_real_info
+ 0001:000000DA  Idle _conv_class_info
+ 0001:000001B7  Idle _conv_to_new
+ 0001:000002D0       _main
+ 0001:000004B0       _open_new_users
+ 0001:00000539       _save_new_user
+ 0001:000006CA  Idle _close_new_users
+ 0001:000006F0       _open_old_users
+ 0001:00000720       _old_get_num_records
+ 0001:00000751       _load_old_user
+ 0001:00000791  Idle _close_old_users
+ 0001:000007B0       __allocbuf
+ 0001:0000084C       ___realcvt
+ 0001:00000852       ___nextreal
+ 0001:00000858       __scantod
+ 0001:0000085E       __scanrslt
+ 0001:000008A0       ___errno
+ 0001:0000092E       _exit
+ 0001:00000941       __exit
+ 0001:00000954  Idle __cexit
+ 0001:00000960  Idle __c_exit
+ 0001:00000970       _fclose
+ 0001:00000A20       _fflush
+ 0001:00000AE0       __initfmode
+ 0001:00000BE0       ___openfp
+ 0001:00000C8A       ___getfp
+ 0001:00000CC8       _fopen
+ 0001:00000D00       ___fputn
+ 0001:00000DF0       _fputs
+ 0001:00000F8A       _fread
+ 0001:00000FE0       _fscanf
+ 0001:000010A9       _fseek
+ 0001:0000112F       _ftell
+ 0001:000011C0       _fwrite
+ 0001:00001210       __getmem
+ 0001:000012D0       __lock_heap
+ 0001:000012E1       __unlock_heap
+ 0001:00001345       _free
+ 0001:000013EA       __same_seg
+ 0001:0000141A       __heapadd
+ 0001:000014ED       _malloc
+ 0001:000016F0  Idle _isalnum
+ 0001:00001704  Idle _isascii
+ 0001:0000171B  Idle _isalpha
+ 0001:0000172F  Idle _iscntrl
+ 0001:00001743  Idle _isdigit
+ 0001:00001757  Idle _isgraph
+ 0001:0000177B  Idle _islower
+ 0001:0000178F  Idle _isprint
+ 0001:000017B3  Idle _ispunct
+ 0001:000017C7  Idle _isspace
+ 0001:000017DB  Idle _isupper
+ 0001:000017EF  Idle _isxdigit
+ 0001:00001803       _getc
+ 0001:00001838  Idle _getchar
+ 0001:00001870       _putc
+ 0001:000018B1  Idle _putchar
+ 0001:000018FF  Idle _feof
+ 0001:00001910  Idle _ferror
+ 0001:000019D1       __fgetc
+ 0001:000019E4       __lgetc
+ 0001:00001AE0       ___longtoa
+ 0001:00001B94       ___utoa
+ 0001:00001BB0       __lputc
+ 0001:00001CE0       _memchr
+ 0001:00001D00       _memcpy
+ 0001:00001D28       _memset
+ 0001:00001D60       ___mkname
+ 0001:00001DAC       ___tmpnam
+ 0001:00001DF0       _perror
+ 0001:00001E60       _printf
+ 0001:00001E98       ___strcpy__
+ 0001:00001F40       _scanf
+ 0001:00001F80       __scanner
+ 0001:00002740       __scantol
+ 0001:00002980       _setvbuf
+ 0001:00002A26       _sprintf
+ 0001:00002A48  Idle _vsprintf
+ 0001:00002AAE       __create_shmem
+ 0001:00002B32       __init_exit_proc
+ 0001:00002BEF       __startup
+ 0001:00002D13       __cleanup
+ 0001:00002DBF       __terminate
+ 0001:00002DD3       __lock_exit
+ 0001:00002DE4       __unlock_exit
+ 0001:00002DF8       _strcat
+ 0001:00002E38       _strcpy
+ 0001:00002E70       __init_streams
+ 0001:00002F5B       __lock_all_streams
+ 0001:00002F6C       __unlock_all_streams
+ 0001:00002F7D       __lock_stream
+ 0001:00003027       __unlock_stream
+ 0001:00003058       _strlen
+ 0001:00003080       _ungetc
+ 0001:00003171       ___vprinter
+ 0001:00003A30       __xfclose
+ 0001:00003A70       __xfflush
+ 0001:00003AC0       __flushall
+ 0001:00003B10       __fputc
+ 0001:00003B30       __stpcpy
+ 0001:00003B60       __umask
+ 0001:00003B80       ___eof
+ 0001:00003CA3       ___read
+ 0001:00003EE6       ___write
+ 0001:00003FE0       __control87
+ 0001:0000400C       __fpreset
+ 0001:00004020       __initmatherr
+ 0001:00004040       _fgetc
+ 0001:00004070       _fputc
+ 0001:000040A0       __thread_buf
+ 0001:00004100       __matherr
+ 0001:00004140       __matherrl
+ 0001:00004190       __initwild
+ 0001:000041A0       __ErrorMessage
+ 0001:000041EA  Idle ___ErrorMessage
+ 0001:000041F9       __ErrorExit
+ 0001:00004210       __lock_all_handles
+ 0001:00004221       __unlock_all_handles
+ 0001:00004232       __lock_handle
+ 0001:000042D0       __unlock_handle
+ 0001:000043B4       __init_handles
+ 0001:000044E0  Idle ___doserrno
+ 0001:000044E9       ___IOerror
+ 0001:00004536       ___DOSerror
+ 0001:00004550       __virt_reserve
+ 0001:0000458D       __virt_commit
+ 0001:000045D1       __virt_decommit
+ 0001:00004620       __getpid
+ 0001:00004650       __read
+ 0001:00004690       __write
+ 0001:000046D0       ___access
+ 0001:00004730       ___close
+ 0001:00004790       ___isatty
+ 0001:000047E0       ___lseek
+ 0001:00004880       ___open
+ 0001:00004A40       ___unlink
+ 0001:00004A80       __create_lock
+ 0001:00004AA4       __lock
+ 0001:00004AC4       __unlock
+ 0001:00004AE2       __lock_error
+ 0001:00004B10       __thread_data
+ 0001:00004B1C       __thread_data_tid
+ 0001:00004C84       ___threadid
+ 0002:0000002B       __c0_heaps
+ 0002:0000002F       __c0_nheaps
+ 0002:00000048       __os2hmod
+ 0002:000002A0       __ctype
+ 0002:000003A8       __realcvtptr
+ 0002:000003AC       __nextrealptr
+ 0002:000003B0       __scantodptr
+ 0002:000003B4       __scanrsltptr
+ 0002:00000410       __default87
+ 0002:00000414       __atexitcnt
+ 0002:00000418       __exitbuf
+ 0002:0000041C       __exitfopen
+ 0002:00000420  Idle __exitopen
+ 0002:00000424       __streams
+ 0002:000007E4       __nfile
+ 0002:000007E8       __openfd
+ 0002:00000888       __fmodeptr
+ 0002:0000088C       __heap_brk
+ 0002:00000890  Idle __heap_top
+ 0002:000008D4       __sys_errlist
+ 0002:00000F48       __cfinfo_get
+ 0002:00000F4C       __cfinfo_value
+ 0002:00000F50       __cfinfo_name
+ 0002:00000F64       __notUmask
+ 0002:00000F68       __pmatherr
+ 0002:00000F6C       __pmatherrl
+ 0002:00000F70       __fmode
+ 0002:0000103C  Idle __dosErrorToSV
+ 0002:00001200  Idle _newfileptr
+ 0002:00001204  Idle _oldfileptr
+ 0002:00001208       __atexittbl
+ 0002:00001288       __pidtab
+ 0002:00001328  Idle __free_dummy
+ 0002:00001338       __free_list
+ 0002:0000133C       __rover
+ 0002:00001340  Idle __heap_lock
+ 0002:00001344       __heaps
+ 0002:00001544       __nheaps
+ 0002:00001550       __tmpnum
+ 0002:00001558       __dll_table
+ 0002:00001560       __ExcRegPtr
+ 0002:00001564       __osenv
+ 0002:00001568       __oscmd
+ 0002:00001570       __C0argc
+ 0002:00001574       __C0argv
+ 0002:00001578       __C0environ
+ 0002:00001584       __stkbase

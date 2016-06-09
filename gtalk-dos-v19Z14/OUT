@@ -1,0 +1,290 @@
+File EDITOR.C:
+   lock_dos();
+   lock_dos();
+   lock_dos();
+   lock_dos();
+   lock_dos();
+File TASK.C:
+void lock_dos(void)
+File MAIL.C:
+  if (flag) lock_dos();
+  lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+   if (flag) lock_dos();
+   if (flag) lock_dos();
+    if (flag) lock_dos();
+  if (flag) lock_dos();
+    if (flag) lock_dos();
+    lock_dos();
+  if (flag) lock_dos();
+    lock_dos();
+  lock_dos();
+  lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+  lock_dos();
+  lock_dos();
+  if (flag)  lock_dos();
+    lock_dos();
+        if (!flag) lock_dos();
+              if (!flag) lock_dos();
+           if (!flag) lock_dos();
+      if (!flag) lock_dos();
+    if (flag) lock_dos();
+    lock_dos();
+       lock_dos();
+  lock_dos();
+  lock_dos();
+     lock_dos();
+     lock_dos();
+  if (flag) lock_dos();
+    lock_dos();
+    lock_dos();
+  lock_dos();
+File USER.C:
+    if (!flag) lock_dos();
+    if (!flag) lock_dos();
+   lock_dos();
+    lock_dos();
+        lock_dos();
+     lock_dos();
+File BBS.C:
+    if (!flag) lock_dos();
+    if (!flag) lock_dos();
+  lock_dos();
+  lock_dos();
+  lock_dos();
+  lock_dos();
+  if (flag) lock_dos();
+        lock_dos();
+      lock_dos();
+  lock_dos();
+  lock_dos();
+File GT.C:
+    if (!dos_locked) lock_dos();
+  lock_dos();
+          lock_dos();
+    if (flag) lock_dos();
+         lock_dos();
+   if (flag) lock_dos();
+   lock_dos();
+   lock_dos();
+      lock_dos();
+      lock_dos();
+        if (!dos_locked) lock_dos();
+    if (flag) lock_dos();
+    if (flag) lock_dos();
+    lock_dos();
+   lock_dos();
+   lock_dos();
+   lock_dos();
+  if (flag)  lock_dos();
+  lock_dos();
+  if (flag)  lock_dos();
+   if (should_lock) lock_dos();
+   if (should_lock) lock_dos();
+File OUTBUF.C:
+void lock_dos(void);
+  lock_dos();
+    lock_dos();
+void lock_dos(void)
+File ROTATOR.C:
+    lock_dos();
+        lock_dos();
+     lock_dos();
+    if (!dos_locked) lock_dos();
+        if (!dos_locked) lock_dos();
+     if (!dos_locked) lock_dos();
+    if (!flag) lock_dos();
+    if (!flag) lock_dos();
+    if (flag) lock_dos();
+    if (flag) lock_dos();
+   if (flag) lock_dos();
+   if (flag) lock_dos();
+File SCHEDULE.C:
+    case DAILY_TASK:    if (lockflag) lock_dos();
+                        if (lockflag) lock_dos();
+    case HOURLY_TASK:   if (lockflag) lock_dos();
+                        if (lockflag) lock_dos();
+    case REL_NOW_TASK:  if (lockflag) lock_dos();
+  if (lockflag) lock_dos();
+  if (lockflag) lock_dos();
+File SYSOP.C:
+    lock_dos();
+      { lock_dos();
+    lock_dos();
+      lock_dos();
+  lock_dos();
+   if (!is_locked) lock_dos();
+   lock_dos();
+     lock_dos();
+   lock_dos();
+     lock_dos();
+   lock_dos();
+   lock_dos();
+   lock_dos();
+      lock_dos();
+   lock_dos();
+      lock_dos();
+File DIAGS.C:
+    if (flag) lock_dos();
+    lock_dos();
+  lock_dos();
+    lock_dos();
+  lock_dos();
+  lock_dos();
+File GFILES.C:
+   lock_dos();
+   lock_dos();
+         lock_dos();
+   lock_dos();
+   lock_dos();
+   lock_dos();
+         lock_dos();
+         lock_dos();
+File LINK.C:
+    lock_dos();
+File COMMAND.C:
+  lock_dos();
+    lock_dos();
+   lock_dos();
+    lock_dos();
+    if (!dos_locked) lock_dos();
+      if (!dos_locked) lock_dos();
+   lock_dos();
+    if (flag) lock_dos();
+         lock_dos();
+  lock_dos();
+    if (flag)  lock_dos();
+  if (flag)  lock_dos();
+   { lock_dos();
+        lock_dos();
+    if (flag) lock_dos();
+    if (flag) lock_dos();
+    if (flag) lock_dos();
+    if (flag) lock_dos();
+   if (flag) lock_dos();
+   if (flag) lock_dos();
+       lock_dos();
+  if (flag) lock_dos();
+File COMJJ.C:
+  lock_dos();               /* lock_dos (read key is not reentrant) */
+    lock_dos();
+    lock_dos();
+  lock_dos();               /* lock_dos (read key is not reentrant) */
+File LINKO.C:
+    lock_dos();
+File PROTOCOL.C:
+  if (!flag) lock_dos();
+  if (!flag) lock_dos();
+  if (!flag) lock_dos();
+File CHANNEL.C:
+ lock_dos();
+File INIT.C:
+    lock_dos();
+      { lock_dos();
+    lock_dos();
+      lock_dos();
+File ALLOC.C:
+      if (not_lock_dos) lock_dos();
+      if (not_lock_dos) lock_dos();
+      if (not_lock_dos) lock_dos();
+      if (not_lock_dos) lock_dos();
+      if (not_lock_dos) lock_dos();
+      if (not_lock_dos) lock_dos();
+      if (not_lock_dos) lock_dos();
+    if (not_lock_dos) lock_dos();
+    if (not_lock_dos) lock_dos();
+    if (not_lock_dos) lock_dos();
+      if (not_lock_dos) lock_dos();
+    if (not_lock_dos) lock_dos();
+    if (not_lock_dos) lock_dos();
+    if (not_lock_dos) lock_dos();
+    if (not_lock_dos) lock_dos();
+    if (not_lock_dos) lock_dos();
+File USEREDIT.C:
+        lock_dos();
+    lock_dos();
+  if (!dos_locked) lock_dos();
+         lock_dos();
+         lock_dos();
+File IO.C:
+   if (!flag) lock_dos();
+   if (!flag) lock_dos();
+   if (!flag) lock_dos();
+   if (!flag) lock_dos();
+   lock_dos();
+         lock_dos();
+         lock_dos();
+       lock_dos();
+         lock_dos();
+      lock_dos();
+       lock_dos();
+         lock_dos();
+      lock_dos();
+   lock_dos();
+      lock_dos();
+File NEWMAIL.C:
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+    if (flag) lock_dos();
+  if (flag) lock_dos();
+    lock_dos();
+    if (flag) lock_dos();
+    lock_dos();
+  if (flag) lock_dos();
+    lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+  if (flag)  lock_dos();
+  if (flag)  lock_dos();
+    if (flag) lock_dos();
+    if (flag) lock_dos();
+    if (flag)  lock_dos();
+  lock_dos();
+     lock_dos();
+     lock_dos();
+  if (flag) lock_dos();
+        lock_dos();
+    lock_dos();
+    lock_dos();
+  lock_dos();
+File OLDMAIL.C:
+  if (flag) lock_dos();
+  lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+    if (flag) lock_dos();
+  if (flag) lock_dos();
+    lock_dos();
+    if (flag) lock_dos();
+    lock_dos();
+  if (flag) lock_dos();
+    lock_dos();
+  lock_dos();
+  lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+  if (flag) lock_dos();
+  if (flag)  lock_dos();
+  if (flag)  lock_dos();
+    if (flag) lock_dos();
+    if (flag) lock_dos();
+    if (flag)  lock_dos();
+  lock_dos();
+     lock_dos();
+     lock_dos();
+  if (flag) lock_dos();
+    lock_dos();
+    lock_dos();
+  lock_dos();

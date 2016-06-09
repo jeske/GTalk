@@ -1,0 +1,60 @@
+cc  -DLINUX  -c -o useredit.o useredit.c
+useredit.c: In function `edit_main_privs':
+useredit.c:640: warning: assignment makes pointer from integer without a cast
+useredit.c:682: warning: passing arg 1 of `print_main_privs_menu' from incompatible pointer type
+useredit.c:694: warning: passing arg 1 of `print_main_privs_menu' from incompatible pointer type
+useredit.c: In function `edit_privs':
+useredit.c:736: warning: assignment makes pointer from integer without a cast
+useredit.c: In function `exist':
+useredit.c:860: structure has no member named `number'
+useredit.c: In function `ue_priv_change':
+useredit.c:1147: structure has no member named `number'
+useredit.c: In function `ue_delete_users':
+useredit.c:1266: structure has no member named `number'
+useredit.c:1279: `user_lines' undeclared (first use this function)
+useredit.c:1279: (Each undeclared identifier is reported only once
+useredit.c:1279: for each function it appears in.)
+useredit.c:1280: `sys_info' undeclared (first use this function)
+useredit.c:1283: structure has no member named `number'
+useredit.c: In function `ue_undelete_users':
+useredit.c:1342: parse error before `/'
+useredit.c:1356: `user_lines' undeclared (first use this function)
+useredit.c:1357: `sys_info' undeclared (first use this function)
+useredit.c:1360: structure has no member named `number'
+useredit.c: At top level:
+useredit.c:1374: parse error before string constant
+useredit.c:1374: warning: data definition has no type or storage class
+useredit.c: In function `ue_class_edit_prompt':
+useredit.c:1411: `sys_info' undeclared (first use this function)
+useredit.c:1452: structure has no member named `number'
+useredit.c:1468: structure has no member named `number'
+useredit.c: In function `ue_user_edit_prompt':
+useredit.c:1596: `sys_info' undeclared (first use this function)
+useredit.c:1611: `user_lines' undeclared (first use this function)
+useredit.c:1650: structure has no member named `number'
+useredit.c:1654: structure has no member named `number'
+useredit.c:1654: structure has no member named `number'
+useredit.c:1656: structure has no member named `number'
+useredit.c:1667: `line_status' undeclared (first use this function)
+useredit.c:1667: `ALL_BITS_SET' undeclared (first use this function)
+useredit.c: In function `ce_class_edit_start':
+useredit.c:1744: warning: passing arg 1 of `edit_staples' from incompatible pointer type
+useredit.c:1756: warning: passing arg 1 of `ce_class_edit_start_new' from incompatible pointer type
+useredit.c: In function `ue_new_user_prompt':
+useredit.c:1775: `DOS_SEM' undeclared (first use this function)
+useredit.c:1881: structure has no member named `password'
+useredit.c:1912: structure has no member named `password'
+useredit.c:1913: structure has no member named `password'
+useredit.c:1914: structure has no member named `password'
+useredit.c:1964: structure has no member named `number'
+useredit.c: In function `start_user_edit':
+useredit.c:2011: `sys_info' undeclared (first use this function)
+useredit.c: In function `ue_global_copy':
+useredit.c:2098: parse error before `/'
+useredit.c:2114: structure has no member named `number'
+useredit.c:2116: structure has no member named `number'
+useredit.c:2122: `user_lines' undeclared (first use this function)
+useredit.c:2125: `line_status' undeclared (first use this function)
+useredit.c:2125: `ALL_BITS_SET' undeclared (first use this function)
+useredit.c:2126: parse error before `/'
+make: *** [useredit.o] Error 1
